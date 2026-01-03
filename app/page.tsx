@@ -1,5 +1,11 @@
-export default function Home() {
+import About from "./components/pages/About";
+import Hero from "./components/pages/Hero";
+
+export default function App() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans"></div>
+    <main className="w-full">
+      <Hero />
+      <About />
+    </main>
   );
 }
