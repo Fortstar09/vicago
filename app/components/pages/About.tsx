@@ -16,19 +16,19 @@ export default function About() {
       ".mission-reveal",
       {
         opacity: 0,
-        y: 40,
-        scale: 0.98,
+        y: 200,
+        scale: 0.8,
       },
       {
         opacity: 1,
         y: 0,
         scale: 1,
-        duration: 1.6,
+        duration: 2,
         ease: "power3.out",
         stagger: 0.15,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 70%",
+          start: "top top",
           once: true,
         },
       }

@@ -3,6 +3,7 @@ import About from "./components/pages/About";
 import Hero from "./components/pages/Hero";
 import Mission from "./components/pages/Mission";
 import Partners from "./components/pages/Partners";
+import Product from "./components/pages/Product";
 import SustainableSection from "./components/pages/SustainableSection";
 import Values from "./components/pages/Values";
 
@@ -15,6 +16,7 @@ export default function App() {
       <About />
       <Mission />
       <Values />
+      <Product />
       <SustainableSection />
       {/* <About /> */}
     </main>

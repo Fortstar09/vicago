@@ -16,7 +16,7 @@ export default function Hero() {
     // HERO ANIMATION
     gsap.fromTo(
       ".hero-animate",
-      { opacity: 0, y: -60 },
+      { opacity: 0, y: 100 },
       {
         opacity: 1,
         y: 0,
@@ -61,7 +61,7 @@ export default function Hero() {
               to sustainable practices, profitably.
             </p>
           </div>
-          <button className=" inline-flex justify-center items-center gap-1.5 rounded-full  bg-lime-400 px-3.5 cursor-pointer py-2 text-base mt-10 font-medium text-black">
+          <button className=" hero-animate inline-flex justify-center items-center gap-1.5 rounded-full  bg-lime-400 px-3.5 cursor-pointer py-2 text-base mt-10 font-medium text-black">
             Get Started
             <span className="inline-flex justify-center items-center p-1 bg-black rounded-full size-7">
               <ArrowUpRight color="oklch(84.1% 0.238 128.85)" size={20} />

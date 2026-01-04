@@ -16,6 +16,14 @@ const Navbar = () => {
 
     let lastScroll = 0;
 
+    gsap.from(".fade", {
+      opacity: 0,
+      y: -100,
+      duration: 1.2,
+      ease: "power3.out",
+      stagger: 0.2,
+    });
+
     ScrollTrigger.create({
       start: 0,
       end: "max",
@@ -62,7 +70,7 @@ const Navbar = () => {
     <header>
       <nav
         ref={navRef}
-        className="fixed top-0 z-20 w-full px-6 md:px-20 py-6 flex items-center justify-between transition-colors"
+        className="fixed top-0 z-20 w-full px-6 md:px-20 py-6 flex items-center justify-between transition-colors fade"
       >
         <div className="font-semibold text-lg">Vicago</div>
 

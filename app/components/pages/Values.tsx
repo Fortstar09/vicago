@@ -87,7 +87,7 @@ export default function Values() {
                 protect the environment, and create lasting impact for
                 generations to come.
               </p>
-              <button className=" inline-flex justify-center items-center gap-1.5 rounded-full  bg-lime-400 px-3.5 cursor-pointer py-2 text-base mt-4 font-medium text-black">
+              <button className=" values-text inline-flex justify-center items-center gap-1.5 rounded-full  bg-lime-400 px-3.5 cursor-pointer py-2 text-base mt-4 font-medium text-black">
                 Our services
                 <span className="inline-flex justify-center items-center p-1 bg-black rounded-full size-7">
                   <ArrowUpRight color="oklch(84.1% 0.238 128.85)" size={20} />
