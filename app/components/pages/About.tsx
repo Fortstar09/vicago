@@ -1,103 +1,105 @@
 "use client";
+
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Earth } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const About = () => {
-  const aboutRef = useRef<HTMLDivElement>(null);
+export default function About() {
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // ABOUT SECTION ON SCROLL
     gsap.fromTo(
-      ".about-animate",
-      { opacity: 0, y: 80 },
+      ".mission-reveal",
+      {
+        opacity: 0,
+        y: 40,
+        scale: 0.98,
+      },
       {
         opacity: 1,
         y: 0,
-        duration: 1,
-        stagger: 0.25,
+        scale: 1,
+        duration: 1.6,
         ease: "power3.out",
+        stagger: 0.15,
         scrollTrigger: {
-          trigger: aboutRef.current,
-          start: "top 75%",
+          trigger: sectionRef.current,
+          start: "top 70%",
+          once: true,
         },
       }
     );
   }, []);
 
   return (
-    <section ref={aboutRef} className="px-6 md:px-20 py-20 bg-white">
-      {/* Tabs */}
-      <div className="about-animate flex gap-4 mb-10">
-        {["About Us", "Journey", "Vision", "Mission"].map((tab, i) => (
-          <button
-            key={tab}
-            className={`rounded-full px-4 py-1.5 text-sm ${
-              i === 0 ? "bg-lime-400 text-black" : "bg-gray-100 text-gray-600"
-            }`}
-          >
-            {tab}
-          </button>
-        ))}
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden flex justify-center items-center bg-[#f5faf7] py-28 px-6 md:px-20 min-h-dvh"
+    >
+      {/* Static Images */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* <div className="absolute left-10 top-10 mission-reveal">
+          <Image
+            src="/hero-bg.jpg"
+            alt="Decorative image"
+            width={140}
+            height={180}
+            className="rounded-xl object-cover shadow-lg h-70 w-50"
+          />
+        </div> */}
+
+        <div className="absolute left-35 top-60 mission-reveal">
+          <Image
+            src="/hero-bg.jpg"
+            alt="Decorative image"
+            width={160}
+            height={200}
+            className="rounded-xl object-cover shadow-lg rotate-3 h-70 w-50"
+          />
+        </div>
+
+        <div className="absolute right-30 top-10 mission-reveal">
+          <Image
+            src="/hero-bg.jpg"
+            alt="Decorative image"
+            width={150}
+            height={190}
+            className="rounded-xl object-cover shadow-lg -rotate-5 h-70 w-50"
+          />
+        </div>
+
+        <div className="absolute right-36 bottom-15 mission-reveal">
+          <Image
+            src="/hero-bg.jpg"
+            alt="Decorative image"
+            width={200}
+            height={260}
+            className="rounded-xl object-cover shadow-lg rotate-3 h-70 w-50"
+          />
+        </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-10 items-center">
-        <div className="about-animate">
-          <p className="text-sm text-gray-500 mb-3">Who We Are at Farmora</p>
-          <h2 className="text-2xl md:text-3xl font-semibold leading-snug mb-4">
-            With years of expertise in both farming and tech, we’re committed to
-            helping farmers grow smarter.
-          </h2>
-          <p className="text-sm text-gray-600 mb-6">
-            By combining innovation with sustainability, we empower farmers to
-            increase productivity and reduce waste.
-          </p>
+      {/* Center Content */}
+      <div className="relative z-10 mx-auto flex flex-col items-center text-center max-w-2xl">
+        <h2 className="mission-reveal text-3xl md:text-5xl font-normal text-gray-900 leading-snug mb-5">
+          Our mission <Earth className="inline size-14 text-emerald-700 " /> is
+          to create and provide innovative, eco-friendly solutions that promote
+          recycling and green living.
+        </h2>
 
-          <button className="rounded-full border px-5 py-2 text-sm">
-            Learn More
-          </button>
-        </div>
+        <p className="mission-reveal mt-4 text-base font-light leading-8 text-gray-600 max-w-xl">
+          We believe in a future where technology, sustainability, and community
+          growth coexist harmoniously.
+        </p>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 gap-6">
-          <div className="about-animate rounded-xl overflow-hidden">
-            <Image
-              src="/hero-bg.jpg"
-              alt="Stat image"
-              width={400}
-              height={300}
-              className="object-cover"
-            />
-          </div>
-
-          <div className="about-animate rounded-xl bg-gray-50 p-6">
-            <h3 className="text-2xl font-semibold mb-2">10+</h3>
-            <p className="text-sm text-gray-600">
-              Years of Agricultural Innovation
-            </p>
-          </div>
-
-          <div className="about-animate rounded-xl overflow-hidden">
-            <Image
-              src="/hero-bg.jpg"
-              alt="Stat image"
-              width={400}
-              height={300}
-              className="object-cover"
-            />
-          </div>
-
-          <div className="about-animate rounded-xl bg-lime-400 p-6">
-            <h3 className="text-2xl font-semibold mb-2">85%</h3>
-            <p className="text-sm">Customer Satisfaction Rate</p>
-          </div>
-        </div>
+        <button className="mission-reveal mt-8 rounded-full bg-emerald-700 px-6 py-2.5 text-sm font-medium text-white hover:bg-emerald-800 transition">
+          About Farmora
+        </button>
       </div>
     </section>
   );
-};
-
-export default About;
+}
