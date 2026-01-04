@@ -40,22 +40,6 @@ export default function Hero() {
       <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/50 to-black/70" />
 
       {/* Navbar */}
-      <nav className="absolute top-0 z-20 w-full  px-6 md:px-20 py-6 flex items-center justify-between text-white hero-animate">
-        <div className="font-semibold text-lg">Vicago</div>
-
-        <div className="hidden md:flex gap-8 text-sm font-light">
-          <Link href="#">Home</Link>
-          <Link href="#">About</Link>
-          <Link href="#">Product</Link>
-          <Link href="#">Sustainability</Link>
-        </div>
-
-        <div className="flex gap-4 items-center">
-          <button className="rounded-full bg-lime-400 px-3.5 py-1.5 text-xs font-medium text-black inline-flex items-center gap-1.5 font-grotesque">
-            <span className="size-1.5 bg-black block rounded-full"></span>Log in
-          </button>
-        </div>
-      </nav>
 
       {/* Hero Content */}
       <div className="relative z-10 h-full flex  items-end px-6 md:px-20 w-full">

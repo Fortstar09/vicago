@@ -94,6 +94,18 @@ export default function Mission() {
           </div>
         </div>
 
+        <div className="flex h-full  items-center justify-center pr-22">
+          <div className="grid grid-cols-2 gap-18 w-full max-w-6xl">
+            <Image
+              src="/hero-bg.jpg"
+              alt="Crops"
+              width={500}
+              height={400}
+              className="rounded-xl object-cover h-100"
+            />
+          </div>
+        </div>
+
         {/* CARD 3 */}
         {/* <div className="flex h-full w-screen items-center justify-center px-16">
           <div className="grid grid-cols-2 gap-6 w-full max-w-6xl">

@@ -85,7 +85,7 @@ export default function About() {
 
       {/* Center Content */}
       <div className="relative z-10 mx-auto flex flex-col items-center text-center max-w-2xl">
-        <h2 className="mission-reveal text-3xl md:text-5xl font-normal text-gray-900 leading-snug mb-5">
+        <h2 className="mission-reveal text-3xl md:text-6xl font-bold text-gray-900 leading-snug mb-5">
           Our mission <Earth className="inline size-14 text-emerald-700 " /> is
           to create and provide innovative, eco-friendly solutions that promote
           recycling and green living.
