@@ -1,11 +1,6 @@
 "use client";
-
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function SustainableSection() {
   return (

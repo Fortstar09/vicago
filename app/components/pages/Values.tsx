@@ -12,52 +12,60 @@ export default function Values() {
   const valueRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Pin section
-    ScrollTrigger.create({
-      trigger: valueRef.current,
-      start: "top top",
-      end: "+=100%",
-      pin: true,
-    });
+    const ctx = gsap.context(() => {
+      // Pin section while in view
+      ScrollTrigger.create({
+        trigger: valueRef.current,
+        start: "top top",
+        end: "+=100%",
+        pin: true,
+      });
 
-    // Text reveal when section reaches top
-    gsap.fromTo(
-      ".values-text",
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.2,
-        ease: "power3.out",
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: valueRef.current,
-          start: "top top", // 👈 key line
-        },
-      }
-    );
+      // Text reveal when section reaches top
+      gsap.fromTo(
+        ".values-text",
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: valueRef.current,
+            start: "top top",
+          },
+        }
+      );
 
-    gsap.fromTo(
-      ".blur-card",
-      {
-        opacity: 0,
-        y: 60,
-        scale: 0.96,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        ease: "power3.out",
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: valueRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true, // 👈 smooth in & out
+      gsap.fromTo(
+        ".blur-card",
+        {
+          opacity: 0,
+          y: 60,
+          scale: 0.96,
         },
-      }
-    );
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          ease: "power3.out",
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: valueRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        }
+      );
+    }, valueRef);
+
+    return () => {
+      ctx.revert();
+      // make sure ScrollTriggers are removed to avoid duplicates
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
   }, []);
 
   return (

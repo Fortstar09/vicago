@@ -53,7 +53,7 @@ export default function ContactCta() {
           />
 
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/40 to-black/10" />
 
           {/* Content */}
           <div className="relative z-10 h-full flex flex-col justify-between p-10 md:p-14 text-white">
@@ -68,7 +68,7 @@ export default function ContactCta() {
                 Let’s grow something <br /> impactful together
               </h2>
 
-              <p className="mt-4 text-sm text-white/80 font-lightgit">
+              <p className="mt-4 text-sm text-white/80 font-light">
                 Whether you’re a farmer, partner, or investor, our team is ready
                 to help you build smarter, more sustainable solutions.
               </p>
@@ -97,9 +97,7 @@ export default function ContactCta() {
               </div>
 
               <div className="value-card rounded-xl bg-lime-400 text-black px-5 py-4">
-                <p className="text-sm font-semibold">
-                  Start a Conversation
-                </p>
+                <p className="text-sm font-semibold">Start a Conversation</p>
                 <div className="mt-3 flex items-center gap-2 text-sm font-medium">
                   Contact Us
                   <ArrowRight size={16} />
