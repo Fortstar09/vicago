@@ -47,7 +47,7 @@ export default function SustainableSection() {
               className="rounded-xl object-cover h-125"
             />
 
-            <div className="rounded-xl bg-lime-400 p-8 flex flex-col justify-between">
+            <div className="rounded-xl bg-lime-400 border-3 border-black p-8 flex flex-col justify-between">
               <div>
                 <h3 className="text-8xl font-bold text-gray-900">85%</h3>
                 <p className="mt-2 text-4xl text-gray-800">

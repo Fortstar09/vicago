@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,7 +73,8 @@ const Navbar = () => {
         ref={navRef}
         className="fixed top-0 z-20 w-full px-6 md:px-20 py-6 flex items-center justify-between transition-colors fade"
       >
-        <div className="font-semibold text-lg">Vicago</div>
+        {/* <div className="font-semibold text-lg">Vicago</div> */}
+        <Image src="/logoWhite.png" alt="logo" width={100} height={100} />
 
         <div className="hidden md:flex gap-8 text-sm font-light">
           <Link href="#">Home</Link>
@@ -81,10 +83,10 @@ const Navbar = () => {
           <Link href="#">Sustainability</Link>
         </div>
 
-        <div className="flex gap-4 items-center">
-          <button className="rounded-full bg-lime-400 px-3.5 py-1.5 text-xs font-medium text-black inline-flex items-center gap-1.5">
+        <div className="flex gap-4 justify-center items-center">
+          <button className="rounded-full bg-lime-400 px-3.5 py-1.5 text-xs font-medium text-black inline-flex justify-center items-center gap-1.5">
             <span className="size-1.5 bg-black block rounded-full"></span>
-            Log in
+            contact us
           </button>
         </div>
       </nav>
