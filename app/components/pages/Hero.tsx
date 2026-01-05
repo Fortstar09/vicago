@@ -62,7 +62,7 @@ export default function Hero() {
               to sustainable practices, profitably.
             </p>
           </div>
-          <button className=" hero-animate inline-flex justify-center items-center gap-1.5 rounded-full  bg-[#517f3e] px-3.5 cursor-pointer py-2 text-base mt-10 font-medium text-black">
+          <button className=" hero-animate inline-flex justify-center items-center gap-1.5 rounded-full  bg-[#517f3e] px-3.5 cursor-pointer py-2 text-base mt-10 font-medium text-gray-100">
             Get Started
             <span className="inline-flex justify-center items-center p-1 bg-gray-200 rounded-full size-7">
               <ArrowUpRight color="#517f3e" size={20} />

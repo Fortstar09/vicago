@@ -71,9 +71,9 @@ const Navbar = () => {
     <header>
       <nav
         ref={navRef}
-        className="fixed top-0 z-20 w-full max-margin py-3 flex items-center justify-between transition-colors fade"
+        className="fixed top-0 z-20 w-full max-margin py-5  flex items-center justify-between transition-colors fade"
       >
-        <Image src="/logoWhite.png" alt="logo" width={90} height={18} />
+        <Image src="/logo.png" alt="logo" width={90} height={18} />
 
         <div className="hidden md:flex gap-8 text-base font-light">
           <Link href="#">Home</Link>
