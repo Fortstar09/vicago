@@ -30,7 +30,7 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="w-full bg-emerald-900/70 px-6 md:px-20 py-24 text-white"
+      className="w-full bg-[#517f3e] px-6 md:px-20 py-24 text-white"
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12 footer-animate">

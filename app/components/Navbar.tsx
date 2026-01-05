@@ -71,12 +71,11 @@ const Navbar = () => {
     <header>
       <nav
         ref={navRef}
-        className="fixed top-0 z-20 w-full px-6 md:px-20 py-6 flex items-center justify-between transition-colors fade"
+        className="fixed top-0 z-20 w-full max-margin py-3 flex items-center justify-between transition-colors fade"
       >
-        {/* <div className="font-semibold text-lg">Vicago</div> */}
-        <Image src="/logoWhite.png" alt="logo" width={100} height={100} />
+        <Image src="/logoWhite.png" alt="logo" width={90} height={18} />
 
-        <div className="hidden md:flex gap-8 text-sm font-light">
+        <div className="hidden md:flex gap-8 text-base font-light">
           <Link href="#">Home</Link>
           <Link href="#">About</Link>
           <Link href="#">Product</Link>
@@ -84,9 +83,9 @@ const Navbar = () => {
         </div>
 
         <div className="flex gap-4 justify-center items-center">
-          <button className="rounded-full bg-lime-400 px-3.5 py-1.5 text-xs font-medium text-black inline-flex justify-center items-center gap-1.5">
-            <span className="size-1.5 bg-black block rounded-full"></span>
-            contact us
+          <button className="rounded-full bg-[#517f3e] px-3 py-1 text-base font-medium text-gray-200 inline-flex justify-center items-center gap-1.5">
+            <span className="size-1.5 bg-gray-200 block rounded-full"></span>
+            contact
           </button>
         </div>
       </nav>

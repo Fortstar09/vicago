@@ -39,7 +39,7 @@ export default function ContactCta() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-white py-40 px-6 md:px-20"
+      className="relative w-full overflow-hidden bg-white py-40 max-margin"
     >
       <div className="mx-auto max-w-7xl">
         {/* Image + Overlay */}
@@ -96,7 +96,7 @@ export default function ContactCta() {
                 </p>
               </div>
 
-              <div className="value-card rounded-xl bg-lime-400 text-black px-5 py-4">
+              <div className="value-card rounded-xl bg-[#517f3e] border-3 border-black text-white px-5 py-4">
                 <p className="text-sm font-semibold">Start a Conversation</p>
                 <div className="mt-3 flex items-center gap-2 text-sm font-medium">
                   Contact Us

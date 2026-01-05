@@ -84,7 +84,7 @@ export default function Values() {
         <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/70 to-black/80" />
 
         {/* Content */}
-        <div className="relative z-10 h-full flex flex-col justify-between items-start px-6 md:px-20 py-20">
+        <div className="relative z-10 h-full flex flex-col justify-between items-start max-margin py-20">
           <div className="w-full text-white space-y-4 flex justify-between mt-10 ">
             <h2 className="values-text max-w-md text-3xl md:text-7xl font-light leading-tight">
               Eco-friendly Innovation
@@ -103,7 +103,7 @@ export default function Values() {
               </button>
             </div>
           </div>
-          <div className="flex justify-between w-full items-center ">
+          <div className="flex justify-between gap-4 w-full items-center ">
             <BlurCard />
             <BlurCard />
             <BlurCard />

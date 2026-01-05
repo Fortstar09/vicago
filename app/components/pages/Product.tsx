@@ -34,10 +34,10 @@ export default function Product() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 bg-[#fbf9f3] md:px-20">
+    <section ref={sectionRef} className="py-20  bg-[#fbf9f3] max-margin">
       <div className="mx-auto rounded-3xl">
         {/* Header */}
-        <h2 className="tc-reveal text-2xl md:text-6xl font-normal text-gray-900 max-w-lg mb-22">
+        <h2 className="tc-reveal text-2xl md:text-6xl font-normal text-gray-900 max-w-lg mb-18">
           Our <br /> Product Cases
         </h2>
 
@@ -59,7 +59,7 @@ export default function Product() {
 
         {/* CTA */}
         <div className="tc-reveal mt-24 flex justify-center">
-          <button className="rounded-full bg-black px-5 py-3 text-base font-medium text-lime-400 hover:bg-black/90 transition">
+          <button className="rounded-full bg-gray-50 border-2 border-[#517f3e] px-5 py-3 text-base font-medium text-[#517f3e] hover:bg-gray-200 transition">
             View all products →
           </button>
         </div>

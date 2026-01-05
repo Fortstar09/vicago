@@ -23,7 +23,7 @@ export default function LenisProvider({
     // Initialize Lenis for smooth scrolling. Cast to a minimal shape because
     // the package doesn't expose the full internal types we need here.
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 0.3,
       easing: (t: number) => t,
     }) as unknown as LenisLike;
 

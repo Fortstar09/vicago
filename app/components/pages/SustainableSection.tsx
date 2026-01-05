@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function SustainableSection() {
   return (
     <section className="relative min-h-dvh w-full overflow-hidden bg-white text-gray-900 z-20">
-      <div className="relative z-10 h-full flex flex-col justify-center gap-30 items-start px-6 md:px-20 py-20">
+      <div className=" max-out relative z-10 h-full flex flex-col justify-center gap-30 items-start max-margin py-20">
         <div className="w-full text-black/80 space-y-4 flex justify-between mt-10 ">
           <h2 className="values-text max-w-md text-3xl md:text-7xl font-light leading-tight">
             Eco-friendly Innovation
@@ -25,13 +25,13 @@ export default function SustainableSection() {
           </div>
         </div>
         <div className="h-full w-full ">
-          <div className="grid grid-cols-3  w-full">
+          <div className="grid grid-cols-3 gap-6  w-full">
             <Image
               src="/hero-bg.jpg"
               alt="Crops"
               width={400}
               height={400}
-              className="rounded-xl object-cover h-125"
+              className="rounded-xl object-cover h-105"
             />
 
             <Image
@@ -39,7 +39,7 @@ export default function SustainableSection() {
               alt="Crops"
               width={400}
               height={400}
-              className="rounded-xl object-cover h-125"
+              className="rounded-xl object-cover h-105"
             />
 
             <div className="rounded-xl bg-lime-400 border-3 border-black p-8 flex flex-col justify-between">

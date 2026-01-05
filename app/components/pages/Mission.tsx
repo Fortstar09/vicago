@@ -52,7 +52,7 @@ export default function Mission() {
               className="rounded-xl object-cover h-100"
             />
 
-            <div className="rounded-xl bg-gray-100 p-8 flex flex-col justify-between">
+            <div className="rounded-xl  border-3 border-black p-8 flex flex-col justify-between">
               <div>
                 <h3 className="text-8xl font-bold text-emerald-700">10+</h3>
                 <p className="mt-2 text-4xl text-gray-600">
@@ -79,15 +79,15 @@ export default function Mission() {
               className="rounded-xl object-cover h-100"
             />
 
-            <div className="rounded-xl bg-lime-400 p-8 flex flex-col justify-between">
+            <div className="rounded-xl bg-[#517f3e] border-3 border-black p-8 flex flex-col justify-between">
               <div>
-                <h3 className="text-8xl font-bold text-gray-900">85%</h3>
-                <p className="mt-2 text-4xl text-gray-800">
+                <h3 className="text-8xl font-bold text-gray-100">85%</h3>
+                <p className="mt-2 text-4xl text-gray-300">
                   Customer Satisfaction Rate
                 </p>
               </div>
 
-              <p className="text-base text-gray-700">
+              <p className="text-base text-gray-100">
                 Trusted by farmers and agribusinesses across regions.
               </p>
             </div>

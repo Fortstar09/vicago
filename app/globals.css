@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
-@import "tailwindcss/utilities";
 
 :root {
   --background: #ffffff;
@@ -9,6 +8,8 @@
   --color-foreground: var(--foreground);
   --font-grotesque: "Bricolage Grotesque", sans-serif;
   --font-inter: "Inter", sans-serif;
+  --color-green: #517f3e;
+  --color-brown: #553f31;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,6 +39,16 @@ h5,
 h6,
 .brand-font {
   font-family: var(--font-grotesque), var(--font-inter), sans-serif;
+}
+
+button {
+  cursor: pointer !important;
+}
+
+@layer base {
+  .max-margin {
+    @apply xl:max-w-[1550px] px-6 xl:px-10  xl:mx-auto w-full;
+  }
 }
 
 .clip-mask {
