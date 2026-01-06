@@ -100,7 +100,7 @@ export default function SustainableSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-dvh w-full overflow-hidden bg-white text-gray-900 z-20"
+      className="relative min-h-dvh w-full overflow-hidden bg-white text-gray-900"
     >
       <div className=" max-out relative z-10 h-full flex flex-col justify-center gap-30 items-start max-margin py-20">
         <div className="w-full text-black/80 space-y-4 flex justify-between items-end mt-10 ">

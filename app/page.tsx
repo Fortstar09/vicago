@@ -22,7 +22,7 @@ export default function App() {
       <Story />
       <TestimonialCarousel />
       <SustainableSection />
-      <ContactCta />
+      {/* <ContactCta /> */}
       <Footer />
       {/* <About /> */}
     </main>
