@@ -13,59 +13,47 @@ export default function Values() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Pin section while in view
-      ScrollTrigger.create({
-        trigger: valueRef.current,
-        start: "top top",
-        end: "+=100%",
-        pin: true,
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: valueRef.current,
+          start: "top top", // 👈 START animation when section enters
+          end: "bottom 20%", // 👈 END after enough reading time
+          pin: true,
+          scrub: false,
+          toggleActions: "play reverse play reverse",
+          // markers: {
+          //   startColor: "green",
+          //   endColor: "red",
+          //   fontSize: "12px",
+          // },
+        },
       });
 
-      // Text reveal when section reaches top
-      gsap.fromTo(
-        ".values-text",
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1.2,
-          ease: "power3.out",
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: valueRef.current,
-            start: "top top",
-          },
-        }
-      );
+      // 1️⃣ Text reveal
+      tl.from(".values-text", {
+        opacity: 0,
+        y: 40,
+        duration: 1.1,
+        ease: "power3.out",
+        stagger: 0.2,
+      });
 
-      gsap.fromTo(
+      // 2️⃣ Cards slide up
+      tl.from(
         ".blur-card",
         {
           opacity: 0,
           y: 60,
           scale: 0.96,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
+          duration: 0.7,
           ease: "power3.out",
           stagger: 0.2,
-          scrollTrigger: {
-            trigger: valueRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          },
-        }
+        },
+        "-=0.4"
       );
     }, valueRef);
 
-    return () => {
-      ctx.revert();
-      // make sure ScrollTriggers are removed to avoid duplicates
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
+    return () => ctx.revert();
   }, []);
 
   return (

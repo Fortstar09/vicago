@@ -51,12 +51,12 @@ export default function Hero() {
                 Sustainable Farming Tech
               </span>
 
-              <h1 className="hero-animate text-4xl md:text-6xl lg:text-[76px] lg:leading-24 font-semibold font-grotesque leading-tight">
+              <h1 className="hero-animate text-4xl md:text-6xl lg:text-[76px] lg:leading-24 font-medium font-grotesque leading-tight">
                 Bringing Innovation to <br /> Your Farming Journey.
               </h1>
             </div>
 
-            <p className="hero-animate text-sm text-white/90 max-w-150 leading-7">
+            <p className="hero-animate text-base text-white/90 max-w-150 leading-7">
               From precision agriculture to sustainable practices, we help you
               grow more efficiently and profitably. From precision agriculture
               to sustainable practices, profitably.

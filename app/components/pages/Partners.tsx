@@ -22,7 +22,10 @@ const Partners = () => {
           stagger: 0.15,
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top top",
+            start: "top 40%",
+            end: "bottom 50%",
+            toggleActions: "play reverse play reverse",
+            // markers: true,
           },
         }
       );

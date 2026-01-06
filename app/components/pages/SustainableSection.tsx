@@ -1,22 +1,119 @@
 "use client";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 export default function SustainableSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // 1️⃣ Heading — strong entrance
+      gsap.from(".sustain-heading", {
+        y: 80,
+        opacity: 0,
+        scale: 0.96,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".sustain-heading",
+          start: "top 75%",
+          end: "bottom 30%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+
+      // 2️⃣ Paragraph — softer, from right
+      gsap.from(".sustain-text", {
+        x: 60,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".sustain-text",
+          start: "top 75%",
+          end: "bottom 15%",
+          toggleActions: "play reverse play reverse",
+          // markers: true,
+        },
+      });
+
+      // 3️⃣ Button — delayed pop
+      gsap.from(".sustain-button", {
+        y: 30,
+        opacity: 0,
+        scale: 0.9,
+        duration: 0.8,
+        ease: "back.out(1.6)",
+        scrollTrigger: {
+          trigger: ".sustain-button",
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+
+      // 4️⃣ Stat number — impact moment
+      gsap.from(".sustain-stat", {
+        scale: 0.7,
+        opacity: 0,
+        duration: 1,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: ".sustain-stat",
+          start: "top 85%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+
+      // 5️⃣ Stat description
+      gsap.from(".sustain-stat-desc", {
+        y: 40,
+        opacity: 0,
+        duration: 0.9,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".sustain-stat-desc",
+          start: "top 85%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+
+      // 6️⃣ Bottom caption
+      gsap.from(".sustain-caption", {
+        opacity: 0,
+        y: 20,
+        duration: 0.7,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".sustain-caption",
+          start: "top 90%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="relative min-h-dvh w-full overflow-hidden bg-white text-gray-900 z-20">
+    <section
+      ref={sectionRef}
+      className="relative min-h-dvh w-full overflow-hidden bg-white text-gray-900 z-20"
+    >
       <div className=" max-out relative z-10 h-full flex flex-col justify-center gap-30 items-start max-margin py-20">
-        <div className="w-full text-black/80 space-y-4 flex justify-between mt-10 ">
-          <h2 className="values-text max-w-md text-3xl md:text-7xl font-light leading-tight">
+        <div className="w-full text-black/80 space-y-4 flex justify-between items-end mt-10 ">
+          <h2 className=" sustain-heading max-w-md text-3xl md:text-7xl font-light leading-tight">
             Eco-friendly Innovation
           </h2>
           <div className="max-w-lg">
-            <p className="values-text text-base text-gray-500">
+            <p className="sustain-text text-base text-gray-500">
               At Vicago, we believe technology should empower communities,
               protect the environment, and create lasting impact for generations
               to come.
             </p>
-            <button className=" inline-flex justify-center items-center gap-1.5 rounded-full  bg-lime-400 px-3.5 cursor-pointer py-2 text-base mt-4 font-medium text-black">
+            <button className=" sustain-button inline-flex justify-center items-center gap-1.5 rounded-full  bg-lime-400 px-3.5 cursor-pointer py-2 text-base mt-4 font-medium text-black">
               Our services
               <span className="inline-flex justify-center items-center p-1 bg-black rounded-full size-7">
                 <ArrowUpRight color="oklch(84.1% 0.238 128.85)" size={20} />
@@ -44,13 +141,15 @@ export default function SustainableSection() {
 
             <div className="rounded-xl bg-lime-400 border-3 border-black p-8 flex flex-col justify-between">
               <div>
-                <h3 className="text-8xl font-bold text-gray-900">85%</h3>
-                <p className="mt-2 text-4xl text-gray-800">
+                <h3 className="sustain-stat text-8xl font-bold text-gray-900">
+                  85%
+                </h3>
+                <p className="sustain-stat-desc mt-2 text-4xl text-gray-800">
                   Customer Satisfaction Rate
                 </p>
               </div>
 
-              <p className="text-base text-gray-700">
+              <p className="sustain-caption  text-base text-gray-700">
                 Trusted by farmers and agribusinesses across regions.
               </p>
             </div>

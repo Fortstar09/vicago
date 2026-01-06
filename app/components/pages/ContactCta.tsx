@@ -18,6 +18,12 @@ export default function ContactCta() {
         opacity: 0,
         duration: 1,
         ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 30%",
+          end: "bottom 30%",
+          toggleActions: "play reverse play reverse",
+        },
       });
 
       gsap.from(".value-card", {
@@ -28,7 +34,9 @@ export default function ContactCta() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 70%",
+          start: "top 30%",
+          end: "bottom 30%",
+          toggleActions: "play reverse play reverse",
         },
       });
     }, sectionRef);
@@ -41,7 +49,7 @@ export default function ContactCta() {
       ref={sectionRef}
       className="relative w-full overflow-hidden bg-white py-40 max-margin"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto">
         {/* Image + Overlay */}
         <div className="headline relative h-130 rounded-3xl overflow-hidden">
           <Image

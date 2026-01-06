@@ -19,7 +19,7 @@ export default function Footer() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: footerRef.current,
-          start: "top 85%",
+          start: "top 60%",
         },
       });
     }, footerRef);

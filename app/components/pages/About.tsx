@@ -16,20 +16,21 @@ export default function About() {
       ".mission-reveal",
       {
         opacity: 0,
-        y: 200,
+        y: 250,
         scale: 0.8,
       },
       {
         opacity: 1,
         y: 0,
         scale: 1,
-        duration: 2,
-        stagger: 0,
+        duration: 1.7,
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 100%",
-          once: true,
+          start: "top 30%",
+          end: "bottom 55%",
+          toggleActions: "play reverse play reverse",
+          // markers: true,
         },
       }
     );
@@ -96,9 +97,9 @@ export default function About() {
           growth coexist harmoniously.
         </p>
 
-        <button className="mission-reveal mt-8 rounded-full bg-emerald-700 px-6 py-2.5 text-sm font-medium text-white hover:bg-emerald-800 transition">
+        {/* <button className="mission-reveal mt-8 rounded-full bg-emerald-700 px-6 py-2.5 text-sm font-medium text-white hover:bg-emerald-800 transition">
           About Vicago
-        </button>
+        </button> */}
       </div>
     </section>
   );
