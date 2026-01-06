@@ -1,16 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight } from "lucide-react";
+import { useScrollPin } from "@/app/hooks/useScrollPin";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
-  const heroRef = useRef<HTMLDivElement>(null);
+  const heroRef = useScrollPin();
 
   useEffect(() => {
     // HERO ANIMATION
@@ -23,6 +23,7 @@ export default function Hero() {
         duration: 1,
         stagger: 0.2,
         ease: "power3.out",
+        // toggleActions: "play reverse play reverse",
       }
     );
   }, []);
@@ -68,27 +69,6 @@ export default function Hero() {
               <ArrowUpRight color="#517f3e" size={20} />
             </span>
           </button>
-          {/* <div className="hero-animate flex items-center gap-10">
-            <div className="rounded-xl bg-white/10 backdrop-blur-xs px-5 py-4 text-sm space-y-8 max-w-sm border border-white/10">
-              <p className="font-light text-xl text-white">Our Mission</p>
-
-              <p className="text-xs font-light text-white/80 mt-2 leading-relaxed">
-                We empower farmers with smart, accessible technology that
-                improves productivity, reduces waste, and drives sustainable
-                growth across communities.
-              </p>
-
-              <div className="mt-3 flex items-center gap-3 text-[11px] text-white/70">
-                <span className="flex items-center gap-1">
-                  🌱 Sustainability
-                </span>
-                <span className="flex items-center gap-1">
-                  📊 Smart Insights
-                </span>
-                <span className="flex items-center gap-1">🚜 Productivity</span>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </section>

@@ -4,12 +4,13 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useScrollPin } from "@/app/hooks/useScrollPin";
 import { ArrowUpRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Values() {
-  const valueRef = useRef<HTMLDivElement>(null);
+  const valueRef = useScrollPin();
 
   useEffect(() => {
     const ctx = gsap.context(() => {

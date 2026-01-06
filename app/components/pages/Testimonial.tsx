@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import { gsap } from "gsap";
+import { useScrollPin } from "@/app/hooks/useScrollPin";
+import Image from "next/image";
 
 // Mock testimonial data - based on the image
 const testimonials = [
@@ -54,6 +55,7 @@ const testimonials = [
 ];
 
 export default function TestimonialCarousel() {
+  const containerRef = useScrollPin();
   const [activeIndex, setActiveIndex] = useState(2);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const textRef = useRef<HTMLDivElement | null>(null);
@@ -97,7 +99,10 @@ export default function TestimonialCarousel() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8">
+    <div
+      ref={containerRef}
+      className="min-h-screen bg-gray-50 flex items-center justify-center p-8"
+    >
       <div className="max-w-7xl w-full">
         {/* Testimonial Quote */}
         <div className="max-w-5xl mx-auto pt-16 mb-20">

@@ -1,33 +1,79 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Leaf } from "lucide-react";
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
+import { useScrollPin } from "@/app/hooks/useScrollPin";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Helper component to split text into spans for per-letter animation (only for footer content)
+function SplitText({ children }: { children: React.ReactNode }) {
+  const nodes: React.ReactNode[] = [];
+  const items = React.Children.toArray(children);
+
+  items.forEach((child, idx) => {
+    if (typeof child === "string" || typeof child === "number") {
+      const str = String(child);
+      str.split("").forEach((char, i) => {
+        nodes.push(
+          <span key={`char-${idx}-${i}`} className="inline-block opacity-0">
+            {char === " " ? "\u00A0" : char}
+          </span>
+        );
+      });
+    } else if (
+      React.isValidElement(child) &&
+      (child as React.ReactElement).type === "br"
+    ) {
+      nodes.push(<br key={`br-${idx}`} />);
+    } else {
+      nodes.push(child);
+    }
+  });
+
+  return <>{nodes}</>;
+}
+
 export default function Footer() {
-  const footerRef = useRef<HTMLDivElement>(null);
+  const footerRef = useScrollPin();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".footer-animate", {
-        y: 40,
-        opacity: 0,
-        stagger: 0.15,
-        duration: 0.9,
-        ease: "power3.out",
+      // Pin footer section - locks scroll when it reaches top
+      gsap.timeline({
         scrollTrigger: {
           trigger: footerRef.current,
-          start: "top 60%",
+          start: "top top",
+          end: "bottom bottom",
+          pin: true,
+          pinSpacing: true,
         },
       });
+
+      // Smooth scroll animations
+      gsap.fromTo(
+        ".footer-animate span",
+        { opacity: 0, x: -8 },
+        {
+          opacity: 1,
+          x: 0,
+          stagger: 0.02, // all letters start immediately, tiny delay between letters
+          duration: 0.4,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: footerRef.current,
+            start: "top 80%",
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
     }, footerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [footerRef]);
 
   return (
     <footer
@@ -42,88 +88,98 @@ export default function Footer() {
         priority
       />
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/40 z-10" />
 
-      <div className="relative mx-auto max-w-7xl w-full flex flex-col gap-20">
+      <div className="relative z-20 mx-auto max-w-7xl w-full flex flex-col gap-20">
         {/* Top text */}
-        <div className="max-w-lg">
-          <div>
-            <h2 className="mt-5 text-3xl md:text-5xl font-light leading-tight">
-              Let’s grow something <br /> impactful together
+        <div className="flex flex-col lg:flex-row w-full justify-center items-start lg:items-end lg:justify-between text-white">
+          <div className="max-w-lg">
+            <h2 className="mt-5 hero-text text-3xl md:text-5xl font-light leading-tight footer-animate">
+              <SplitText>
+                Let’s grow something <br />
+                impactful together
+              </SplitText>
             </h2>
 
-            <p className="mt-4 text-sm text-white/80 font-light">
-              Whether you’re a farmer, partner, or investor, our team is ready
-              to help you build smarter, more sustainable solutions.
+            <p className="mt-4 text-sm text-white/80 font-light footer-animate">
+              <SplitText>
+                Whether you’re a farmer, partner, or investor, our team is ready
+                to help you build smarter, more sustainable solutions.
+              </SplitText>
             </p>
           </div>
+          <button className="hero-animate inline-flex justify-center items-center gap-1.5 rounded-full bg-lime-400 pl-3 pr-2 cursor-pointer py-1.5 text-base mt-10 font-medium text-black footer-animate">
+            Partner with us
+            <span className="inline-flex justify-center items-center p-1 bg-gray-200 rounded-full size-7">
+              <ArrowUpRight color="#000" size={20} />
+            </span>
+          </button>
         </div>
 
-        <div className="bg-white rounded-3xl p-12 md:p-16 shadow-2xl">
+        {/* Footer content box */}
+        <div className="bg-white footer-box rounded-xl p-6 md:p-12 shadow-2xl">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
             {/* Brand Section */}
             <div className="md:col-span-1 space-y-3 footer-animate">
-              <h3 className="text-3xl font-bold text-gray-900">Vicago</h3>
+              <h3 className="text-3xl font-bold text-gray-900">
+                <SplitText>Vicago</SplitText>
+              </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Building a sustainable agricultural future with technology,
-                collaboration, and nature-driven smarter practices.
+                <SplitText>
+                  Building a sustainable agricultural future with technology,
+                  collaboration, and nature-driven smarter practices.
+                </SplitText>
               </p>
             </div>
 
             {/* Quick Menu */}
             <div className="space-y-4 footer-animate">
               <p className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
-                Quick Menu
+                <SplitText>Quick Menu</SplitText>
               </p>
               <ul className="space-y-3 text-sm text-gray-700">
-                <li className="hover:text-green-600 cursor-pointer transition-colors">
-                  Home
-                </li>
-                <li className="hover:text-green-600 cursor-pointer transition-colors">
-                  About
-                </li>
-                <li className="hover:text-green-600 cursor-pointer transition-colors">
-                  Services
-                </li>
-                <li className="hover:text-green-600 cursor-pointer transition-colors">
-                  Gallery
-                </li>
+                {["Home", "About", "Services", "Gallery"].map((item, i) => (
+                  <li
+                    key={i}
+                    className="hover:text-green-600 cursor-pointer transition-colors"
+                  >
+                    <SplitText>{item}</SplitText>
+                  </li>
+                ))}
               </ul>
             </div>
 
             {/* Resources */}
             <div className="space-y-4 footer-animate">
               <p className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
-                Resources
+                <SplitText>Resources</SplitText>
               </p>
               <ul className="space-y-3 text-sm text-gray-700">
-                <li className="hover:text-green-600 cursor-pointer transition-colors">
-                  Insights
-                </li>
-                <li className="hover:text-green-600 cursor-pointer transition-colors">
-                  Reports
-                </li>
-                <li className="hover:text-green-600 cursor-pointer transition-colors">
-                  News
-                </li>
+                {["Insights", "Reports", "News"].map((item, i) => (
+                  <li
+                    key={i}
+                    className="hover:text-green-600 cursor-pointer transition-colors"
+                  >
+                    <SplitText>{item}</SplitText>
+                  </li>
+                ))}
               </ul>
             </div>
 
             {/* Social */}
             <div className="space-y-4 footer-animate">
               <p className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
-                Social
+                <SplitText>Social</SplitText>
               </p>
               <ul className="space-y-3 text-sm text-gray-700">
-                <li className="hover:text-green-600 cursor-pointer transition-colors">
-                  Instagram
-                </li>
-                <li className="hover:text-green-600 cursor-pointer transition-colors">
-                  X
-                </li>
-                <li className="hover:text-green-600 cursor-pointer transition-colors">
-                  TikTok
-                </li>
+                {["Instagram", "X", "TikTok"].map((item, i) => (
+                  <li
+                    key={i}
+                    className="hover:text-green-600 cursor-pointer transition-colors"
+                  >
+                    <SplitText>{item}</SplitText>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -131,18 +187,20 @@ export default function Footer() {
           {/* Bottom bar */}
           <div className="mt-12 border-t border-gray-200 pt-8 footer-animate flex flex-col md:flex-row items-center justify-between">
             <p className="text-xs text-gray-500">
-              © {new Date().getFullYear()} GreenVest. All rights reserved.
+              <SplitText>
+                © {new Date().getFullYear()} Vicago. All rights reserved.
+              </SplitText>
             </p>
             <div className="flex gap-6 mt-4 md:mt-0 text-xs text-gray-500">
-              <a href="#" className="hover:text-gray-900 transition-colors">
-                Term
-              </a>
-              <a href="#" className="hover:text-gray-900 transition-colors">
-                Privacy
-              </a>
-              <a href="#" className="hover:text-gray-900 transition-colors">
-                Cookie Policy
-              </a>
+              {["Term", "Privacy", "Cookie Policy"].map((item, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="hover:text-gray-900 transition-colors"
+                >
+                  <SplitText>{item}</SplitText>
+                </a>
+              ))}
             </div>
           </div>
         </div>

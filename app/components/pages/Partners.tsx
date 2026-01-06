@@ -1,13 +1,14 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useScrollPin } from "@/app/hooks/useScrollPin";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Partners = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useScrollPin();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -22,8 +23,8 @@ const Partners = () => {
           stagger: 0.15,
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 40%",
-            end: "bottom 50%",
+            start: "top 50%",
+            end: "bottom 40%",
             toggleActions: "play reverse play reverse",
             // markers: true,
           },
@@ -32,7 +33,7 @@ const Partners = () => {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [sectionRef]);
 
   return (
     <section ref={sectionRef} className="bg-[#f5faf7] py-30">

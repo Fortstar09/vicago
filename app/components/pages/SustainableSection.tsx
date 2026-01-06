@@ -1,11 +1,12 @@
 "use client";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
+import { useScrollPin } from "@/app/hooks/useScrollPin";
 
 export default function SustainableSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useScrollPin();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -95,7 +96,7 @@ export default function SustainableSection() {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [sectionRef]);
 
   return (
     <section

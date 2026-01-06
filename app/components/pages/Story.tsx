@@ -1,15 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight } from "lucide-react";
+import { useScrollPin } from "@/app/hooks/useScrollPin";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Story() {
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useScrollPin();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -62,14 +63,14 @@ export default function Story() {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [sectionRef]);
 
   return (
     <section ref={sectionRef} className="py-20 bg-[#fbf9f3] max-margin">
       <div className="mx-auto rounded-3xl">
         {/* Header */}
         <h2 className="tc-header text-2xl md:text-6xl font-normal text-gray-900 max-w-lg mb-18">
-          Our <br /> Story
+          Our Story
         </h2>
 
         {/* Cards */}

@@ -5,11 +5,12 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Earth } from "lucide-react";
+import { useScrollPin } from "@/app/hooks/useScrollPin";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useScrollPin();
 
   useEffect(() => {
     gsap.fromTo(
