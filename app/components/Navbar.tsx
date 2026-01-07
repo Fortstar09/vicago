@@ -44,9 +44,10 @@ const Navbar = () => {
         if (currentScroll < lastScroll) {
           gsap.to(nav, {
             y: "0%",
-            backgroundColor: "rgba(255,255,255,0.1)",
-            backdropFilter: "blur(20px)",
+            backgroundColor: "rgba(255,255,255)",
+            // backdropFilter: "blur(20px)",
             color: "#000000",
+            borderBottom: "1px solid rgba(0,0,0,0.1)",
             duration: 0.3,
             ease: "power2.out",
           });
@@ -57,6 +58,8 @@ const Navbar = () => {
           gsap.to(nav, {
             backgroundColor: "rgba(255,255,255,0)",
             backdropFilter: "blur(0px)",
+            borderBottom: "1px solid rgba(0,0,0,0)",
+
             color: "#ffffff",
             duration: 0.3,
           });
@@ -68,11 +71,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header>
-      <nav
-        ref={navRef}
-        className="fixed top-0 z-20 w-full max-margin py-5  flex items-center justify-between transition-colors fade"
-      >
+    <header
+      ref={navRef}
+      className="flex justify-center fixed top-0 z-20 fade w-full"
+    >
+      <nav className="w-full max-margin py-5 flex items-center justify-between transition-colors ">
         <Image src="/logo.png" alt="logo" width={90} height={18} />
 
         <div className="hidden md:flex gap-8 text-base font-light">

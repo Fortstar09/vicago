@@ -1,10 +1,10 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import About from "./components/pages/About";
-import ContactCta from "./components/pages/ContactCta";
 import Hero from "./components/pages/Hero";
 import Mission from "./components/pages/Mission";
 import Partners from "./components/pages/Partners";
+import StackingCardsSection from "./components/pages/Products";
 import Story from "./components/pages/Story";
 import SustainableSection from "./components/pages/SustainableSection";
 import TestimonialCarousel from "./components/pages/Testimonial";
@@ -20,6 +20,7 @@ export default function App() {
       <Mission />
       <Values />
       <Story />
+      <StackingCardsSection />
       <TestimonialCarousel />
       <SustainableSection />
       {/* <ContactCta /> */}

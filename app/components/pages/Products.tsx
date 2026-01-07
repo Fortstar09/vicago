@@ -1,5 +1,150 @@
 "use client";
 
-export default function Products() {
-  return <section className="py-20 bg-[#fbf9f3] max-margin">Products</section>;
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const DATA = [
+  {
+    title: "Smart irrigation systems",
+    subtitle:
+      "Water-efficient systems that optimize usage and improve overall farming efficiency.",
+    image: "/hero-bg.jpg",
+  },
+  // {
+  //   title: "Agriculture technology integration",
+  //   subtitle:
+  //     "Technology-driven tools that improve farming accuracy and productivity.",
+  //   image: "/value-bg.jpg",
+  // },
+  // {
+  //   title: "Precision farming solutions",
+  //   subtitle:
+  //     "Advanced monitoring systems that enhance crop yields and resource management.",
+  //   image: "/hero-bg.jpg",
+  // },
+  {
+    title: "Agriculture technology",
+    subtitle:
+      "Technology-driven tools improve farming accuracy and productivity.",
+    image: "/value-bg.jpg",
+  },
+];
+
+export default function StackingCardsSection() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // 🔹 Initial positions: let GSAP control slide transforms
+      DATA.forEach((_, i) => {
+        if (i === 0) {
+          gsap.set(`.slide-${i}`, { yPercent: 0 });
+        } else {
+          gsap.set(`.bg-image-${i}`, { yPercent: 100 });
+          gsap.set(`.card-${i}`, { yPercent: 100 });
+          gsap.set(`.slide-${i}`, { yPercent: 100 });
+        }
+      });
+
+      // 🔹 Timeline for scroll animation
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: `+=${DATA.length * window.innerHeight}`,
+          scrub: true,
+          pin: true,
+        },
+      });
+
+      DATA.forEach((_, i) => {
+        if (i === 0) return;
+
+        // slide previous out, bring bg/card in, then bring new slide in
+        tl.to(
+          `.slide-${i - 1}`,
+          { yPercent: -100, duration: 0.45, ease: "power2.inOut" },
+          "<"
+        )
+          .to(`.bg-image-${i}`, { yPercent: 0, duration: 0.6 })
+          .to(`.card-${i}`, { yPercent: 0, duration: 0.6 }, "<")
+          .to(
+            `.slide-${i}`,
+            { yPercent: 0, duration: 0.45, ease: "power2.out" },
+            "<"
+          );
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="relative h-screen overflow-hidden">
+      {/* Background images */}
+      {DATA.map((item, i) => (
+        <div
+          key={i}
+          className={`bg-image-${i} absolute inset-0`}
+          style={{ zIndex: i }}
+        >
+          <Image src={item.image} alt="" fill className="object-cover" />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+      ))}
+
+      {/* Content */}
+      <div className="relative z-10 h-full flex items-center justify-center">
+        <div className="relative w-full max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden">
+          <div className="p-4">
+            {/* Card images */}
+            <div className="relative aspect-video overflow-hidden rounded-xl">
+              {DATA.map((item, i) => (
+                <div
+                  key={i}
+                  className={`card-${i} absolute inset-0`}
+                  style={{ zIndex: i }}
+                >
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Text */}
+            <div className="relative w-full py-6">
+              <div className="relative w-full h-22 overflow-hidden ">
+                {DATA.map((item, i) => (
+                  <div
+                    key={i}
+                    className={`slide-${i} absolute inset-0 flex flex-col items-center justify-center text-center`}
+                    style={{ zIndex: DATA.length - i }}
+                  >
+                    <h2 className="text-3xl text-gray-800 mb-2">
+                      {item.title}
+                    </h2>
+                    <p className="text-gray-600 max-w-xl">{item.subtitle}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6 flex justify-center">
+                <button className="text-sm text-gray-600 border-2 px-4 py-1 rounded-full border-gray-600 hover:text-white hover:bg-gray-600 transition">
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
