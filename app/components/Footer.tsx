@@ -90,7 +90,7 @@ export default function Footer() {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/40 z-10" />
 
-      <div className="relative z-20 mx-auto max-w-7xl w-full flex flex-col gap-20">
+      <div className="relative z-20 mx-auto max-w-[1550px] px-6 xl:px-10 h-full w-full flex flex-col justify-between xl:justify-center xl:gap-30">
         {/* Top text */}
         <div className="flex flex-col lg:flex-row w-full justify-center items-start lg:items-end lg:justify-between text-white">
           <div className="max-w-lg">
@@ -118,9 +118,9 @@ export default function Footer() {
 
         {/* Footer content box */}
         <div className="bg-white footer-box rounded-xl p-6 md:p-12 shadow-2xl">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-16">
             {/* Brand Section */}
-            <div className="md:col-span-1 space-y-3 footer-animate">
+            <div className="md:col-span-2 space-y-3 footer-animate">
               <h3 className="text-3xl font-bold text-gray-900">
                 <SplitText>Vicago</SplitText>
               </h3>
