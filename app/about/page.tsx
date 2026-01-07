@@ -6,6 +6,7 @@ import Image from "next/image";
 import About from "../components/aboutPage/About";
 import Mission from "../components/homePage/Mission";
 import SustainableSection from "../components/homePage/SustainableSection";
+import Team from "../components/aboutPage/Team";
 
 const Aboutpage = () => {
   return (
@@ -23,6 +24,7 @@ const Aboutpage = () => {
       </div>
       <About />
       <Mission />
+      <Team />
       <SustainableSection />
       <Footer />
     </main>
