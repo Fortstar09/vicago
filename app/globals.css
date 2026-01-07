@@ -49,6 +49,9 @@ button {
   .max-margin {
     @apply xl:max-w-[1550px] px-6 xl:px-10  xl:mx-auto w-full;
   }
+  .word {
+    @apply text-7xl font-bold;
+  }
 }
 
 .clip-mask {

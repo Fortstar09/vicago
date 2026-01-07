@@ -1,18 +1,18 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import About from "./components/pages/About";
-import Hero from "./components/pages/Hero";
-import Mission from "./components/pages/Mission";
-import Partners from "./components/pages/Partners";
-import StackingCardsSection from "./components/pages/Products";
-import Story from "./components/pages/Story";
-import SustainableSection from "./components/pages/SustainableSection";
-import TestimonialCarousel from "./components/pages/Testimonial";
-import Values from "./components/pages/Values";
+import About from "./components/homePage/About";
+import Hero from "./components/homePage/Hero";
+import Mission from "./components/homePage/Mission";
+import Partners from "./components/homePage/Partners";
+import StackingCardsSection from "./components/homePage/Products";
+import Story from "./components/homePage/Story";
+import SustainableSection from "./components/homePage/SustainableSection";
+import TestimonialCarousel from "./components/homePage/Testimonial";
+import Values from "./components/homePage/Values";
 
 export default function App() {
   return (
-    <main className="relative w-full overflow-x-hidden ">
+    <main className="relative w-full overflow-x-hidden overflow-y-hidden ">
       <Navbar />
       <Hero />
       <Partners />

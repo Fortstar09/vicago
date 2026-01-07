@@ -117,7 +117,7 @@ export default function Footer() {
         </div>
 
         {/* Footer content box */}
-        <div className="bg-white footer-box rounded-xl p-6 md:p-12 shadow-2xl">
+        <div className="bg-white footer-box rounded-xl p-6 md:p-12 shadow-2xl mb-10">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-16">
             {/* Brand Section */}
             <div className="md:col-span-2 space-y-3 footer-animate">
