@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight } from "lucide-react";
 import { useScrollPin } from "@/hooks/useScrollPin";
+import Button from "../ui/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,10 +38,22 @@ export default function Hero() {
           fill
           className="object-cover"
           priority
+        />{" "}
+        <Image
+          src="/value-bg.jpg"
+          alt="Hero background"
+          fill
+          className="object-cover"
+          priority
+        />{" "}
+        <Image
+          src="/hero-bg.jpg"
+          alt="Hero background"
+          fill
+          className="object-cover"
+          priority
         />
-
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/50 to-black/70" />
-
         {/* Hero Content */}
         <div className="max-out relative z-10 h-full flex items-end w-full">
           <div className="text-white flex flex-col md:flex-row justify-between items-start md:items-end w-full mb-15">
@@ -61,12 +74,7 @@ export default function Hero() {
                 to sustainable practices, profitably.
               </p>
             </div>
-            <button className=" hero-animate inline-flex justify-center items-center gap-1.5 rounded-full  bg-[#517f3e] px-3.5 cursor-pointer py-2 text-base mt-10 font-medium text-gray-100">
-              Get Started
-              <span className="inline-flex justify-center items-center p-1 bg-gray-200 rounded-full size-7">
-                <ArrowUpRight color="#517f3e" size={20} />
-              </span>
-            </button>
+            <Button title="Explore more" animationClass="hero-animate" />
           </div>
         </div>
       </div>

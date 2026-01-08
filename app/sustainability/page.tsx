@@ -1,9 +1,8 @@
-import React from "react";
-import StackingCardsSection from "../components/homePage/Products";
-import Hero from "../components/aboutPage/Hero";
 import Image from "next/image";
+import Hero from "../components/aboutPage/Hero";
+import SustainableSection from "../components/homePage/SustainableSection";
 
-const Products = () => {
+const page = () => {
   return (
     <>
       <Hero />
@@ -16,11 +15,9 @@ const Products = () => {
           className="w-full object-center"
         />
       </div>
-      <div className="h-96 w-full bg-white" />
-      <StackingCardsSection />
-      <div className="h-96 w-full bg-white" />
+      <SustainableSection />
     </>
   );
 };
 
-export default Products;
+export default page;

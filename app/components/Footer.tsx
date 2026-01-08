@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { useScrollPin } from "@/hooks/useScrollPin";
+import Button from "./ui/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -108,12 +109,7 @@ export default function Footer() {
               </SplitText>
             </p>
           </div>
-          <button className="hero-animate inline-flex justify-center items-center gap-1.5 rounded-full bg-lime-400 pl-3 pr-2 cursor-pointer py-1.5 text-base mt-10 font-medium text-black footer-animate">
-            Partner with us
-            <span className="inline-flex justify-center items-center p-1 bg-gray-200 rounded-full size-7">
-              <ArrowUpRight color="#000" size={20} />
-            </span>
-          </button>
+          <Button title="Partner with us" animationClass="hero-animate" />
         </div>
 
         {/* Footer content box */}

@@ -98,10 +98,6 @@ export default function About() {
             We believe in a future where technology, sustainability, and
             community growth coexist harmoniously.
           </p>
-
-          {/* <button className="mission-reveal mt-8 rounded-full bg-emerald-700 px-6 py-2.5 text-sm font-medium text-white hover:bg-emerald-800 transition">
-          About Vicago
-        </button> */}
         </div>
       </div>
     </section>

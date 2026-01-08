@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import gsap from "gsap";
 import { useScrollPin } from "@/hooks/useScrollPin";
+import Button from "../ui/Button";
 
 export default function SustainableSection() {
   const sectionRef = useScrollPin();
@@ -114,12 +115,7 @@ export default function SustainableSection() {
               protect the environment, and create lasting impact for generations
               to come.
             </p>
-            <button className=" sustain-button inline-flex justify-center items-center gap-1.5 rounded-full  bg-lime-400 px-3.5 cursor-pointer py-2 text-base mt-4 font-medium text-black">
-              Our services
-              <span className="inline-flex justify-center items-center p-1 bg-black rounded-full size-7">
-                <ArrowUpRight color="oklch(84.1% 0.238 128.85)" size={20} />
-              </span>
-            </button>
+            <Button title="Our services" animationClass="sustain-button" />
           </div>
         </div>
         <div className="h-full w-full ">

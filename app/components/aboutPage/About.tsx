@@ -54,7 +54,7 @@ const About: React.FC = () => {
     tl.fromTo(
       words,
       { opacity: 0 },
-      { opacity: 1, stagger: 0.2, ease: "none" },
+      { opacity: 1, stagger: 0.02, ease: "none" },
       0
     ).to(
       imgInners,

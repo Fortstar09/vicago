@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight } from "lucide-react";
 import { useScrollPin } from "@/hooks/useScrollPin";
+import Button from "../ui/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -91,9 +92,7 @@ export default function Story() {
 
         {/* CTA */}
         <div className="tc-cta mt-14 flex justify-center">
-          <button className="rounded-full bg-gray-50 border-2 border-[#517f3e] px-5 py-3 text-base font-medium text-[#517f3e] hover:bg-gray-200 transition">
-            View all products →
-          </button>
+          <Button title="Learn more" />
         </div>
       </div>
     </section>

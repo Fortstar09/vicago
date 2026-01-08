@@ -92,11 +92,11 @@ const Navbar = () => {
           <a href="/">Home</a>
           <a href="/about">About</a>
           <a href="/product">Product</a>
-          <a href="#">Sustainability</a>
+          <a href="/sustainability">Sustainability</a>
         </div>
 
         <div className="flex gap-4 justify-center items-center">
-          <button className="rounded-full border-2 border-[#517f3e] px-3 py-1 text-base font-medium inline-flex justify-center items-center gap-1.5 text-black/80 ">
+          <button className="rounded-full border border-[#517f3e] px-4 py-0.5 text-base font-medium inline-flex justify-center items-center gap-1.5 text-black/80 ">
             <span className="size-1.5 bg-[#517f3e] block rounded-full"></span>
             contact
           </button>

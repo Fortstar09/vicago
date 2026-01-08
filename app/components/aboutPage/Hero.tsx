@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { useScrollPin } from "@/hooks/useScrollPin";
+import Button from "../ui/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,9 +51,7 @@ export default function Hero() {
                 technology
               </p>
             </div>
-            <button className="hero-animate inline-flex justify-center items-center gap-2 text-sm mt-10 font-light text-gray-500">
-              Explore more <ArrowDown strokeWidth={1.5} size={16} />
-            </button>
+            <Button title="Explore more" animationClass="hero-animate" />
           </div>
         </div>
       </div>
