@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useScrollPin } from "@/app/hooks/useScrollPin";
+import { useScrollPin } from "@/hooks/useScrollPin";
 import { ArrowUpRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);

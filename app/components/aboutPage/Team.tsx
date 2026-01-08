@@ -109,7 +109,7 @@ const Team: React.FC = () => {
                 </article>
               ))}
             </div>
-            <hr className="my-12 border-t border-gray-200" />
+            <hr className="my-12 border-t border-gray-300" />
           </div>
         </div>
 

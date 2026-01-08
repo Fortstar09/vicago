@@ -33,7 +33,7 @@ const About: React.FC = () => {
         width: "0px",
         height: `${height}px`,
         overflow: "hidden",
-        display: "inline-block",
+        display: "inline-flex",
         verticalAlign: "middle",
         opacity: "0",
         position: "relative",
@@ -54,7 +54,7 @@ const About: React.FC = () => {
     tl.fromTo(
       words,
       { opacity: 0 },
-      { opacity: 1, stagger: 0.02, ease: "none" },
+      { opacity: 1, stagger: 0.2, ease: "none" },
       0
     ).to(
       imgInners,
@@ -76,27 +76,27 @@ const About: React.FC = () => {
   const tokens = TEXT.split(" ");
 
   return (
-    <section className="bg-white text-gray-900">
+    <section className="bg-white text-gray-900 overflow-hidden">
       <div ref={containerRef} className="max-w-7xl mx-auto px-4 py-40">
         <p className="text-lg md:text-xl font-medium leading-snug text-center mx-auto max-w-6xl justify-center items-center">
-          {tokens.slice(0, 9).map((word, i) => (
-            <span key={i} className="word inline-block mr-3 mb-4">
+          {tokens.slice(0, 10).map((word, i) => (
+            <span key={i} className="word">
               {word}
             </span>
           ))}
 
           <InlineImage src="/hero-bg.jpg" />
 
-          {tokens.slice(9, 18).map((word, i) => (
-            <span key={i + 12} className="word inline-block mr-2 mb-2">
+          {tokens.slice(10, 17).map((word, i) => (
+            <span key={i + 12} className="word">
               {word}
             </span>
           ))}
 
           <InlineImage src="/value-bg.jpg" />
 
-          {tokens.slice(18).map((word, i) => (
-            <span key={i + 24} className="word inline-block mr-2 mb-2">
+          {tokens.slice(17).map((word, i) => (
+            <span key={i + 24} className="word">
               {word}
             </span>
           ))}
@@ -112,7 +112,7 @@ export default About;
 /* ---------- helpers ---------- */
 
 const InlineImage = ({ src }: { src: string }) => (
-  <span className="inline-block align-middle mx-3">
+  <span className="inline-flex justify-center items-center p-1.5 overflow-hidden">
     <span className="img-inner rounded-lg">
       <Image src={src} alt="" fill className="object-cover" />
     </span>

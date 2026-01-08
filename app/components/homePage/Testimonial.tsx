@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { useScrollPin } from "@/app/hooks/useScrollPin";
+import { useScrollPin } from "@/hooks/useScrollPin";
 import Image from "next/image";
 
 // Mock testimonial data - based on the image

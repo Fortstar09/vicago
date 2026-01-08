@@ -53,7 +53,10 @@ export default function LenisProvider({
           height: window.innerHeight,
         };
       },
-      pinType: document.documentElement.style.transform ? "transform" : "fixed",
+      // When using a smooth-scroller like Lenis prefer transform-based pinning
+      // to avoid DOM reparenting issues that can surface during client-side
+      // navigation in Next.js (insertBefore/removeChild errors).
+      pinType: "transform",
     });
 
     // Keep ScrollTrigger in sync after layout changes

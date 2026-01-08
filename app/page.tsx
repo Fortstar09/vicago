@@ -13,7 +13,7 @@ import Values from "./components/homePage/Values";
 export default function App() {
   return (
     <main className="relative w-full overflow-x-hidden overflow-y-hidden ">
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <Partners />
       <About />
@@ -24,7 +24,7 @@ export default function App() {
       <TestimonialCarousel />
       <SustainableSection />
       {/* <ContactCta /> */}
-      <Footer />
+      {/* <Footer /> */}
       {/* <About /> */}
     </main>
   );

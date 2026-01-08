@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect } from "react";
 import gsap from "gsap";
-import { useScrollPin } from "@/app/hooks/useScrollPin";
+import { useScrollPin } from "@/hooks/useScrollPin";
 
 export default function SustainableSection() {
   const sectionRef = useScrollPin();

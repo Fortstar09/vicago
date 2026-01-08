@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import LenisProvider from "./components/LenisProvider";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 // Add preconnect links for fonts to improve loading across browsers
 
@@ -29,7 +31,11 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <LenisProvider>{children}</LenisProvider>
+        <LenisProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </LenisProvider>
       </body>
     </html>
   );
