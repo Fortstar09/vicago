@@ -4,7 +4,6 @@ import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
 import { useScrollPin } from "@/hooks/useScrollPin";
 import Button from "./ui/Button";
 
@@ -15,17 +14,6 @@ export default function Footer() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Pin footer section
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: "top top",
-          end: "bottom bottom",
-          pin: true,
-          pinSpacing: true,
-        },
-      });
-
       // Slide up animation
       gsap.fromTo(
         ".footer-animate",
@@ -33,8 +21,7 @@ export default function Footer() {
         {
           opacity: 1,
           y: 0,
-          stagger: 0.1,
-          duration: 0.6,
+          duration: 0.8,
           ease: "power2.out",
           scrollTrigger: {
             trigger: footerRef.current,
@@ -65,14 +52,14 @@ export default function Footer() {
 
       <div className="relative z-20 mx-auto max-w-[1550px] px-6 xl:px-10 h-full w-full flex flex-col justify-between xl:justify-center xl:gap-30">
         {/* Top text */}
-        <div className="flex flex-col lg:flex-row w-full justify-center items-start lg:items-end lg:justify-between text-white">
+        <div className="flex flex-col lg:flex-row w-full justify-center items-start lg:items-end lg:justify-between text-white footer-animate">
           <div className="max-w-lg">
-            <h2 className="mt-5 hero-text text-3xl md:text-5xl font-light leading-tight footer-animate">
+            <h2 className="mt-5 hero-text text-3xl md:text-5xl font-light leading-tight">
               Let&apos;s grow something <br />
               impactful together
             </h2>
 
-            <p className="mt-4 text-sm text-white/80 font-light footer-animate">
+            <p className="mt-4 text-sm text-white/80 font-light">
               Whether you&apos;re a farmer, partner, or investor, our team is
               ready to help you build smarter, more sustainable solutions.
             </p>
@@ -81,10 +68,10 @@ export default function Footer() {
         </div>
 
         {/* Footer content box */}
-        <div className="bg-white footer-box rounded-xl p-6 md:p-12 shadow-2xl mb-10">
+        <div className="bg-white footer-box rounded-xl p-6 md:p-12 shadow-2xl mb-10 footer-animate">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-16">
             {/* Brand Section */}
-            <div className="md:col-span-2 space-y-3 footer-animate">
+            <div className="md:col-span-2 space-y-3">
               <h3 className="text-3xl font-bold text-gray-900">Vicago</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
                 Building a sustainable agricultural future with technology,
@@ -93,7 +80,7 @@ export default function Footer() {
             </div>
 
             {/* Quick Menu */}
-            <div className="space-y-4 footer-animate">
+            <div className="space-y-4">
               <p className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
                 Quick Menu
               </p>
@@ -110,7 +97,7 @@ export default function Footer() {
             </div>
 
             {/* Resources */}
-            <div className="space-y-4 footer-animate">
+            <div className="space-y-4">
               <p className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
                 Resources
               </p>
@@ -127,7 +114,7 @@ export default function Footer() {
             </div>
 
             {/* Social */}
-            <div className="space-y-4 footer-animate">
+            <div className="space-y-4">
               <p className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
                 Social
               </p>
@@ -145,7 +132,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom bar */}
-          <div className="mt-12 border-t border-gray-200 pt-8 footer-animate flex flex-col md:flex-row items-center justify-between">
+          <div className="mt-12 border-t border-gray-200 pt-8 flex flex-col md:flex-row items-center justify-between">
             <p className="text-xs text-gray-500">
               © {new Date().getFullYear()} Vicago. All rights reserved.
             </p>
