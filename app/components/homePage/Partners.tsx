@@ -24,7 +24,7 @@ const Partners = () => {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 50%",
-            end: "bottom 40%",
+            end: "bottom 30%",
             toggleActions: "play reverse play reverse",
             // markers: true,
           },

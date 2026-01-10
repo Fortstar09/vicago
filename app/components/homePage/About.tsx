@@ -28,7 +28,7 @@ export default function About() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 30%",
+          start: "top 40%",
           end: "bottom 55%",
           toggleActions: "play reverse play reverse",
           // markers: true,
@@ -88,13 +88,13 @@ export default function About() {
 
         {/* Center Content */}
         <div className="relative z-10 mx-auto flex flex-col items-center text-center max-w-2xl">
-          <h2 className="mission-reveal text-3xl md:text-6xl font-bold text-gray-900 leading-snug">
+          <h2 className="mission-reveal text-3xl md:text-5xl xl:text-6xl font-bold text-gray-900 leading-snug">
             Our mission <Earth className="inline size-14 text-emerald-700 " />{" "}
             is to create and provide innovative, eco-friendly solutions that
             promote recycling and green living.
           </h2>
 
-          <p className="mission-reveal text-base font-light leading-8 text-gray-600 max-w-xl">
+          <p className="mission-reveal text-base md:text-xl font-light leading-8 text-gray-600 max-w-xl">
             We believe in a future where technology, sustainability, and
             community growth coexist harmoniously.
           </p>

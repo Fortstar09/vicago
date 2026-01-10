@@ -9,9 +9,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const DATA = [
   {
-    title: "Smart irrigation systems",
-    subtitle:
-      "Water-efficient systems that optimize usage and improve overall farming efficiency.",
+    title: "Premium Nigeria Cocoa",
+    subtitle: "High-quality cocoa beans sourced directly from Nigerian farms.",
     image: "/hero-bg.jpg",
   },
   // {
@@ -27,9 +26,9 @@ const DATA = [
   //   image: "/hero-bg.jpg",
   // },
   {
-    title: "Agriculture technology",
+    title: "Canadian Wheat",
     subtitle:
-      "Technology-driven tools improve farming accuracy and productivity.",
+      "Premium wheat varieties from Canadian farms, perfect for milling, baking, and food processing.",
     image: "/value-bg.jpg",
   },
 ];
@@ -99,7 +98,7 @@ export default function StackingCardsSection() {
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center justify-center">
-        <div className="relative w-full max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden">
+        <div className="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl overflow-hidden">
           <div className="p-4">
             {/* Card images */}
             <div className="relative aspect-video overflow-hidden rounded-xl">

@@ -19,7 +19,7 @@ export default function Values() {
         scrollTrigger: {
           trigger: valueRef.current,
           start: "top top", // 👈 START animation when section enters
-          end: "bottom 20%", // 👈 END after enough reading time
+          end: "bottom 30%", // 👈 END after enough reading time
           pin: true,
           scrub: false,
           toggleActions: "play reverse play reverse",
@@ -37,7 +37,7 @@ export default function Values() {
         y: 40,
         duration: 1.1,
         ease: "power3.out",
-        stagger: 0.2,
+        // stagger: 0.2,
       });
 
       // 2️⃣ Cards slide up
@@ -75,11 +75,11 @@ export default function Values() {
 
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col justify-between items-start max-margin py-20">
-          <div className="w-full text-white space-y-4 flex justify-between mt-10 ">
-            <h2 className="values-text max-w-md text-3xl md:text-7xl font-light leading-tight">
-              Eco-friendly Innovation
+          <div className="w-full text-white space-y-4 flex flex-col md:flex-row items-end justify-between mt-10 ">
+            <h2 className="values-text max-w-md text-5xl md:text-7xl font-light leading-tight">
+              Our Values - RIIT
             </h2>
-            <div className="max-w-lg">
+            <div className="max-w-lg mb-10">
               <p className="values-text text-base text-white/80">
                 At Vicago, we believe technology should empower communities,
                 protect the environment, and create lasting impact for
@@ -89,9 +89,26 @@ export default function Values() {
             </div>
           </div>
           <div className="flex justify-between gap-4 w-full items-center ">
-            <BlurCard />
-            <BlurCard />
-            <BlurCard />
+            <BlurCard
+              id="1"
+              title="Reliability"
+              subTitle="We empower farmers with smart, accessible technology that improves productivity."
+            />
+            <BlurCard
+              id="2"
+              title="Impact"
+              subTitle="We develop cutting-edge solutions to address global food challenges."
+            />
+            <BlurCard
+              id="3"
+              title="Integrity"
+              subTitle="We build partnerships that uplift local communities and support economic growth."
+            />
+            <BlurCard
+              id="4"
+              title="Transformation"
+              subTitle="We operate with transparency, accountability, and ethical practices in all our endeavors."
+            />
           </div>
         </div>
       </section>
@@ -99,18 +116,25 @@ export default function Values() {
   );
 }
 
-const BlurCard = () => {
+const BlurCard = ({
+  id,
+  title,
+  subTitle,
+}: {
+  id: string;
+  title: string;
+  subTitle: string;
+}) => {
   return (
     <div className="blur-card">
       <div className="rounded-xl bg-white/10 backdrop-blur-xs px-5 py-4 text-sm space-y-3 max-w-sm border border-white/10">
         <div>
-          <p className="font-extralight text-xs text-white">001</p>
-          <p className="text-lg font-medium text-white mt-2">Sustainability</p>
+          <p className="font-extralight text-xs text-white">00{id}</p>
+          <p className="text-lg font-medium text-white mt-2">{title}</p>
         </div>
 
         <p className="text-sm font-light text-white/80 mt-2 leading-relaxed">
-          We empower farmers with smart, accessible technology that improves
-          productivity.
+          {subTitle}
         </p>
       </div>
     </div>

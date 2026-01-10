@@ -16,24 +16,24 @@ const testimonials = [
     testimonial:
       "With their smart farming solutions, we've increased our crop yield by 35% while reducing water usage by 40%. The IoT monitoring system and AI analytics completely transformed the way we manage our farm.",
   },
-  {
-    id: 2,
-    name: "Leo Albertus",
-    role: "Strawberry Farmer",
-    image:
-      "https://images.unsplash.com/photo-1595314617711-b7b3b4f0c4ff?w=400&h=500&fit=crop",
-    testimonial:
-      "The precision agriculture tools have revolutionized our strawberry production. We're seeing healthier crops and significantly better yields than ever before.",
-  },
-  {
-    id: 3,
-    name: "Jim Welbeck",
-    role: "Vegetable Farmer",
-    image:
-      "https://images.unsplash.com/photo-1595314617711-b7b3b4f0c4ff?w=400&h=500&fit=crop",
-    testimonial:
-      "With their smart farming solutions, we've increased our crop yield by 35% while reducing water usage by 40%. The IoT monitoring system and AI analytics completely transformed the way we manage our farm.",
-  },
+  // {
+  //   id: 2,
+  //   name: "Leo Albertus",
+  //   role: "Strawberry Farmer",
+  //   image:
+  //     "https://images.unsplash.com/photo-1595314617711-b7b3b4f0c4ff?w=400&h=500&fit=crop",
+  //   testimonial:
+  //     "The precision agriculture tools have revolutionized our strawberry production. We're seeing healthier crops and significantly better yields than ever before.",
+  // },
+  // {
+  //   id: 3,
+  //   name: "Jim Welbeck",
+  //   role: "Vegetable Farmer",
+  //   image:
+  //     "https://images.unsplash.com/photo-1595314617711-b7b3b4f0c4ff?w=400&h=500&fit=crop",
+  //   testimonial:
+  //     "With their smart farming solutions, we've increased our crop yield by 35% while reducing water usage by 40%. The IoT monitoring system and AI analytics completely transformed the way we manage our farm.",
+  // },
   {
     id: 4,
     name: "Amy Rosenfield",

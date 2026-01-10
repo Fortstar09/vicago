@@ -1,0 +1,203 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useScrollPin } from "@/hooks/useScrollPin";
+
+gsap.registerPlugin(ScrollTrigger);
+
+interface Partner {
+  id: string;
+  name: string;
+  logo: string;
+  height: string;
+}
+
+const PARTNERS: Partner[] = [
+  {
+    id: "cargill",
+    name: "Cargill",
+    logo: "https://cdn.prod.website-files.com/686b85e087270569bd280001/686f3c911ea3c809db4ef892_cargill.webp",
+    height: "h-15",
+  },
+  {
+    id: "barry-callebaut",
+    name: "Barry Callebaut",
+    logo: "https://cdn.prod.website-files.com/686b85e087270569bd280001/686f3c911ea3c809db4ef889_BARRY%20CALLEBAUT.webp",
+    height: "h-15",
+  },
+  {
+    id: "touton",
+    name: "Touton",
+    logo: "https://cdn.prod.website-files.com/686b85e087270569bd280001/686f3c919f67d305e552c1dc_touton-neg.webp",
+    height: "h-15",
+  },
+  {
+    id: "jbcocoa",
+    name: "JBCocoa",
+    logo: "https://cdn.prod.website-files.com/686b85e087270569bd280001/686f3c91e1122c356321caa5_JBCOCOA.webp",
+    height: "h-15",
+  },
+];
+
+const Certification = () => {
+  const sectionRef = useScrollPin();
+  const marqueeRef = React.useRef<HTMLDivElement>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const marqueeAnimationRef = React.useRef<gsap.core.Tween | null>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".partners-animate",
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 50%",
+            end: "bottom 30%",
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, [sectionRef]);
+
+  useEffect(() => {
+    if (!marqueeRef.current) return;
+
+    const marqueeContent = marqueeRef.current.querySelector(
+      ".marquee-content"
+    ) as HTMLElement;
+    if (!marqueeContent) return;
+
+    const startAnimation = () => {
+      if (marqueeAnimationRef.current) {
+        marqueeAnimationRef.current.play();
+      } else {
+        marqueeAnimationRef.current = gsap.to(marqueeContent, {
+          x: -marqueeContent.offsetWidth / 2,
+          duration: 30,
+          ease: "none",
+          repeat: -1,
+        });
+      }
+    };
+
+    const stopAnimation = () => {
+      if (marqueeAnimationRef.current) {
+        marqueeAnimationRef.current.pause();
+      }
+    };
+
+    marqueeRef.current.addEventListener("mouseenter", stopAnimation);
+    marqueeRef.current.addEventListener("mouseleave", startAnimation);
+
+    startAnimation();
+
+    return () => {
+      marqueeRef.current?.removeEventListener("mouseenter", stopAnimation);
+      marqueeRef.current?.removeEventListener("mouseleave", startAnimation);
+      if (marqueeAnimationRef.current) {
+        marqueeAnimationRef.current.kill();
+      }
+    };
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="bg-[#f5faf7] py-10">
+      <div className="max-margin ">
+        <div className="flex flex-col items-center gap-14 text-center">
+          <div className="w-full text-black/80 flex flex-col items-start ">
+            <h2 className=" partners-animate max-w-md text-3xl md:text-5xl font-medium text-left leading-tight">
+              Our work comes with a responsibility
+            </h2>
+            <p className="partners-animate mt-4 max-w-lg text-left text-base text-gray-500">
+              At Vicago, we believe technology should empower communities,
+              protect the environment, and create lasting impact for generations
+              to come.
+            </p>
+          </div>
+
+          {/* Marquee Container */}
+          <div ref={marqueeRef} className="relative w-full overflow-hidden py-10">
+            {/* Blur Edges */}
+            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#f5faf7] to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#f5faf7] to-transparent z-10 pointer-events-none" />
+
+            {/* Marquee Content */}
+            <div className="marquee-content flex gap-12 w-fit">
+              {/* First set of logos */}
+              {PARTNERS.map((partner) => (
+                <PartnerLogo
+                  key={`${partner.id}-1`}
+                  partner={partner}
+                  isHovered={hoveredId === partner.id}
+                  onHover={setHoveredId}
+                />
+              ))}
+
+              {/* Duplicate set for seamless loop */}
+              {PARTNERS.map((partner) => (
+                <PartnerLogo
+                  key={`${partner.id}-2`}
+                  partner={partner}
+                  isHovered={hoveredId === partner.id}
+                  onHover={setHoveredId}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+interface PartnerLogoProps {
+  partner: Partner;
+  isHovered: boolean;
+  onHover: (id: string | null) => void;
+}
+
+const PartnerLogo: React.FC<PartnerLogoProps> = ({
+  partner,
+  isHovered,
+  onHover,
+}) => {
+  return (
+    <div
+      className="relative flex items-center justify-center flex-shrink-0 group"
+      onMouseEnter={() => onHover(partner.id)}
+      onMouseLeave={() => onHover(null)}
+    >
+      <img
+        src={partner.logo}
+        alt={partner.name}
+        className={`${
+          partner.height
+        } object-contain transition-opacity duration-200 ${
+          isHovered ? "opacity-100" : "opacity-75 group-hover:opacity-90"
+        }`}
+      />
+
+      {/* Tooltip */}
+      {isHovered && (
+        <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 whitespace-nowrap bg-gray-900 text-white text-sm px-3 py-1 rounded shadow-lg pointer-events-none">
+          {partner.name}
+          <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-900" />
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Certification;

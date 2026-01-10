@@ -19,8 +19,8 @@ export default function Story() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 20%", // start when section top is near bottom of viewport
-          end: "bottom 20%", // active range
+          start: "top 50%", // start when section top is near bottom of viewport
+          end: "bottom top", // active range
           scrub: false, // scroll-tied? set true if you want
           toggleActions: "play reverse play reverse",
           // markers: true, // debug markers
