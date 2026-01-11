@@ -176,7 +176,9 @@ const OurJourney: React.FC = () => {
           {timelineData.map((item, index) => (
             <div
               key={`bg-${item.year}`}
-              ref={(el) => (bgYearsRef.current[index] = el)}
+              ref={(el) => {
+                bgYearsRef.current[index] = el;
+              }}
               className="absolute inset-0 flex items-center justify-center"
               style={{ opacity: index === 0 ? 1 : 0 }}
             >

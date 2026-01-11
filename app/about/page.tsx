@@ -11,9 +11,9 @@ const Aboutpage = () => {
     <main className="relative w-full overflow-y-hidden overflow-x-hidden bg-white">
       <Hero />
       <About />
+      <OurJourney />
       <Mission />
       <VisionMissionStack />
-      <OurJourney />
       <SustainableSection />
       <Team />
     </main>
