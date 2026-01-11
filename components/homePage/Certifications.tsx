@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useScrollPin } from "@/hooks/useScrollPin";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,7 +41,7 @@ const PARTNERS: Partner[] = [
 ];
 
 const Certification = () => {
-  const sectionRef = useScrollPin();
+  const sectionRef = useRef<HTMLDivElement>(null);
   const marqueeRef = React.useRef<HTMLDivElement>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const marqueeAnimationRef = React.useRef<gsap.core.Tween | null>(null);
@@ -128,7 +127,10 @@ const Certification = () => {
           </div>
 
           {/* Marquee Container */}
-          <div ref={marqueeRef} className="relative w-full overflow-hidden py-10">
+          <div
+            ref={marqueeRef}
+            className="relative w-full overflow-hidden py-10"
+          >
             {/* Blur Edges */}
             <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#f5faf7] to-transparent z-10 pointer-events-none" />
             <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#f5faf7] to-transparent z-10 pointer-events-none" />

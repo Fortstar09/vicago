@@ -5,12 +5,11 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Earth } from "lucide-react";
-import { useScrollPin } from "@/hooks/useScrollPin";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
-  const sectionRef = useScrollPin();
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     gsap.fromTo(
@@ -30,7 +29,7 @@ export default function About() {
           trigger: sectionRef.current,
           start: "top 40%",
           end: "bottom 55%",
-          toggleActions: "play reverse play reverse",
+          // toggleActions: "play reverse play reverse",
           // markers: true,
         },
       }

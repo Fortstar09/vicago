@@ -80,11 +80,11 @@ export default function VisionMissionPurpose() {
       className="relative h-screen bg-[#5a3b1f]/30 text-white z-10 "
     >
       <div className="mx-auto flex h-full max-w-6xl items-start px-6">
-        <div className="relative h-[400px] w-full mt-15">
+        <div className="relative h-100 w-full mt-5">
           {cards.map((card, index) => (
             <div
               key={index}
-              className={`stack-card p-10 absolute top-0 w-full h-full rounded-3xl shadow-2xl ${card.bg} overflow-hidden flex justify-between items-center gap-15`}
+              className={`stack-card p-10 absolute top-10 w-full h-full rounded-3xl shadow-2xl ${card.bg} overflow-hidden flex justify-between items-center gap-15`}
             >
               <div className="w-4/5  flex flex-col justify-center">
                 <h3 className="mb-6 text-4xl font-bold">{card.title}</h3>

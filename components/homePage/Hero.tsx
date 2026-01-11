@@ -1,17 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowUpRight } from "lucide-react";
-import { useScrollPin } from "@/hooks/useScrollPin";
 import Button from "../ui/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
-  const heroRef = useScrollPin();
+  const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // HERO ANIMATION

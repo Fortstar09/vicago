@@ -25,7 +25,7 @@ const About: React.FC = () => {
     // derive image size from text
     const sample = words[0] ?? container;
     const fontSize = parseFloat(getComputedStyle(sample).fontSize || "16");
-    const height = Math.round(fontSize + 10);
+    const height = 40;
     const width = Math.round(height * 2.2);
 
     imgInners.forEach((el) => {
@@ -76,8 +76,8 @@ const About: React.FC = () => {
   const tokens = TEXT.split(" ");
 
   return (
-    <section className="bg-white text-gray-900 overflow-hidden z-10 ">
-      <div ref={containerRef} className="max-w-7xl mx-auto px-4 py-40">
+    <section className="bg-white text-gray-900 overflow-hidden z-10">
+      <div ref={containerRef} className="max-w-7xl mx-auto px-4 pb-30 mb-20">
         <p className="text-lg md:text-xl font-medium leading-snug text-center mx-auto max-w-6xl justify-center items-center">
           {tokens.slice(0, 10).map((word, i) => (
             <span key={i} className="word">

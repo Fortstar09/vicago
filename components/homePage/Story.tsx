@@ -1,17 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight } from "lucide-react";
-import { useScrollPin } from "@/hooks/useScrollPin";
 import Button from "../ui/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Story() {
-  const sectionRef = useScrollPin();
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -22,7 +21,7 @@ export default function Story() {
           start: "top 50%", // start when section top is near bottom of viewport
           end: "bottom top", // active range
           scrub: false, // scroll-tied? set true if you want
-          toggleActions: "play reverse play reverse",
+          // toggleActions: "play reverse play reverse",
           // markers: true, // debug markers
           // id: "Product Section",
         },

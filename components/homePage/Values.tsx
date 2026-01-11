@@ -4,14 +4,12 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useScrollPin } from "@/hooks/useScrollPin";
-import { ArrowUpRight } from "lucide-react";
 import Button from "../ui/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Values() {
-  const valueRef = useScrollPin();
+  const valueRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -19,10 +17,10 @@ export default function Values() {
         scrollTrigger: {
           trigger: valueRef.current,
           start: "top top", // 👈 START animation when section enters
-          end: "bottom 30%", // 👈 END after enough reading time
+
           pin: true,
           scrub: false,
-          toggleActions: "play reverse play reverse",
+          // toggleActions: "play reverse play reverse",
           // markers: {
           //   startColor: "green",
           //   endColor: "red",
@@ -88,7 +86,7 @@ export default function Values() {
               <Button title="Our services" animationClass="values-text" />
             </div>
           </div>
-          <div className="flex justify-between gap-4 w-full items-center ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full items-center ">
             <BlurCard
               id="1"
               title="Reliability"
@@ -126,7 +124,7 @@ const BlurCard = ({
   subTitle: string;
 }) => {
   return (
-    <div className="blur-card">
+    <div className="blur-card col-span-1">
       <div className="rounded-xl bg-white/10 backdrop-blur-xs px-5 py-4 text-sm space-y-3 max-w-sm border border-white/10">
         <div>
           <p className="font-extralight text-xs text-white">00{id}</p>

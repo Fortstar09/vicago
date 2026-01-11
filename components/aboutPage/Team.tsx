@@ -56,7 +56,7 @@ const Team: React.FC = () => {
           scrollTrigger: {
             trigger: ".team-grid",
             start: "top 35%",
-            toggleActions: "play none none reverse",
+            // toggleActions: "play none none reverse",
           },
         }
       );

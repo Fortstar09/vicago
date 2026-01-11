@@ -72,13 +72,19 @@ export default function Mission() {
                   height={250}
                   className="rounded-xl object-cover max-h-62.5"
                 />
-                <div className="rounded-xl col-span-2 border-3 border-black p-10 bg-[#fef9e9]">
+                <div className="rounded-xl col-span-2 border-3 border-black p-10 bg-[#fef9e9] flex items-center justify-between ">
                   <div className="flex flex-col justify-center items-start gap-9">
                     <h3 className="text-7xl font-bold text-emerald-700">50+</h3>
                     <p className="text-xl text-gray-700 max-w-[250px]">
                       Partners spread across the world
                     </p>
                   </div>
+                  <Image
+                    src="https://cdn.prod.website-files.com/686b85e087270569bd280001/686f747cf0ecdecdba817744_partners-logo.webp"
+                    width={300}
+                    height={50}
+                    alt="partners-icon"
+                  />
                 </div>
               </div>
             </div>

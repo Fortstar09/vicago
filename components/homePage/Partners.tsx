@@ -1,14 +1,13 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useScrollPin } from "@/hooks/useScrollPin";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Partners = () => {
-  const sectionRef = useScrollPin();
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {

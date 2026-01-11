@@ -1,16 +1,15 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useScrollPin } from "@/hooks/useScrollPin";
 import Button from "./ui/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer() {
-  const footerRef = useScrollPin();
+  const footerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -38,7 +37,7 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="relative w-full min-h-dvh flex items-center justify-center px-6 md:px-20 pt-20 pb-8"
+      className="relative w-full min-h-dvh flex items-center justify-center pt-20 pb-8"
     >
       <Image
         src="/hero-bg.jpg"
@@ -50,7 +49,7 @@ export default function Footer() {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/40 z-10" />
 
-      <div className="relative z-20 mx-auto max-w-[1550px] px-6 xl:px-10 h-full w-full flex flex-col justify-between xl:justify-center xl:gap-30">
+      <div className="relative z-20 max-margin h-full w-full flex flex-col justify-between gap-10 xl:justify-center xl:gap-30">
         {/* Top text */}
         <div className="flex flex-col lg:flex-row w-full justify-center items-start lg:items-end lg:justify-between text-white footer-animate">
           <div className="max-w-lg">
