@@ -1,6 +1,6 @@
 import React from "react";
-import StackingCardsSection from "../components/homePage/Products";
-import Hero from "../components/aboutPage/Hero";
+import StackingCardsSection from "@/components/homePage/Products";
+import Hero from "@/components/aboutPage/Hero";
 import Image from "next/image";
 
 const Products = () => {

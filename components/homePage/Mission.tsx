@@ -37,10 +37,10 @@ export default function Mission() {
   }, []);
 
   return (
-    <div className=" bg-white ">
+    <div className=" bg-white z-10">
       <section
         ref={sectionRef}
-        className="relative h-screen overflow-hidden bg-white "
+        className="relative h-screen overflow-hidden bg-white z-10"
       >
         <div ref={trackRef} className="flex h-full w-max">
           {/* CARD 1 */}
@@ -98,18 +98,18 @@ export default function Mission() {
               <div className="grid grid-cols-2 gap-5 col-span-2">
                 <div className="rounded-xl w-full border-3 border-black p-10 bg-[#f5faf7] max-h-62.5">
                   <div className="flex flex-col justify-center items-start gap-9">
-                    <h3 className="text-7xl font-bold text-emerald-700">
-                      3K+
-                    </h3>
+                    <h3 className="text-7xl font-bold text-emerald-700">3K+</h3>
                     <p className="text-xl text-gray-500 max-w-[250px]">
-                      Farmers across <br/> West Africa
+                      Farmers across <br /> West Africa
                     </p>
                   </div>
                 </div>
 
                 <div className="rounded-xl border-3 border-black p-10 bg-[#f5faf7]">
                   <div className="flex flex-col justify-center items-start gap-9">
-                    <h3 className="text-7xl font-bold text-emerald-700">200+</h3>
+                    <h3 className="text-7xl font-bold text-emerald-700">
+                      200+
+                    </h3>
                     <p className="text-xl text-gray-500 max-w-[250px]">
                       Employees across Nigeria, UK and the Netherlands
                     </p>

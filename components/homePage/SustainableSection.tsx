@@ -107,10 +107,10 @@ export default function SustainableSection() {
       <div className=" max-out relative z-10 h-full flex flex-col justify-center gap-30 items-start max-margin py-20">
         <div className="w-full text-black/80 space-y-4 flex justify-between items-end mt-10 ">
           <h2 className=" sustain-heading max-w-md text-3xl md:text-7xl font-light leading-tight">
-            Eco-friendly Innovation
+            Sustainability Section
           </h2>
           <div className="max-w-lg">
-            <p className="sustain-text text-base text-gray-500">
+            <p className="sustain-text text-lg text-gray-500">
               At Vicago, we believe technology should empower communities,
               protect the environment, and create lasting impact for generations
               to come.

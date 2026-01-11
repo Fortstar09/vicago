@@ -43,7 +43,7 @@ const About: React.FC = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container,
-        start: "top top",
+        start: "top 25%",
         end: "+=600",
         scrub: 0.6,
         pin: true,
@@ -76,7 +76,7 @@ const About: React.FC = () => {
   const tokens = TEXT.split(" ");
 
   return (
-    <section className="bg-white text-gray-900 overflow-hidden">
+    <section className="bg-white text-gray-900 overflow-hidden z-10 ">
       <div ref={containerRef} className="max-w-7xl mx-auto px-4 py-40">
         <p className="text-lg md:text-xl font-medium leading-snug text-center mx-auto max-w-6xl justify-center items-center">
           {tokens.slice(0, 10).map((word, i) => (

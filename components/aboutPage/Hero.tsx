@@ -32,11 +32,11 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative  w-full overflow-hidden bg-[#f5faf7] "
+      className="relative  w-full overflow-hidden bg-[#f5faf7] z-10 h-fit"
     >
-      <div className="max-margin mt-50">
+      <div className="max-margin mt-40 mb-20">
         {/* Hero Content */}
-        <div className="max-out relative z-10 h-full flex flex-col gap-20 items-center w-full">
+        <div className="max-out relative z-10 h-full flex flex-col gap-20 items-center w-full mb-8">
           <div className="text-black/90 flex flex-col md:flex-row justify-between items-start md:items-end w-full mb-15">
             <div className="flex flex-col items-start space-y-6">
               <div>
@@ -53,6 +53,15 @@ export default function Hero() {
             </div>
             <Button title="Explore more" animationClass="hero-animate" />
           </div>
+        </div>
+        <div className="w-full relative flex items-center aspect-video justify-center overflow-hidden h-100  rounded-xl">
+          <Image
+            src="/hero-bg.jpg"
+            alt="Hero background"
+            width={500}
+            height={500}
+            className="w-full object-cover rounded-xl"
+          />
         </div>
       </div>
     </section>

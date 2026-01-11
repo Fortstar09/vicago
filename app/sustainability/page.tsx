@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Hero from "../components/aboutPage/Hero";
-import SustainableSection from "../components/homePage/SustainableSection";
+import Hero from "@/components/aboutPage/Hero";
+import SustainableSection from "@/components/homePage/SustainableSection";
 
 const page = () => {
   return (
