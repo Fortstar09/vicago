@@ -37,7 +37,7 @@ const Navbar = () => {
   return (
     <header
       ref={navRef}
-      className={`fixed top-0 z-20 w-full transition-colors duration-300 ${bgStyle}`}
+      className={`fixed top-0 z-20 w-full transition-colors duration-300 ${bgStyle} z-40`}
     >
       <nav
         className={`w-full max-margin py-4 flex items-center justify-between transition-colors duration-300 ${textColor}`}

@@ -1,14 +1,17 @@
 import React from "react";
-import StackingCardsSection from "@/components/homePage/Products";
-import Hero from "@/components/aboutPage/Hero";
-import Image from "next/image";
+import Hero from "@/components/otherpages/Hero";
+import AllProducts from "@/components/otherpages/AllProducts";
+import TestimonialCarousel from "@/components/homePage/Testimonial";
 
 const Products = () => {
   return (
     <>
-      <Hero />
-      <div className="h-96 w-full bg-white" />
-      <div className="h-96 w-full bg-white" />
+      <Hero
+        title=" Securing global food futures"
+        subtitle="We source and export ethically grown cocoa, wheat, and more, partnering with global brands to build a fairer agro-commodity chain."
+      />
+      <AllProducts />
+      <TestimonialCarousel />
     </>
   );
 };

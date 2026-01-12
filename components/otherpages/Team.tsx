@@ -69,7 +69,7 @@ const Team: React.FC = () => {
     <section className="w-full bg-[#f5faf7] py-20">
       <div className="max-margin">
         <div className="w-full mb-15">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl text-black/80 font-normal font-grotesque leading-tight mb-3">
+          <h2 className="text-5xl md:text-5xl lg:text-6xl text-black/80 font-normal font-grotesque leading-tight mb-3">
             Our team
           </h2>
           <p className="text-base text-gray-500 max-w-lg leading-7">

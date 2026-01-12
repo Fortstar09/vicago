@@ -8,7 +8,13 @@ import Button from "../ui/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Hero() {
+export default function Hero({
+  title,
+  subtitle,
+}: {
+  title: string;
+  subtitle: string;
+}) {
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -25,6 +31,19 @@ export default function Hero() {
         // toggleActions: "play reverse play reverse",
       }
     );
+    gsap.fromTo(
+      ".hero-image",
+      { opacity: 0, y: 200 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        stagger: 0.2,
+        ease: "power3.out",
+        delay: 0.5,
+        // toggleActions: "play reverse play reverse",
+      }
+    );
   }, []);
 
   return (
@@ -38,21 +57,19 @@ export default function Hero() {
           <div className="text-black/90 flex flex-col md:flex-row justify-between items-start md:items-end w-full mb-15">
             <div className="flex flex-col items-start space-y-6">
               <div>
-                <h1 className="hero-animate text-2xl md:text-4xl lg:text-[60px] lg:leading-16 max-w-xl font-normal font-grotesque leading-tight">
-                  Discover The Story:
-                  <br /> Cultivating Innovation In Agriculture.
+                <h1 className="hero-animate text-5xl md:text-5xl lg:text-6xl lg:leading-16 max-w-xl font-normal font-grotesque leading-tight">
+                  {title}
                 </h1>
               </div>
 
               <p className="hero-animate text-base text-gray-500 max-w-90 leading-7">
-                Explore our journey in Redefining the future of farming
-                technology
+                {subtitle}
               </p>
             </div>
             <Button title="Explore more" animationClass="hero-animate" />
           </div>
         </div>
-        <div className="w-full relative flex items-center aspect-video justify-center overflow-hidden h-100  rounded-xl">
+        <div className="hero-image w-full relative flex items-center aspect-video justify-center overflow-hidden h-150  rounded-xl">
           <Image
             src="/hero-bg.jpg"
             alt="Hero background"

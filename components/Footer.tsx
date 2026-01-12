@@ -51,14 +51,14 @@ export default function Footer() {
 
       <div className="relative z-20 max-margin h-full w-full flex flex-col justify-between gap-10 xl:justify-center xl:gap-30">
         {/* Top text */}
-        <div className="flex flex-col lg:flex-row w-full justify-center items-start lg:items-end lg:justify-between text-white footer-animate">
-          <div className="max-w-lg">
-            <h2 className="mt-5 hero-text text-3xl md:text-5xl font-light leading-tight">
+        <div className="flex flex-col lg:flex-row w-full justify-center items-start lg:items-end lg:justify-between gap-6 text-white footer-animate">
+          <div className="max-w-lg space-y-6">
+            <h2 className="mt-5 hero-text text-5xl md:text-5xl lg:text-6xl font-light leading-tight">
               Let&apos;s grow something <br />
               impactful together
             </h2>
 
-            <p className="mt-4 text-sm text-white/80 font-light">
+            <p className="text-base text-white/80 font-light">
               Whether you&apos;re a farmer, partner, or investor, our team is
               ready to help you build smarter, more sustainable solutions.
             </p>

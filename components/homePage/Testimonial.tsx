@@ -55,7 +55,7 @@ const testimonials = [
 
 export default function TestimonialCarousel() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(2);
+  const [activeIndex, setActiveIndex] = useState(1);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const textRef = useRef<HTMLDivElement | null>(null);
 
