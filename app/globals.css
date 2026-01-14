@@ -85,6 +85,14 @@ button {
   max-width: 80rem; /* approx Tailwind max-w-7xl */
 }
 
+.text-stroke {
+  -webkit-text-stroke: 0.4px white;
+}
+
+.text-stroke-black {
+  -webkit-text-stroke: 0.4px black;
+}
+
 /* animation  */
 
 @keyframes shine {

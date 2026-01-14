@@ -8,7 +8,7 @@ import Image from "next/image";
 const Navbar = () => {
   const navRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  const isHome = pathname === "/" || pathname === "/blog";
 
   const [scrolled, setScrolled] = useState(false);
 
@@ -50,14 +50,17 @@ const Navbar = () => {
           <a href="/about">About us</a>
           <a href="/product">Product</a>
           <a href="/sustainability">CSR</a>
-          <a href="/carears">Carears</a>
+          {/* <a href="/carears">Carears</a> */}
           <a href="/blog">Blog</a>
         </div>
 
         <div className="flex gap-4 items-center">
-          <button className="rounded-full border-[1.5px] border-gray-600 px-4 py-1 text-base font-medium inline-flex items-center gap-1.5 hover:bg-gray-600 hover:text-white">
+          <a
+            href="/contact"
+            className="rounded-full border-[1.5px] border-gray-600 px-4 py-1 text-base font-medium inline-flex items-center gap-1.5 hover:bg-gray-600 hover:text-white"
+          >
             Contact us
-          </button>
+          </a>
         </div>
       </nav>
     </header>

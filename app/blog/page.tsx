@@ -1,17 +1,14 @@
 import Hero from "@/components/otherpages/Hero";
 import SustainableSection from "@/components/homePage/SustainableSection";
+import BlogHero from "@/components/otherpages/BlogHero";
+import BlogSection from "@/components/otherpages/BlogSection";
 
 const page = () => {
   return (
-    <>
-      <Hero
-        title=" Discover The Story:
-                        Cultivating Innovation In Agriculture."
-        subtitle=" Explore our journey in Redefining the future of farming
-                      technology"
-      />
-      <SustainableSection />
-    </>
+    <main>
+      <BlogHero />
+      <BlogSection />
+    </main>
   );
 };
 

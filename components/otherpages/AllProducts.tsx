@@ -57,9 +57,9 @@ export default function AllProducts() {
           </p>
         </div>
         <div className="h-full w-full ">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
             {/* cocoa  */}
-            <div className="relative w-full h-180 overflow-hidden">
+            <div className="relative w-full h-150 overflow-hidden">
               <Image
                 src="/hero-bg.jpg"
                 alt="Crops"
@@ -105,7 +105,7 @@ export default function AllProducts() {
             </div>
 
             {/* wheat  */}
-            <div className="relative w-full h-180 overflow-hidden">
+            <div className="relative w-full h-150 overflow-hidden">
               <Image
                 src="/hero-bg.jpg"
                 alt="Crops"

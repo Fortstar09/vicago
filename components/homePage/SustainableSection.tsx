@@ -20,7 +20,7 @@ export default function SustainableSection() {
           trigger: ".sustain-heading",
           start: "top 75%",
           end: "bottom 30%",
-          toggleActions: "play reverse play reverse",
+          // toggleActions: "play reverse play reverse",
         },
       });
 
@@ -34,7 +34,7 @@ export default function SustainableSection() {
           trigger: ".sustain-text",
           start: "top 75%",
           end: "bottom 15%",
-          toggleActions: "play reverse play reverse",
+          // toggleActions: "play reverse play reverse",
           // markers: true,
         },
       });
@@ -50,7 +50,7 @@ export default function SustainableSection() {
           trigger: ".sustain-button",
           start: "top 80%",
           end: "bottom 20%",
-          toggleActions: "play reverse play reverse",
+          // toggleActions: "play reverse play reverse",
         },
       });
 
@@ -63,7 +63,7 @@ export default function SustainableSection() {
         scrollTrigger: {
           trigger: ".sustain-stat",
           start: "top 85%",
-          toggleActions: "play reverse play reverse",
+          // toggleActions: "play reverse play reverse",
         },
       });
 
@@ -76,7 +76,7 @@ export default function SustainableSection() {
         scrollTrigger: {
           trigger: ".sustain-stat-desc",
           start: "top 85%",
-          toggleActions: "play reverse play reverse",
+          // toggleActions: "play reverse play reverse",
         },
       });
 
@@ -89,7 +89,7 @@ export default function SustainableSection() {
         scrollTrigger: {
           trigger: ".sustain-caption",
           start: "top 90%",
-          toggleActions: "play reverse play reverse",
+          // toggleActions: "play reverse play reverse",
         },
       });
     }, sectionRef);
@@ -103,7 +103,7 @@ export default function SustainableSection() {
       className="relative min-h-dvh w-full overflow-hidden bg-white text-gray-900"
     >
       <div className=" max-out relative z-10 h-full flex flex-col justify-center gap-30 items-start max-margin py-20">
-        <div className="w-full text-black/80 space-y-4 flex justify-between items-end mt-10 ">
+        <div className="w-full text-black/80 space-y-4 flex justify-between items-end">
           <h2 className=" sustain-heading max-w-md text-3xl md:text-7xl font-light leading-tight">
             Sustainability Section
           </h2>
