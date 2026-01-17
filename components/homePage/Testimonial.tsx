@@ -80,7 +80,7 @@ export default function TestimonialCarousel() {
       gsap.fromTo(
         textRef.current,
         { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
       );
     }
   }, [activeIndex]);
@@ -167,11 +167,11 @@ export default function TestimonialCarousel() {
 
           <button
             onClick={handleNext}
-            className="w-10 h-10 rounded-full bg-lime-400 hover:bg-lime-500 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
+            className="w-10 h-10 rounded-full bg-olive/80 hover:bg-olive flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
             aria-label="Next testimonial"
           >
             <svg
-              className="w-6 h-6 text-gray-900"
+              className="w-6 h-6 text-snow"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

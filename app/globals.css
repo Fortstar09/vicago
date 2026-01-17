@@ -2,11 +2,16 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-lemon: #606c38;
-  --color-darkGreen: #283618;
-  --color-wheat: #fefae0;
-  --color-lightOrange: #dda15e;
-  --color-brightOrange: #bc6c25;
+  --color-darkBrown: #4a290f;
+  --color-lightBrown: #813b1c;
+  /* --color-olive: #58714d; */
+  --color-olive: oklch(50.8% 0.118 165.612);
+  --color-goldenBrown: #c89637;
+  --color-charcoal: #36454f;
+  --color-creamy: #f5f5dc;
+  --color-lightgray: #ebece7;
+  --color-lightGreen: #f5faf7;
+  --color-snow: #fafafa;
 }
 
 :root {
@@ -32,8 +37,17 @@ body {
 
 /* Apply fonts consistently */
 body {
-  font-family: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
+  font-family:
+    var(--font-inter),
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
     "Segoe UI Symbol";
 }
 

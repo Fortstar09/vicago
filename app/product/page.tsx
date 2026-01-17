@@ -2,11 +2,12 @@ import React from "react";
 import Hero from "@/components/otherpages/Hero";
 import AllProducts from "@/components/otherpages/AllProducts";
 import TestimonialCarousel from "@/components/homePage/Testimonial";
+import DupHero from "@/components/otherpages/HeroDup";
 
 const Products = () => {
   return (
     <>
-      <Hero
+      <DupHero
         title=" Securing global food futures"
         subtitle="We source and export ethically grown cocoa, wheat, and more, partnering with global brands to build a fairer agro-commodity chain."
       />

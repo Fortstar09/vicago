@@ -5,11 +5,10 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../ui/Button";
-import { ArrowDown } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Hero({
+export default function DupHero({
   title,
   subtitle,
 }: {
@@ -50,35 +49,42 @@ export default function Hero({
   return (
     <section
       ref={heroRef}
-      className="relative  w-full overflow-hidden bg-[#f5faf7] z-10 h-fit"
+      className="relative w-full overflow-hidden bg-[#f5faf7] z-10"
     >
-      <div className="max-margin mt-40 mb-20">
+      <div className="max-margin flex items-center justify-between h-screen gap-6">
         {/* Hero Content */}
-        <div className="max-out relative z-10 h-full flex flex-col gap-20 items-center w-full mb-8">
-          <div className="text-black/90 flex flex-col md:flex-row justify-between items-start md:items-end w-full mb-15">
-            <div className="flex flex-col items-start space-y-6">
-              <div>
-                <h1 className="hero-animate text-5xl md:text-5xl lg:text-6xl lg:leading-16 max-w-xl font-normal font-grotesque leading-tight">
-                  {title}
-                </h1>
-              </div>
+        <div className="flex flex-col items-start space-y-6 max-w-lg">
+          <h1 className="hero-animate text-5xl md:text-5xl lg:text-6xl lg:leading-16 text-black font-normal font-grotesque leading-tight">
+            {title}
+          </h1>
 
-              <p className="hero-animate text-base text-gray-500 max-w-90 leading-7">
-                {subtitle}
-              </p>
-            </div>
-            <button className="inline-flex justify-center items-center gap-2 animate-bounce text-sm text-gray-400">
-              Explore more <ArrowDown size={16} />
-            </button>
-          </div>
+          <p className="hero-animate text-base text-gray-500 leading-7">
+            {subtitle}
+          </p>
         </div>
-        <div className="hero-image w-full relative flex items-center aspect-video justify-center overflow-hidden h-100  rounded-xl">
+        {/* <div className="hero-image w-full relative flex items-center aspect-video justify-center overflow-hidden h-150  rounded-xl">
           <Image
             src="/hero-bg.jpg"
             alt="Hero background"
             width={500}
             height={500}
             className="w-full object-cover rounded-xl"
+          />
+        </div> */}
+        <div className="w-full relative flex flex-col gap-6 max-w-2xl">
+          <Image
+            src="/hero-bg.jpg"
+            alt="Hero background"
+            width={500}
+            height={100}
+            className="w-full object-cover h-60 rounded-xl"
+          />
+          <Image
+            src="/hero-bg.jpg"
+            alt="Hero background"
+            width={500}
+            height={200}
+            className="w-full object-cover h-70 rounded-xl"
           />
         </div>
       </div>

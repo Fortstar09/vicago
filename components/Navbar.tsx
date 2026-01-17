@@ -27,8 +27,8 @@ const Navbar = () => {
   const textColor = scrolled
     ? "text-black"
     : isHome
-    ? "text-white"
-    : "text-black";
+      ? "text-white"
+      : "text-black";
 
   const bgStyle = scrolled
     ? "bg-white border-b border-black/10"
@@ -49,7 +49,7 @@ const Navbar = () => {
         <div className="hidden md:flex gap-8 text-base font-normal">
           <a href="/about">About us</a>
           <a href="/product">Product</a>
-          <a href="/sustainability">CSR</a>
+          <a href="/csr">CSR</a>
           {/* <a href="/carears">Carears</a> */}
           <a href="/blog">Blog</a>
         </div>
@@ -57,7 +57,7 @@ const Navbar = () => {
         <div className="flex gap-4 items-center">
           <a
             href="/contact"
-            className="rounded-full border-[1.5px] border-gray-600 px-4 py-1 text-base font-medium inline-flex items-center gap-1.5 hover:bg-gray-600 hover:text-white"
+            className="rounded-full border border-black px-3 py-2 text-sm font-semibold hover:text-white hover:bg-olive"
           >
             Contact us
           </a>

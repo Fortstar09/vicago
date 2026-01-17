@@ -23,7 +23,7 @@ export default function Hero() {
         stagger: 0.2,
         ease: "power3.out",
         // toggleActions: "play reverse play reverse",
-      }
+      },
     );
   }, []);
 
@@ -54,7 +54,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/50 to-black/70" />
         {/* Hero Content */}
         <div className="max-out relative z-10 h-full flex items-end w-full">
-          <div className="text-white flex flex-col md:flex-row justify-between items-start md:items-end w-full mb-15">
+          <div className="text-snow flex flex-col md:flex-row justify-between items-start md:items-end w-full mb-15">
             <div className="flex flex-col items-start space-y-6">
               <div>
                 <span className="hero-animate inline-block rounded-full mb-5 backdrop-blur-sm px-4 py-1.5 text-xs border border-white/20">
@@ -62,11 +62,11 @@ export default function Hero() {
                 </span>
 
                 <h1 className="hero-animate text-4xl md:text-6xl lg:text-[76px] lg:leading-24 font-medium font-grotesque leading-tight">
-                  Bringing Innovation to <br /> Your Farming Journey.
+                  Bringing Innovation to <br /> your Farming Journey.
                 </h1>
               </div>
 
-              <p className="hero-animate text-base text-white/90 max-w-150 leading-7">
+              <p className="hero-animate text-base text-lightgray/80 max-w-150 leading-7">
                 From precision agriculture to sustainable practices, we help you
                 grow more efficiently and profitably. From precision agriculture
                 to sustainable practices, profitably.

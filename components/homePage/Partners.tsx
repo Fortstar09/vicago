@@ -27,7 +27,7 @@ const Partners = () => {
             toggleActions: "play reverse play reverse",
             // markers: true,
           },
-        }
+        },
       );
     }, sectionRef);
 
@@ -35,10 +35,10 @@ const Partners = () => {
   }, [sectionRef]);
 
   return (
-    <section ref={sectionRef} className="bg-[#f5faf7] py-30">
+    <section ref={sectionRef} className="bg-lightGreen py-30">
       <div className="mx-auto max-w-7xl px-6 md:px-20">
         <div className="flex flex-col items-center gap-10 text-center">
-          <h2 className="partners-animate text-xl md:text-3xl font-semibold text-gray-900 max-w-2xl">
+          <h2 className="partners-animate text-xl md:text-3xl font-semibold text-charcoal max-w-2xl">
             Trusted by global leaders in food and trade
           </h2>
 

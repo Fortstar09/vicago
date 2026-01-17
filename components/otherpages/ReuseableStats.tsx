@@ -54,13 +54,13 @@ export default function ReusableStats({
                 backgroundPosition: "center",
               }
             : ball.background.type === "gradient"
-            ? { background: ball.background.value }
-            : { backgroundColor: ball.background.value };
+              ? { background: ball.background.value }
+              : { backgroundColor: ball.background.value };
 
         return (
           <div
             key={ball.id}
-            className="stat-ball absolute rounded-full overflow-hidden animate-[bounce_5s_infinite]"
+            className="stat-ball absolute rounded-full overflow-hidden animate-[bounce_10s_infinite]"
             style={{
               width: ball.size,
               height: ball.size,

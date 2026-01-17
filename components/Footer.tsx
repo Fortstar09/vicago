@@ -27,7 +27,7 @@ export default function Footer() {
             start: "top 80%",
             toggleActions: "play reverse play reverse",
           },
-        }
+        },
       );
     }, footerRef);
 
@@ -68,7 +68,7 @@ export default function Footer() {
 
         {/* Footer content box */}
         <div className="bg-white footer-box rounded-xl p-6 md:p-12 shadow-2xl mb-10 footer-animate">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-16">
             {/* Brand Section */}
             <div className="md:col-span-2 space-y-3">
               <h3 className="text-3xl font-bold text-gray-900">Vicago</h3>
@@ -78,30 +78,58 @@ export default function Footer() {
               </p>
             </div>
 
+            <div className="space-y-4">
+              <p className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
+                Reach out
+              </p>
+              <ul className="space-y-3 text-sm text-gray-700">
+                {["+234 701 254 4554", "info@vicagogroup.com"].map(
+                  (item, i) => (
+                    <li
+                      key={i}
+                      className="hover:text-green-600 cursor-pointer transition-colors"
+                    >
+                      {item}
+                    </li>
+                  ),
+                )}
+              </ul>
+            </div>
+
             {/* Quick Menu */}
             <div className="space-y-4">
               <p className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
                 Quick Menu
               </p>
               <ul className="space-y-3 text-sm text-gray-700">
-                {["Home", "About", "Services", "Gallery"].map((item, i) => (
-                  <li
-                    key={i}
-                    className="hover:text-green-600 cursor-pointer transition-colors"
-                  >
-                    {item}
-                  </li>
-                ))}
+                {["Home", "About", "Product", "CSR", "Blog", "Contact"].map(
+                  (item, i) => (
+                    <li
+                      key={i}
+                      className="hover:text-green-600 cursor-pointer transition-colors"
+                    >
+                      {item}
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
 
             {/* Resources */}
             <div className="space-y-4">
               <p className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
-                Resources
+                policies
               </p>
+
               <ul className="space-y-3 text-sm text-gray-700">
-                {["Insights", "Reports", "News"].map((item, i) => (
+                {[
+                  "ESG Policy",
+                  "Human rights policy",
+                  "DEI policy",
+                  "IMS Policy",
+                  "Legal policies",
+                  "Privacy Policy",
+                ].map((item, i) => (
                   <li
                     key={i}
                     className="hover:text-green-600 cursor-pointer transition-colors"
@@ -115,10 +143,16 @@ export default function Footer() {
             {/* Social */}
             <div className="space-y-4">
               <p className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
-                Social
+                Connect with us
               </p>
               <ul className="space-y-3 text-sm text-gray-700">
-                {["Instagram", "X", "TikTok"].map((item, i) => (
+                {[
+                  "Instagram",
+                  "X (Twitter)",
+                  "TikTok",
+                  "LinkedIn",
+                  "Facebook",
+                ].map((item, i) => (
                   <li
                     key={i}
                     className="hover:text-green-600 cursor-pointer transition-colors"
@@ -135,17 +169,6 @@ export default function Footer() {
             <p className="text-xs text-gray-500">
               © {new Date().getFullYear()} Vicago. All rights reserved.
             </p>
-            <div className="flex gap-6 mt-4 md:mt-0 text-xs text-gray-500">
-              {["Term", "Privacy", "Cookie Policy"].map((item, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="hover:text-gray-900 transition-colors"
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
           </div>
         </div>
       </div>

@@ -102,50 +102,47 @@ export default function SustainableSection() {
       ref={sectionRef}
       className="relative min-h-dvh w-full overflow-hidden bg-white text-gray-900"
     >
-      <div className=" max-out relative z-10 h-full flex flex-col justify-center gap-30 items-start max-margin py-20">
+      <div className=" max-out relative z-10 h-full flex flex-col justify-center gap-20 items-start max-margin py-20">
         <div className="w-full text-black/80 space-y-4 flex justify-between items-end">
           <h2 className=" sustain-heading max-w-md text-3xl md:text-7xl font-light leading-tight">
-            Sustainability Section
+            Our strategy
           </h2>
-          <div className="max-w-lg">
-            <p className="sustain-text text-lg text-gray-500">
-              At Vicago, we believe technology should empower communities,
-              protect the environment, and create lasting impact for generations
-              to come.
-            </p>
-            <Button title="Our services" animationClass="sustain-button" />
-          </div>
         </div>
         <div className="h-full w-full ">
-          <div className="grid grid-cols-3 gap-6  w-full">
+          <div className="grid grid-cols-6 gap-4  w-full">
+            <div className="rounded-xl bg-[#4A290F] border-3 col-span-4 border-black p-8 flex flex-col gap-6 ">
+              <h2 className="sustain-stat-desc mt-2 text-5xl font-semibold text-creamy max-w-lg">
+                Strengthening Community Wellbeing
+              </h2>
+              <p className="sustain-caption  text-lg text-gray-50 max-w-lg">
+                We build with the whole community in mind. From education access
+                and child labor prevention to women’s income programs, we invest
+                in the communities behind the produce.
+              </p>
+            </div>
             <Image
               src="/hero-bg.jpg"
               alt="Crops"
               width={400}
               height={400}
-              className="rounded-xl object-cover h-105"
+              className="rounded-xl object-cover col-span-2 w-full"
             />
-
             <Image
               src="/hero-bg.jpg"
               alt="Crops"
               width={400}
               height={400}
-              className="rounded-xl object-cover h-105"
+              className="rounded-xl object-cover col-span-2 w-full"
             />
-
-            <div className="rounded-xl bg-lime-400 border-3 border-black p-8 flex flex-col justify-between">
-              <div>
-                <h3 className="sustain-stat text-8xl font-bold text-gray-900">
-                  85%
-                </h3>
-                <p className="sustain-stat-desc mt-2 text-4xl text-gray-800">
-                  Customer Satisfaction Rate
-                </p>
-              </div>
-
-              <p className="sustain-caption  text-base text-gray-700">
-                Trusted by farmers and agribusinesses across regions.
+            <div className="rounded-xl bg-[#58714D] border-3 col-span-4 border-black p-8 flex flex-col gap-6 ">
+              <h2 className="sustain-stat-desc mt-2 text-5xl font-semibold text-creamy max-w-lg">
+                Improving Farmers’ Livelihoods
+              </h2>
+              <p className="sustain-caption  text-lg text-gray-50 max-w-lg">
+                We believe farmers are the backbone of our global value chain
+                and should earn more than survival. That’s why we pay fairly,
+                educate consistently, and help local producers unlock real
+                value, from sourcing to financing.
               </p>
             </div>
           </div>

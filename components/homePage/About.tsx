@@ -32,14 +32,14 @@ export default function About() {
           // toggleActions: "play reverse play reverse",
           // markers: true,
         },
-      }
+      },
     );
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden flex justify-center items-center bg-[#f5faf7]  min-h-dvh "
+      className="relative overflow-hidden flex justify-center items-center bg-lightGreen  min-h-dvh "
     >
       <div className="max-margin py-28 flex justify-center items-center">
         {/* Static Images */}

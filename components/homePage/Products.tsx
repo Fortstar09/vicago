@@ -67,14 +67,14 @@ export default function StackingCardsSection() {
         tl.to(
           `.slide-${i - 1}`,
           { yPercent: -100, duration: 0.45, ease: "power2.inOut" },
-          "<"
+          "<",
         )
           .to(`.bg-image-${i}`, { yPercent: 0, duration: 0.6 })
           .to(`.card-${i}`, { yPercent: 0, duration: 0.6 }, "<")
           .to(
             `.slide-${i}`,
             { yPercent: 0, duration: 0.45, ease: "power2.out" },
-            "<"
+            "<",
           );
       });
     }, sectionRef);
@@ -136,9 +136,12 @@ export default function StackingCardsSection() {
               </div>
 
               <div className="mt-6 flex justify-center">
-                <button className="text-sm text-gray-600 border-2 px-4 py-1 rounded-full border-gray-600 hover:text-white hover:bg-gray-600 transition">
-                  View Details
-                </button>
+                <a
+                  href="/contact"
+                  className="bg-white text-green-950 px-3 py-2 border border-black rounded-full text-sm font-semibold hover:text-white hover:bg-olive"
+                >
+                  Contact us
+                </a>
               </div>
             </div>
           </div>
