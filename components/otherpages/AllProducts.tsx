@@ -45,7 +45,7 @@ export default function AllProducts() {
       ref={sectionRef}
       className="relative min-h-dvh w-full overflow-hidden bg-white text-gray-900"
     >
-      <div className=" max-out relative z-10 h-full flex flex-col justify-center gap-20 items-start max-margin py-20">
+      <div className="relative z-10 h-full flex flex-col justify-center gap-20 items-start max-margin py-20">
         <div className="w-full text-black/80 gap-6 flex flex-col justify-center items-start max-w-3xl">
           <h2 className=" sustain-heading max-w-4xl text-5xl md:text-6xl mb-0 font-normal">
             The building blocks of sustainable global food security
@@ -132,13 +132,6 @@ export default function AllProducts() {
                       Contact us
                     </a>
                   </div>
-                  {/* <Image
-                    src="/wheat.png"
-                    alt="cocoa icon"
-                    width={100}
-                    height={100}
-                    className=""
-                  /> */}
                 </div>
               </div>
             </div>

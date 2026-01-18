@@ -100,7 +100,7 @@ export default function TestimonialCarousel() {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen bg-gray-50 flex items-center justify-center p-8"
+      className="min-h-screen bg-snow flex items-center justify-center p-8"
     >
       <div className="max-w-7xl w-full">
         {/* Testimonial Quote */}

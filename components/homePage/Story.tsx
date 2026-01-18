@@ -47,7 +47,7 @@ export default function Story() {
           stagger: 0.25,
           delay: 0.3,
         },
-        "-=0.6" // overlap with header
+        "-=0.6", // overlap with header
       );
 
       // 3️⃣ CTA button
@@ -65,7 +65,7 @@ export default function Story() {
   }, [sectionRef]);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-[#fbf9f3] ">
+    <section ref={sectionRef} className="py-20 bg-lightGreen ">
       <div className="mx-auto rounded-3xl max-margin ">
         {/* Header */}
         <h2 className="tc-header text-2xl md:text-6xl font-normal text-gray-900 max-w-lg mb-18">
