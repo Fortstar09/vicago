@@ -35,8 +35,8 @@ export default function RootLayout({
         <LenisProvider>
           <Navbar />
           {children}
+          <Footer />
         </LenisProvider>
-        <Footer />
       </body>
     </html>
   );
