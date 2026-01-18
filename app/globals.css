@@ -107,14 +107,47 @@ button {
   -webkit-text-stroke: 0.4px black;
 }
 
-/* animation  */
+/* page transition animation  */
 
-@keyframes shine {
-  to {
-    transform: rotate(360deg);
-  }
+.transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  display: flex;
+  pointer-events: none;
+  z-index: 60;
 }
 
-.animate-shine {
-  animation: shine 4s linear infinite;
+.block {
+  flex: 1;
+  height: 100%;
+  background-color: #222;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.sign-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  background-color: #222;
+  opacity: 0;
+}
+
+.sign-container {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }

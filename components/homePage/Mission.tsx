@@ -49,7 +49,7 @@ export default function Mission() {
               <Image
                 src="/hero-bg.jpg"
                 alt="Farmer"
-                width={500}
+                width={400}
                 height={400}
                 className="rounded-xl object-cover h-full col-span-1"
               />

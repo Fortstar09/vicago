@@ -134,7 +134,7 @@ export default function SustainableSection() {
               height={400}
               className="rounded-xl object-cover col-span-2 w-full"
             />
-            <div className="rounded-xl bg-[#58714D] border-3 col-span-4 border-black p-8 flex flex-col gap-6 ">
+            <div className="rounded-xl bg-olive border-3 col-span-4 border-black p-8 flex flex-col gap-6 ">
               <h2 className="sustain-stat-desc mt-2 text-5xl font-semibold text-creamy max-w-lg">
                 Improving Farmers’ Livelihoods
               </h2>

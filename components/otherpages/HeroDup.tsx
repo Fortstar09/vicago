@@ -51,7 +51,7 @@ export default function DupHero({
       ref={heroRef}
       className="relative w-full overflow-hidden bg-[#f5faf7] z-10"
     >
-      <div className="max-margin flex items-center justify-between h-screen gap-6">
+      <div className="max-margin flex items-center justify-between h-screen gap-6 pt-20">
         {/* Hero Content */}
         <div className="flex flex-col items-start space-y-6 max-w-lg">
           <h1 className="hero-animate text-5xl md:text-5xl lg:text-6xl lg:leading-16 text-black font-normal font-grotesque leading-tight">
@@ -71,20 +71,36 @@ export default function DupHero({
             className="w-full object-cover rounded-xl"
           />
         </div> */}
-        <div className="w-full relative flex flex-col gap-6 max-w-2xl">
-          <Image
-            src="/hero-bg.jpg"
-            alt="Hero background"
-            width={500}
-            height={100}
-            className="w-full object-cover h-60 rounded-xl"
-          />
+        <div className="w-full relative flex flex-col gap-4 max-w-2xl">
+          <div className="grid grid-cols-3 gap-4">
+            <Image
+              src="/hero-bg.jpg"
+              alt="Hero background"
+              width={200}
+              height={200}
+              className="w-full object-cover h-50 rounded-lg row-span-1"
+            />{" "}
+            <Image
+              src="/hero-bg.jpg"
+              alt="Hero background"
+              width={200}
+              height={200}
+              className="w-full object-cover h-50 rounded-lg row-span-1"
+            />{" "}
+            <Image
+              src="/hero-bg.jpg"
+              alt="Hero background"
+              width={200}
+              height={200}
+              className="w-full object-cover h-50 rounded-lg row-span-1"
+            />
+          </div>
           <Image
             src="/hero-bg.jpg"
             alt="Hero background"
             width={500}
             height={200}
-            className="w-full object-cover h-70 rounded-xl"
+            className="w-full object-cover h-70 rounded-lg"
           />
         </div>
       </div>

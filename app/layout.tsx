@@ -3,6 +3,7 @@ import "./globals.css";
 import LenisProvider from "@/components/LenisProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+// import PageTransition from "@/components/ui/PageTransition";
 
 // Add preconnect links for fonts to improve loading across browsers
 
@@ -34,8 +35,8 @@ export default function RootLayout({
         <LenisProvider>
           <Navbar />
           {children}
-          <Footer />
         </LenisProvider>
+        <Footer />
       </body>
     </html>
   );
