@@ -5,10 +5,10 @@ export const stats: StatBall[] = [
     id: "hectares",
     title: "81M+",
     subtitle: "Hectares Planted Areas",
-    size: 260,
+    size: 270,
     position: {
       bottom: "220px",
-      left: "5%",
+      left: "15%",
     },
     textClassName: "text-7xl text-white/70 text-stroke",
     background: {
@@ -20,10 +20,10 @@ export const stats: StatBall[] = [
     id: "facilities",
     title: "17.6K+",
     subtitle: "Facilities",
-    size: 200,
+    size: 300,
     position: {
       top: "160px",
-      left: "30%",
+      left: "45%",
     },
     textClassName: "text-5xl text-white/70 text-stroke",
     background: {
@@ -35,33 +35,16 @@ export const stats: StatBall[] = [
     id: "traceability",
     title: "1.8K+",
     subtitle: "Units Traceability to Plantations",
-    size: 160,
+    size: 360,
     position: {
-      top: "160px",
-      right: "8%",
+      bottom: "100px",
+      right: "10%",
     },
-    textClassName: "text-4xl text-green-600",
+    textClassName: "text-8xl text-green-600",
     subTextClassName: "text-xs text-gray-600",
     background: {
       type: "color",
       value: "#fff",
-    },
-  },
-  {
-    id: "country",
-    title: "20+",
-    subtitle: "Country reached",
-    size: 300,
-    position: {
-      bottom: "100px",
-      right: "30%",
-    },
-    textClassName: "text-8xl text-green-800 font-bold",
-    subTextClassName: "text-base font-bold text-white",
-
-    background: {
-      type: "image",
-      value: "/value-bg.jpg",
     },
   },
 ];

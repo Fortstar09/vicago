@@ -20,14 +20,12 @@ const OurJourney: React.FC = () => {
 
   const timelineData: TimelineItem[] = [
     {
-      year: "2017",
+      year: "2004",
       title: "A Bold Start Against the Odds",
       description:
         'When our founder sought funding to scale, he was denied a loan despite having assets. The reason? "No experience." But that setback became a setup. That same year, we secured our first client, Touton, and exported our very first shipment of cocoa. We started with just 200 metric tonnes, and a relentless belief in possibility.',
       achievements: [],
-      images: [
-        "https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?w=800",
-      ],
+      images: ["/images/found-office.jpg"],
     },
     {
       year: "2020",
@@ -145,7 +143,7 @@ const OurJourney: React.FC = () => {
               end: "top 30%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       });
     }, containerRef);
@@ -154,10 +152,10 @@ const OurJourney: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-[#0a4a44]">
+    <section className="bg-vgbrown">
       <div
         ref={containerRef}
-        className="relative max-margin text-white overflow-hidden"
+        className="relative max-margin text-creamy overflow-hidden"
       >
         {/* Header Section */}
         <div className="relative z-20 pt-20 pb-12 px-6 text-center">

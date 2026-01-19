@@ -49,7 +49,7 @@ export default function Values() {
           ease: "power3.out",
           stagger: 0.2,
         },
-        "-=0.4"
+        "-=0.4",
       );
     }, valueRef);
 
@@ -77,13 +77,17 @@ export default function Values() {
             <h2 className="values-text max-w-md text-5xl md:text-7xl font-light leading-tight">
               Our Values - RIIT
             </h2>
-            <div className="max-w-lg mb-10">
-              <p className="values-text text-base text-white/80">
+            <div className="max-w-lg mb-4">
+              <p className="values-text text-base text-white/80 mb-6">
                 At Vicago, we believe technology should empower communities,
                 protect the environment, and create lasting impact for
                 generations to come.
               </p>
-              <Button title="Our services" animationClass="values-text" />
+              <Button
+                title="About us"
+                link="/about"
+                animationClass="values-text"
+              />
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full items-center ">
@@ -124,8 +128,8 @@ const BlurCard = ({
   subTitle: string;
 }) => {
   return (
-    <div className="blur-card col-span-1">
-      <div className="rounded-xl bg-white/10 backdrop-blur-xs px-5 py-4 text-sm space-y-3 max-w-sm border border-white/10">
+    <div className="blur-card rounded-xl col-span-1 bg-white/10 backdrop-blur-xs border border-white/10 h-full">
+      <div className="  px-5 py-4 text-sm space-y-3 max-w-sm">
         <div>
           <p className="font-extralight text-xs text-white">00{id}</p>
           <p className="text-lg font-medium text-white mt-2">{title}</p>

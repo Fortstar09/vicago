@@ -23,7 +23,7 @@ export default function BlogCard({
 
         {/* Arrow */}
         <div className="absolute bottom-0 right-0">
-          <div className="flex size-12 items-center justify-center rounded-full bg-olive shadow">
+          <div className="flex size-12 items-center justify-center rounded-full bg-vgbrown shadow">
             <ArrowUpRight size={28} strokeWidth={2.5} color="#fafafa" />
           </div>
         </div>

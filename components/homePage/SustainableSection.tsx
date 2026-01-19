@@ -103,42 +103,42 @@ export default function SustainableSection() {
       className="relative min-h-dvh w-full overflow-hidden bg-white text-gray-900"
     >
       <div className=" max-out relative z-10 h-full flex flex-col justify-center gap-20 items-start max-margin py-20">
-        <div className="w-full text-black/80 space-y-4 flex justify-between items-end">
-          <h2 className=" sustain-heading max-w-md text-3xl md:text-7xl font-light leading-tight">
+        <div className="w-full  space-y-4 flex justify-between items-end">
+          <h2 className=" sustain-heading max-w-md text-3xl md:text-6xl font-normal leading-tight text-vgreen">
             Our strategy
           </h2>
         </div>
         <div className="h-full w-full ">
-          <div className="grid grid-cols-6 gap-4  w-full">
-            <div className="rounded-xl bg-[#4A290F] border-3 col-span-4 border-black p-8 flex flex-col gap-6 ">
-              <h2 className="sustain-stat-desc mt-2 text-5xl font-semibold text-creamy max-w-lg">
+          <div className="grid grid-cols-6 gap-4  w-full h-fit">
+            <div className="rounded-xl bg-vgreen col-span-4 p-5 flex flex-col gap-6 h-full ">
+              <h2 className="sustain-stat-desc mt-2 text-4xl font-semibold text-creamy max-w-lg">
                 Strengthening Community Wellbeing
               </h2>
-              <p className="sustain-caption  text-lg text-gray-50 max-w-lg">
+              <p className="sustain-caption  text-base text-gray-50/80 max-w-md">
                 We build with the whole community in mind. From education access
                 and child labor prevention to women’s income programs, we invest
                 in the communities behind the produce.
               </p>
             </div>
             <Image
-              src="/hero-bg.jpg"
+              src="/images/strategy-one.jpg"
               alt="Crops"
-              width={400}
-              height={400}
-              className="rounded-xl object-cover col-span-2 w-full"
+              width={200}
+              height={200}
+              className="rounded-xl object-cover col-span-2 w-full aspect-video h-full"
             />
             <Image
-              src="/hero-bg.jpg"
+              src="/images/strategy-two.jpg"
               alt="Crops"
-              width={400}
-              height={400}
-              className="rounded-xl object-cover col-span-2 w-full"
+              width={200}
+              height={200}
+              className="rounded-xl object-cover col-span-2 w-full aspect-video h-full"
             />
-            <div className="rounded-xl bg-olive border-3 col-span-4 border-black p-8 flex flex-col gap-6 ">
-              <h2 className="sustain-stat-desc mt-2 text-5xl font-semibold text-creamy max-w-lg">
+            <div className="rounded-xl bg-vgbrown col-span-4 p-5 flex flex-col gap-6 h-full ">
+              <h2 className="sustain-stat-desc mt-2 text-4xl font-semibold text-creamy max-w-lg">
                 Improving Farmers’ Livelihoods
               </h2>
-              <p className="sustain-caption  text-lg text-gray-50 max-w-lg">
+              <p className="sustain-caption   text-base text-gray-50/80  max-w-md">
                 We believe farmers are the backbone of our global value chain
                 and should earn more than survival. That’s why we pay fairly,
                 educate consistently, and help local producers unlock real

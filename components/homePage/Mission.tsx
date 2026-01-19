@@ -37,7 +37,7 @@ export default function Mission() {
   }, []);
 
   return (
-    <div className=" bg-white z-10">
+    <div className=" bg-[#F8F5F3] z-10">
       <section
         ref={sectionRef}
         className="relative h-screen overflow-hidden bg-white z-10"
@@ -51,11 +51,11 @@ export default function Mission() {
                 alt="Farmer"
                 width={400}
                 height={400}
-                className="rounded-xl object-cover h-full col-span-1"
+                className="rounded-lg object-cover h-full col-span-1"
               />
 
               <div className="grid grid-cols-2 gap-5 col-span-2">
-                <div className="rounded-xl w-full border-3 border-black p-10 bg-[#f5faf7] max-h-62.5">
+                <div className="rounded-lg w-full border border-gray-300 p-10 bg-[#f5faf7] max-h-62.5">
                   <div className="flex flex-col justify-center items-start gap-9">
                     <h3 className="text-7xl font-bold text-emerald-700">
                       200K+
@@ -70,11 +70,11 @@ export default function Mission() {
                   alt="Farmer"
                   width={500}
                   height={250}
-                  className="rounded-xl object-cover max-h-62.5"
+                  className="rounded-lg object-cover max-h-62.5"
                 />
-                <div className="rounded-xl col-span-2 border-3 border-black p-10 bg-[#fef9e9] flex items-center justify-between ">
+                <div className="rounded-lg col-span-2 border border-gray-300 p-10 bg-[#F0EAE6] flex items-center justify-between ">
                   <div className="flex flex-col justify-center items-start gap-9">
-                    <h3 className="text-7xl font-bold text-emerald-700">50+</h3>
+                    <h3 className="text-7xl font-bold text-vgbrown">50+</h3>
                     <p className="text-xl text-gray-700 max-w-[250px]">
                       Partners spread across the world
                     </p>
@@ -98,11 +98,11 @@ export default function Mission() {
                 alt="Farmer"
                 width={500}
                 height={400}
-                className="rounded-xl object-cover h-full col-span-1"
+                className="rounded-lg object-cover h-full col-span-1"
               /> */}
 
               <div className="grid grid-cols-2 gap-5 col-span-2">
-                <div className="rounded-xl w-full border-3 border-black p-10 bg-[#f5faf7] max-h-62.5">
+                <div className="rounded-lg w-full border border-gray-300 p-10 bg-[#f5faf7] max-h-62.5">
                   <div className="flex flex-col justify-center items-start gap-9">
                     <h3 className="text-7xl font-bold text-emerald-700">3K+</h3>
                     <p className="text-xl text-gray-500 max-w-[250px]">
@@ -111,7 +111,7 @@ export default function Mission() {
                   </div>
                 </div>
 
-                <div className="rounded-xl border-3 border-black p-10 bg-[#f5faf7]">
+                <div className="rounded-lg border border-gray-300 p-10 bg-[#f5faf7]">
                   <div className="flex flex-col justify-center items-start gap-9">
                     <h3 className="text-7xl font-bold text-emerald-700">
                       200+
@@ -126,7 +126,7 @@ export default function Mission() {
                   alt="Farmer"
                   width={500}
                   height={250}
-                  className="rounded-xl object-cover w-full max-h-62.5 col-span-2"
+                  className="rounded-lg object-cover w-full max-h-62.5 col-span-2"
                 />
               </div>
             </div>

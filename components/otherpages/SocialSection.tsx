@@ -6,8 +6,8 @@ const SocialSection = () => {
   return (
     <section className="relative min-h-dvh w-full overflow-hidden bg-white text-gray-900">
       <div className=" max-out relative z-10 h-full flex flex-col justify-center gap-20 items-start max-margin py-20">
-        <div className="w-full text-black/80 space-y-4 flex justify-between items-end">
-          <h2 className="max-w-md text-3xl md:text-7xl font-light mb-0">
+        <div className="w-full  space-y-4 flex justify-between items-end">
+          <h2 className="max-w-md text-vgreen text-3xl md:text-7xl font-light mb-0">
             Social responsibility
           </h2>
           <p className="sustain-text text-lg text-gray-500 max-w-lg">
@@ -36,10 +36,10 @@ const SocialEach = () => {
           <HandHelping size={20} />
           Values
         </p>
-        <h3 className="text-3xl font-semibold text-green-900 ">
+        <h3 className="text-3xl font-semibold text-vgbrown ">
           Community Development
         </h3>
-        <p className="text-base font-normal text-gray-500 max-w-lg">
+        <p className="text-base font-normal text-gray-600 max-w-lg">
           We invest in local communities by supporting education and
           infrastructure projects. Our goal is to enhance the quality of life
           and economic possibilities for members of our sourcing communities.

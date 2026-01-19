@@ -3,7 +3,7 @@ import React from "react";
 
 const PictureDivider = () => {
   return (
-    <section className="relative overflow-hidden h-50 md:h-96 lg:h-100 xl:h-130 w-full flex justify-center items-end">
+    <section className="relative overflow-hidden h-96 lg:h-100 xl:h-130 w-full flex justify-center items-end">
       <Image
         src="/hero-bg.jpg"
         fill
@@ -16,7 +16,7 @@ const PictureDivider = () => {
           <div className="col-start-3 row-span-full border-l-2 border-white/30 pointer-events-none" />
           <div className="border-t-2 border-white/30 px-10 md:pt-7 lg:pt-10 xl:pt-15 flex items-start col-span-2 row-start-3 row-end-5 bg-green-950/20 backdrop-blur-xs">
             <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light max-w-xl">
-              Basically the description of image.
+              First Vicago Store in Nigeria (2003).
             </h2>
           </div>
           {/* <p>Natural pantry items</p> */}

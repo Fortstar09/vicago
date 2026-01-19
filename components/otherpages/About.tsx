@@ -8,7 +8,7 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 const TEXT =
-  "Inovasi Agriplot is a tech-driven dataset developed by Mosaix and Inovasi Digital to provide companies with deforestation-free supply chain information aligned with EU Deforestation Regulation.";
+  "With strategic operations in Nigeria and Canada, we serve manufacturers and processors across West Africa, Europe, and North America. Our mission is to facilitate global trade, enabling food producers to source premium ingredients. We combine market knowledge, global logistics, and deep-rooted partnerships to create efficient, reliable, and transparent supply chains built on integrity.";
 
 const About: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -19,13 +19,13 @@ const About: React.FC = () => {
 
     const words = Array.from(container.querySelectorAll<HTMLElement>(".word"));
     const imgInners = Array.from(
-      container.querySelectorAll<HTMLElement>(".img-inner")
+      container.querySelectorAll<HTMLElement>(".img-inner"),
     );
 
     // derive image size from text
     const sample = words[0] ?? container;
     const fontSize = parseFloat(getComputedStyle(sample).fontSize || "16");
-    const height = 40;
+    const height = 10;
     const width = Math.round(height * 2.2);
 
     imgInners.forEach((el) => {
@@ -55,7 +55,7 @@ const About: React.FC = () => {
       words,
       { opacity: 0 },
       { opacity: 1, stagger: 0.02, ease: "none" },
-      0
+      0,
     ).to(
       imgInners,
       {
@@ -64,7 +64,7 @@ const About: React.FC = () => {
         stagger: 0.5,
         ease: "power2.out",
       },
-      0
+      0,
     );
 
     return () => {
@@ -75,32 +75,29 @@ const About: React.FC = () => {
 
   const tokens = TEXT.split(" ");
 
+  console.log(tokens.length);
+
   return (
-    <section className="bg-white text-gray-900 overflow-hidden z-10">
+    <section className="bg-vgreen text-snow  overflow-hidden z-10">
       <div ref={containerRef} className="max-w-7xl mx-auto px-4 pb-30 mb-20">
-        <p className="text-lg md:text-xl font-medium leading-snug text-center mx-auto max-w-6xl justify-center items-center">
-          {tokens.slice(0, 10).map((word, i) => (
+        <p className="text-lg font-medium leading-snug text-center mx-auto max-w-6xl justify-center items-center">
+          {tokens.slice(0, 17).map((word, i) => (
             <span key={i} className="word">
               {word}
             </span>
           ))}
 
-          <InlineImage src="/hero-bg.jpg" />
-
-          {tokens.slice(10, 17).map((word, i) => (
+          {tokens.slice(18, 34).map((word, i) => (
             <span key={i + 12} className="word">
               {word}
             </span>
           ))}
 
-          <InlineImage src="/value-bg.jpg" />
-
-          {tokens.slice(17).map((word, i) => (
+          {tokens.slice(35, 56).map((word, i) => (
             <span key={i + 24} className="word">
               {word}
             </span>
           ))}
-          <InlineImage src="/hero-bg.jpg" />
         </p>
       </div>
     </section>

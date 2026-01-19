@@ -167,7 +167,7 @@ export default function TestimonialCarousel() {
 
           <button
             onClick={handleNext}
-            className="w-10 h-10 rounded-full bg-olive/80 hover:bg-olive flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
+            className="w-10 h-10 rounded-full bg-vgbrown/80 hover:bg-vgbrown flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
             aria-label="Next testimonial"
           >
             <svg

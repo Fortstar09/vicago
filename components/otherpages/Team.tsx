@@ -58,7 +58,7 @@ const Team: React.FC = () => {
             start: "top 35%",
             // toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     });
 
@@ -68,17 +68,17 @@ const Team: React.FC = () => {
   return (
     <section className="w-full bg-[#f5faf7] py-20">
       <div className="max-margin">
-        <div className="w-full mb-15">
-          <h2 className="text-5xl md:text-5xl lg:text-6xl text-black/80 font-normal font-grotesque leading-tight mb-3">
+        <div className="w-full mb-20">
+          <h2 className="text-5xl md:text-5xl lg:text-6xl text-vgbrown font-normal font-grotesque leading-tight mb-3">
             Our team
           </h2>
-          <p className="text-base text-gray-500 max-w-lg leading-7">
+          <p className="text-base text-gray-600 max-w-lg leading-7">
             Our diverse team brings together expertise from various disciplines
             to provide comprehensive and personalized solutions for our clients.
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <h3 className="text-3xl text-gray-600 col-span-3">
+          <h3 className="text-2xl text-vgbrown col-span-3 font-light">
             Founders and partners
           </h3>
 
@@ -91,7 +91,7 @@ const Team: React.FC = () => {
                       src={m.img || "/hero-bg.jpg"}
                       alt={m.name}
                       fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      sizes="(max-width: 540px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover grayscale hover:grayscale-0"
                     />
 
@@ -115,7 +115,7 @@ const Team: React.FC = () => {
 
         {/* Another component  */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <h3 className="text-3xl text-gray-600 col-span-3">
+          <h3 className="text-2xl text-vgbrown col-span-3">
             Board of Directors
           </h3>
 

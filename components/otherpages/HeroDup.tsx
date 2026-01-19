@@ -49,7 +49,7 @@ export default function DupHero({
   return (
     <section
       ref={heroRef}
-      className="relative w-full overflow-hidden bg-[#f5faf7] z-10"
+      className="relative w-full overflow-hidden bg-lightGreen z-10"
     >
       <div className="max-margin flex items-center justify-between h-screen gap-6 pt-20">
         {/* Hero Content */}
@@ -71,37 +71,37 @@ export default function DupHero({
             className="w-full object-cover rounded-xl"
           />
         </div> */}
-        <div className="w-full relative flex flex-col gap-4 max-w-2xl">
-          <div className="grid grid-cols-3 gap-4">
-            <Image
-              src="/hero-bg.jpg"
-              alt="Hero background"
-              width={200}
-              height={200}
-              className="w-full object-cover h-50 rounded-lg row-span-1"
-            />{" "}
-            <Image
-              src="/hero-bg.jpg"
-              alt="Hero background"
-              width={200}
-              height={200}
-              className="w-full object-cover h-50 rounded-lg row-span-1"
-            />{" "}
-            <Image
-              src="/hero-bg.jpg"
-              alt="Hero background"
-              width={200}
-              height={200}
-              className="w-full object-cover h-50 rounded-lg row-span-1"
-            />
-          </div>
+        <div className="w-full relative flex flex-col gap-5 max-w-2xl">
           <Image
-            src="/hero-bg.jpg"
+            src="/images/about-main.jpg"
             alt="Hero background"
             width={500}
             height={200}
-            className="w-full object-cover h-70 rounded-lg"
+            className="w-full object-cover h-70 rounded-lg cursor-pointer hover:scale-105"
           />
+          <div className="grid grid-cols-3 gap-5">
+            <Image
+              src="/images/about-cocoa.jpg"
+              alt="Hero background"
+              width={200}
+              height={200}
+              className="w-full object-cover h-50 rounded-lg row-span-1 cursor-pointer hover:scale-105"
+            />{" "}
+            <Image
+              src="/images/cocoa-tree.jpg"
+              alt="Hero background"
+              width={200}
+              height={200}
+              className="w-full object-cover h-50 rounded-lg row-span-1 cursor-pointer hover:scale-105"
+            />{" "}
+            <Image
+              src="/images/about-wheat.jpg"
+              alt="Hero background"
+              width={200}
+              height={200}
+              className="w-full object-cover h-50 rounded-lg row-span-1 cursor-pointer hover:scale-105"
+            />
+          </div>
         </div>
       </div>
     </section>

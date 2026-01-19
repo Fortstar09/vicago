@@ -3,78 +3,123 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../ui/Button";
 
-gsap.registerPlugin(ScrollTrigger);
+const slides = [
+  {
+    badge: "Sustainable Farming Tech",
+    title: (
+      <>
+        Bringing Innovation to <br /> your Farming Journey.
+      </>
+    ),
+    description:
+      "From precision agriculture to sustainable practices, we help you grow more efficiently and profitably.",
+    image: "/images/hero-bg-1.jpg",
+  },
+  {
+    badge: "Smart Agriculture",
+    title: (
+      <>
+        Technology That Grows <br /> With You.
+      </>
+    ),
+    description:
+      "Modern tools and data-driven farming solutions for better yields.",
+    image: "/images/hero-bg-2.jpg",
+  },
+  {
+    badge: "Reliability • Innovation • Growth",
+    title: (
+      <>
+        Premium Wheat from
+        <br /> Canada.
+      </>
+    ),
+    description: "North American grain excellence for global food production",
+    image: "/images/hero-bg-3.jpg",
+  },
+];
 
 export default function Hero() {
-  const heroRef = useRef<HTMLDivElement>(null);
+  const slidesRef = useRef<HTMLDivElement[]>([]);
+  const currentIndex = useRef(0);
 
   useEffect(() => {
-    // HERO ANIMATION
-    gsap.fromTo(
-      ".hero-animate",
-      { opacity: 0, y: 100 },
-      {
+    // show first slide
+    gsap.set(slidesRef.current, { opacity: 0 });
+    gsap.set(slidesRef.current[0], { opacity: 1, zIndex: 2 });
+
+    const interval = setInterval(() => {
+      const current = currentIndex.current;
+      const next = (current + 1) % slidesRef.current.length;
+
+      // next slide already under
+      gsap.set(slidesRef.current[next], {
         opacity: 1,
-        y: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power3.out",
-        // toggleActions: "play reverse play reverse",
-      },
-    );
+        zIndex: 1,
+      });
+
+      // fade out current slide
+      gsap.to(slidesRef.current[current], {
+        opacity: 0,
+        duration: 1.5,
+        ease: "power2.out",
+        onComplete: () => {
+          gsap.set(slidesRef.current[current], { zIndex: 0 });
+          currentIndex.current = next;
+        },
+      });
+    }, 10000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <section ref={heroRef} className="relative h-dvh w-full overflow-hidden">
-      <div className="max-margin h-dvh ">
-        <Image
-          src="/hero-bg.jpg"
-          alt="Hero background"
-          fill
-          className="object-cover"
-          priority
-        />{" "}
-        <Image
-          src="/value-bg.jpg"
-          alt="Hero background"
-          fill
-          className="object-cover"
-          priority
-        />{" "}
-        <Image
-          src="/hero-bg.jpg"
-          alt="Hero background"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/50 to-black/70" />
-        {/* Hero Content */}
-        <div className="max-out relative z-10 h-full flex items-end w-full">
-          <div className="text-snow flex flex-col md:flex-row justify-between items-start md:items-end w-full mb-15">
-            <div className="flex flex-col items-start space-y-6">
-              <div>
-                <span className="hero-animate inline-block rounded-full mb-5 backdrop-blur-sm px-4 py-1.5 text-xs border border-white/20">
-                  Sustainable Farming Tech
-                </span>
+    <section className="relative h-dvh w-full overflow-hidden">
+      <div className="h-dvh relative">
+        {slides.map((slide, i) => (
+          <div
+            key={i}
+            ref={(el) => {
+              if (el) slidesRef.current[i] = el;
+            }}
+            className="absolute inset-0"
+          >
+            {/* Background */}
+            <Image
+              src={slide.image}
+              alt="Hero background"
+              fill
+              className="object-cover"
+              priority={i === 0}
+            />
+            <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/50 to-black/70" />
 
-                <h1 className="hero-animate text-4xl md:text-6xl lg:text-[76px] lg:leading-24 font-medium font-grotesque leading-tight">
-                  Bringing Innovation to <br /> your Farming Journey.
-                </h1>
+            {/* Hero Content — UNCHANGED */}
+            <div className="max-margin relative z-10 h-full flex items-end w-full">
+              <div className="text-snow flex flex-col md:flex-row justify-between items-start md:items-end w-full mb-20">
+                <div className="flex flex-col items-start space-y-6">
+                  <div>
+                    <span className="inline-block rounded-full mb-5 backdrop-blur-sm px-4 py-1.5 text-xs border border-white/20">
+                      {slide.badge}
+                    </span>
+
+                    <h1 className="text-4xl md:text-5xl lg:text-[66px] lg:leading-20 font-medium font-grotesque leading-tight">
+                      {slide.title}
+                    </h1>
+                  </div>
+
+                  <p className="text-base text-lightgray/80 max-w-150 leading-7">
+                    {slide.description}
+                  </p>
+                </div>
+
+                <Button title="Explore more" link="#about" />
               </div>
-
-              <p className="hero-animate text-base text-lightgray/80 max-w-150 leading-7">
-                From precision agriculture to sustainable practices, we help you
-                grow more efficiently and profitably. From precision agriculture
-                to sustainable practices, profitably.
-              </p>
             </div>
-            <Button title="Explore more" animationClass="hero-animate" />
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );

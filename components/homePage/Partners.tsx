@@ -35,7 +35,7 @@ const Partners = () => {
   }, [sectionRef]);
 
   return (
-    <section ref={sectionRef} className="bg-lightGreen py-30">
+    <section ref={sectionRef} className="bg-lightGreen pt-30 pb-10">
       <div className="mx-auto max-w-7xl px-6 md:px-20">
         <div className="flex flex-col items-center gap-10 text-center">
           <h2 className="partners-animate text-xl md:text-3xl font-semibold text-charcoal max-w-2xl">

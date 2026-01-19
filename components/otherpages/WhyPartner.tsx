@@ -23,7 +23,7 @@ const WhyPartner = () => {
             className="rounded-xl object-cover col-span-1 w-full h-full"
           />
           <div className="col-span-2 grid grid-rows-4 gap-3">
-            <div className="rounded-xl bg-[#4A290F] border-3 col-span-1 border-black p-4 flex flex-col gap-3">
+            <div className="rounded-xl bg-vgreen  col-span-1 p-4 flex flex-col gap-3">
               <h2 className="sustain-stat-desc text-2xl font-normal text-creamy max-w-lg">
                 Our global reach
               </h2>
@@ -32,7 +32,7 @@ const WhyPartner = () => {
                 East, and we&apos;re built to scale with you.
               </p>
             </div>
-            <div className="rounded-xl bg-olive border-3 col-span-1 border-black p-4 flex flex-col gap-3 ">
+            <div className="rounded-xl bg-vgbrown col-span-1 p-4 flex flex-col gap-3 ">
               <h2 className="sustain-stat-desc text-2xl font-normal text-snow max-w-lg">
                 Certified, high-quality commodities
               </h2>
@@ -41,7 +41,7 @@ const WhyPartner = () => {
                 traceability and global certifications.
               </p>
             </div>
-            <div className="rounded-xl bg-[#4A290F] border-3 col-span-1 border-black p-4 flex flex-col gap-3">
+            <div className="rounded-xl bg-vgreen col-span-1 p-4 flex flex-col gap-3">
               <h2 className="sustain-stat-desc text-2xl font-normal text-creamy max-w-lg">
                 Ethical, farmer-centered sourcing
               </h2>
@@ -50,7 +50,7 @@ const WhyPartner = () => {
                 supporting sustainable practices and livelihoods.
               </p>
             </div>
-            <div className="rounded-xl bg-olive  border-3 col-span-1 border-black p-4 flex flex-col gap-3 ">
+            <div className="rounded-xl bg-vgbrown  col-span-1 p-4 flex flex-col gap-3 ">
               <h2 className="sustain-stat-desc text-2xl font-normal text-snow max-w-lg">
                 End-to-end logistics
               </h2>

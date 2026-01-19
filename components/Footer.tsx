@@ -53,7 +53,7 @@ export default function Footer() {
         {/* Top text */}
         <div className="flex flex-col lg:flex-row w-full justify-center items-start lg:items-end lg:justify-between gap-6 text-white footer-animate">
           <div className="max-w-xl space-y-6">
-            <h2 className="mt-5 hero-text text-5xl md:text-5xl lg:text-6xl font-light leading-tight">
+            <h2 className="mt-5 hero-text text-5xl md:text-5xl font-light leading-tight">
               Let&apos;s grow something <br />
               impactful together
             </h2>
@@ -73,8 +73,9 @@ export default function Footer() {
             <div className="md:col-span-2 space-y-3">
               <h3 className="text-3xl font-bold text-gray-900">Vicago</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Building a sustainable agricultural future with technology,
-                collaboration, and nature-driven smarter practices.
+                Cross-border agricultural commodity trading company specializing
+                in premium cocoa beans and wheat, connecting global markets with
+                quality raw materials since 2004.
               </p>
             </div>
 
@@ -116,7 +117,7 @@ export default function Footer() {
             </div>
 
             {/* Resources */}
-            <div className="space-y-4">
+            {/* <div className="space-y-4">
               <p className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
                 policies
               </p>
@@ -138,7 +139,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
 
             {/* Social */}
             <div className="space-y-4">

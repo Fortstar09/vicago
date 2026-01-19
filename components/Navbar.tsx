@@ -25,7 +25,7 @@ const Navbar = () => {
    * COLORS LOGIC
    */
   const textColor = scrolled
-    ? "text-black"
+    ? "text-gray-500"
     : isHome
       ? "text-white"
       : "text-black";
@@ -57,7 +57,7 @@ const Navbar = () => {
         <div className="flex gap-4 items-center">
           <a
             href="/contact"
-            className="rounded-full border border-black px-3 py-2 text-sm font-semibold hover:text-white hover:bg-olive"
+            className="rounded-full border border-gray-400 px-3 py-2 text-sm font-semibold hover:text-white hover:bg-vgbrown hover:border-vgbrown"
           >
             Contact us
           </a>

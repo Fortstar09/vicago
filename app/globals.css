@@ -2,11 +2,11 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-darkBrown: #4a290f;
-  --color-lightBrown: #813b1c;
-  /* --color-olive: #58714d; */
-  --color-olive: oklch(50.8% 0.118 165.612);
-  --color-goldenBrown: #c89637;
+  --color-darkbrown: #4a290f;
+  --color-lightbrown: #813b1c;
+  --color-vgbrown: #815331;
+  --color-vgreen: #679550;
+  --color-goldenvgbrown: #c89637;
   --color-charcoal: #36454f;
   --color-creamy: #f5f5dc;
   --color-lightgray: #ebece7;
@@ -42,7 +42,7 @@ body {
     system-ui,
     -apple-system,
     "Segoe UI",
-    Roboto,
+    "Roboto",
     "Helvetica Neue",
     Arial,
     "Noto Sans",
@@ -70,7 +70,7 @@ button {
     @apply xl:max-w-[1550px] px-6 xl:px-10  xl:mx-auto w-full;
   }
   .word {
-    @apply text-xl md:text-3xl lg:text-5xl xl:text-7xl font-bold inline-flex justify-center items-center p-1.5;
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold inline-flex justify-center items-center p-1 md:p-2;
   }
 }
 

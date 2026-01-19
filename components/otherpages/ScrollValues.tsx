@@ -8,22 +8,22 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const cards = [
+  // {
+  //   title: "Vision",
+  //   text: "To shape the future through thoughtful innovation. We believe in pushing boundaries and exploring new possibilities to create meaningful solutions that drive progress. Our vision is rooted in the belief that technology and design can work together to solve complex problems and make a lasting impact on society.",
+  //   bg: "bg-white text-neutral-900",
+  //   image: "/hero-bg.jpg",
+  // },
   {
-    title: "Vision",
-    text: "To shape the future through thoughtful innovation. We believe in pushing boundaries and exploring new possibilities to create meaningful solutions that drive progress. Our vision is rooted in the belief that technology and design can work together to solve complex problems and make a lasting impact on society.",
-    bg: "bg-white text-neutral-900",
-    image: "/hero-bg.jpg",
-  },
-  {
-    title: "Mission",
-    text: "To build meaningful products that empower people. We're committed to creating tools and experiences that help individuals and organizations reach their full potential. Every product we develop is designed with purpose, combining functionality with elegance to deliver real value to our users and communities.",
+    title: "Our Mission",
+    text: "To connect producers and processors through world-class commodity sourcing, reliable delivery, and uncompromising standards.",
     bg: "bg-gray-100 text-neutral-900",
     image: "/value-bg.jpg",
   },
   {
-    title: "Purpose",
-    text: "To create long-term impact with clarity and intention. We understand that success isn't just about metrics—it's about creating positive change that resonates beyond numbers. Our purpose guides every decision we make, ensuring that we build a future where innovation serves humanity and sustainability leads the way.",
-    bg: "bg-gray-200 text-neutral-900",
+    title: "Our Values",
+    text: "To create long-term impact with clarity and intention. We understand that success isn't just about metrics—it's about creating positive change that resonates beyond numbers.",
+    bg: "bg-vgbrown text-creamy",
     image: "/hero-bg.jpg",
   },
 ];
@@ -35,7 +35,6 @@ export default function VisionMissionPurpose() {
     const ctx = gsap.context(() => {
       const cards = gsap.utils.toArray<HTMLElement>(".stack-card");
 
-      const overlap = 110; // how much each card peeks out
       const enterFrom = 500; // start fully hidden below
 
       // Initial state — cards start from below, hidden
@@ -53,7 +52,7 @@ export default function VisionMissionPurpose() {
           end: `+=${cards.length * 1000}`,
           scrub: true,
           pin: true,
-          //   markers: true,
+          markers: true,
         },
       });
 
@@ -61,12 +60,12 @@ export default function VisionMissionPurpose() {
         tl.to(
           card,
           {
-            y: index * overlap,
+            y: -index,
             opacity: 1,
             ease: "power2.inOut",
             duration: 1.5,
           },
-          index === 0 ? 0 : "-=0.5"
+          index === 0 ? 0 : "-=0.5",
         );
       });
     }, sectionRef);
@@ -77,25 +76,44 @@ export default function VisionMissionPurpose() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen bg-[#5a3b1f]/30 text-white z-10 "
+      className="relative h-screen bg-[#F1EAE4] text-white z-10 "
     >
-      <div className="mx-auto flex h-full max-w-6xl items-start px-6">
-        <div className="relative h-100 w-full mt-5">
+      <div className="mx-auto flex justify-center items-center h-full max-w-6xl px-6">
+        <div className="relative h-80 w-full mt-5">
+          <div className="p-7 absolute top-10 w-full h-full rounded-3xl shadow-2xl bg-vgreen overflow-hidden flex justify-between items-center gap-15">
+            <div className="w-4/5  flex flex-col justify-center">
+              <h3 className="mb-6 text-4xl font-bold text-snow">Our Vision</h3>
+              <p className="text-lg leading-relaxed text-gray-50">
+                To become a globally recognised trade facilitator and trusted
+                supplier of premium agricultural commodities, empowering
+                manufacturers worldwide
+              </p>
+            </div>
+            <div className="h-full">
+              <Image
+                src="/images/cocoa-tree.jpg"
+                width={500}
+                height={500}
+                alt={`cocoa-tree-image`}
+                className="object-cover aspect-video rounded-2xl h-full"
+              />
+            </div>
+          </div>
           {cards.map((card, index) => (
             <div
               key={index}
-              className={`stack-card p-10 absolute top-10 w-full h-full rounded-3xl shadow-2xl ${card.bg} overflow-hidden flex justify-between items-center gap-15`}
+              className={`stack-card p-7 absolute top-10 w-full h-full rounded-3xl ${card.bg} overflow-hidden flex justify-between items-center gap-15`}
             >
               <div className="w-4/5  flex flex-col justify-center">
                 <h3 className="mb-6 text-4xl font-bold">{card.title}</h3>
-                <p className="text-lg leading-relaxed text-gray-400">
+                <p className="text-lg leading-relaxed text-gray-300">
                   {card.text}
                 </p>
               </div>
               <div>
                 <Image
                   src={card.image}
-                  width={500}
+                  width={400}
                   height={500}
                   alt={`${card.title}-image`}
                   className="object-cover rounded-2xl"
