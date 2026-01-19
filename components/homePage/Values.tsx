@@ -61,7 +61,7 @@ export default function Values() {
       <section ref={valueRef} className="relative h-dvh w-full overflow-hidden">
         {/* Background image */}
         <Image
-          src="/value-bg.jpg"
+          src="/images/about-main.jpg"
           alt="Values background"
           fill
           className="object-cover"
@@ -69,7 +69,7 @@ export default function Values() {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/70 to-black/80" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/40 to-black/30" />
 
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col justify-between items-start max-margin py-20">

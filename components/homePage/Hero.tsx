@@ -54,13 +54,20 @@ export default function Hero() {
       const current = currentIndex.current;
       const next = (current + 1) % slidesRef.current.length;
 
-      // next slide already under
+      // prepare next slide
       gsap.set(slidesRef.current[next], {
-        opacity: 1,
-        zIndex: 1,
+        opacity: 0,
+        zIndex: 2,
       });
 
-      // fade out current slide
+      // fade in next
+      gsap.to(slidesRef.current[next], {
+        opacity: 1,
+        duration: 1.5,
+        ease: "power2.out",
+      });
+
+      // fade out current
       gsap.to(slidesRef.current[current], {
         opacity: 0,
         duration: 1.5,
@@ -92,7 +99,7 @@ export default function Hero() {
               alt="Hero background"
               fill
               className="object-cover"
-              priority={i === 0}
+              priority={i === 2}
             />
             <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/50 to-black/70" />
 
