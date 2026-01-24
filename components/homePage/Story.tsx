@@ -75,16 +75,19 @@ export default function Story() {
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <BlogCard
-            title="Premium Nigeria Cocoa "
-            subTitle="High-quality cocoa beans sourced directly from Nigerian farms, meeting international standards for chocolate and confectionery production."
+            title="A Year in Cocoa"
+            subTitle="Reflections on the Cocoa Industry in 2024"
+            src="/images/cocoa-tree-much.jpg"
           />
           <BlogCard
-            title="Canadian Wheat"
-            subTitle="Premium wheat varieties from Canadian farms, perfect for milling, baking, and food processing applications worldwide."
+            title="Driving Positive Change"
+            subTitle="Highlights of Vicago Group Global Concepts' Rural Impact in 2024"
+            src="/images/blog1.jpg"
           />
           <BlogCard
-            title="Cocoa Wheat"
-            subTitle="High-quality cocoa beans sourced directly from Nigerian farms, meeting international standards for chocolate and confectionery production."
+            title="Spotlighting Our Sustainability Champions"
+            subTitle=" "
+            src="/images/strategy-one.jpg"
           />
         </div>
 

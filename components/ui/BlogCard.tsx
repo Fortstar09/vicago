@@ -4,16 +4,18 @@ import Image from "next/image";
 export default function BlogCard({
   title,
   subTitle,
+  src = "/hero-bg.jpg",
 }: {
   title: string;
   subTitle: string;
+  src?: string;
 }) {
   return (
     <div className="tc-card">
       <div className="relative overflow-hidden rounded-xl">
-        <div className="clip-mask">
+        <div className="clip-mask ">
           <Image
-            src="/hero-bg.jpg"
+            src={src}
             alt={title}
             width={400}
             height={500}

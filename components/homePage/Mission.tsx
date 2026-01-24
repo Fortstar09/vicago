@@ -5,10 +5,18 @@ import Image from "next/image";
 import { gsap } from "gsap";
 
 const avatars = [
-  "/partners/001.jpg",
-  "/partners/002.png",
-  "/partners/003.png",
-  "/partners/001.jpg",
+  {
+    src: "/partners/avatar1.svg",
+    size: 24,
+  },
+  {
+    src: "/partners/avatar3.svg",
+    size: 32,
+  },
+  {
+    src: "/partners/avatar2.svg",
+    size: 24,
+  },
 ];
 
 export default function Mission() {
@@ -33,13 +41,13 @@ export default function Mission() {
   return (
     <section
       ref={containerRef}
-      className="w-full bg-snow py-40 flex justify-center items-center z-50"
+      className="w-full bg-snow py-40 flex justify-center items-center relative z-50"
     >
       <div className="max-margin w-full h-full">
         <div className="h-150 grid grid-cols-9 grid-rows-8 gap-5">
           <div
             id="blue"
-            className="bg-blue-300 rounded-xl col-span-9 row-span-3 relative"
+            className="bg-blue-300 rounded-xl col-span-9 row-span-3 relative drop-shadow-md drop-shadow-darkbrown/50 hover-lift"
           >
             <Image
               src="/images/hero-bg-2.jpg"
@@ -50,17 +58,23 @@ export default function Mission() {
           </div>
 
           {/* partners */}
+
           <div
             id="blue"
-            className="rounded-xl col-span-3 row-span-1 border border-vgreen/30 flex justify-between px-10 items-center gap-5 hover:shadow-lg cursor-pointer"
+            className="rounded-xl col-span-3 row-span-1 border border-vgreen/30 flex justify-between px-10 items-center gap-5 hover:shadow-lg cursor-pointer hover-lift"
           >
-            <div className="flex space-x-1">
-              {avatars.map((src, i) => (
+            <div className="flex gap-[5px] inline-flex items-center">
+              {avatars.map((n, i) => (
                 <div
                   key={i}
-                  className="h-8 w-8 overflow-hidden rounded-full drop-shadow-lg mission-animate"
+                  className={`overflow-hidden rounded-full drop-shadow-[0_8px_3px_rgba(0,0,0,0.1)] mission-animate ${i === 0 || i === 2 ? "border " : ""}`}
                 >
-                  <Image src={src} alt="Avatar" width={32} height={32} />
+                  <Image
+                    src={n.src}
+                    alt="Avatar"
+                    width={n.size}
+                    height={n.size}
+                  />
                 </div>
               ))}
             </div>
@@ -69,28 +83,34 @@ export default function Mission() {
             </h2>
           </div>
 
-          <div className=" border border-vgreen/30 p-3 rounded-xl col-span-3 row-span-4">
+          {/* revenue  */}
+
+          <div className=" border border-vgreen/30 p-6 rounded-xl col-span-3 row-span-4 relative overflow-hidden hover-lift">
+            <Image
+              src="/moneyIcon.svg"
+              alt="trend background"
+              width={160}
+              height={100}
+              className="opacity-5 absolute right-0 bottom-0 "
+            />
             <div className="flex flex-col items-start justify-between max-w-sm h-full w-full z-10">
-              <p className="text-base text-snow/80 max-w-xs">
-                We delivered 50+ projects worldwide, helping service-based
-                companies secure more clients
+              <p className="text-base text-gray-500/80 max-w-62">
+                Through our custom tailored funnel systems, we generated
               </p>
-              <div className="flex justify-between items-end w-full">
-                <h2 className="font-semiblod text-3xl text-snow/80">
-                  <span className="text-7xl text-white">4.9</span>
-                  <span className="text-5xl">/</span>5
+              <div className="flex flex-col justify-center items-start w-full gap-4">
+                <h2 className="font-semiblod text-3xl text-darkbrown/80">
+                  <span className="text-7xl text-darkbrown">$2M</span>+
                 </h2>
-                <p className=" inline-flex flex-col gap-1 items-start uppercase text-xs text-snow">
-                  <span>⭐⭐⭐⭐⭐</span>
-                  <span className="text-[10px]">
-                    Trusted by client worldwide
-                  </span>
+                <p className="uppercase text-xs text-gray-600">
+                  Revenue generated
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-darkbrown rounded-xl col-span-3 row-span-5 relative p-6 drop-shadow-xl drop-shadow-darkbrown/50">
+          {/* rating  */}
+
+          <div className="bg-darkbrown rounded-xl col-span-3 row-span-5 relative p-6 drop-shadow-xl drop-shadow-darkbrown/50 hover-lift">
             <Image
               src="/trend-up.svg"
               alt="trend background"
@@ -117,12 +137,30 @@ export default function Mission() {
               </div>
             </div>
           </div>
+
+          {/* cocoa  */}
+
           <div
             id="green"
-            className="bg-darkbrown p-3 rounded-xl col-span-3 row-span-4"
-          ></div>
+            className="bg-vgreen p-5 rounded-xl col-span-3 row-span-4 drop-shadow-xl drop-shadow-vgreen/50 hover-lift"
+          >
+            <div className="flex flex-col items-start justify-between max-w-sm h-full w-full z-10">
+              <div className="flex flex-col justify-center items-start w-full">
+                <h2 className="font-bold text-3xl text-snow/70">
+                  <span className="text-7xl text-snow">60K</span>+
+                </h2>
+                <p className="uppercase text-xs text-creamy">METRIC TONNES</p>
+              </div>
+              <p className="text-base text-creamy max-w-62">
+                Seedlings of wheat and cocoa beans successfully distributed to
+                40+ farmers
+              </p>
+            </div>
+          </div>
 
-          <div className="border border-vgreen/30 p-3 rounded-xl col-span-3 row-span-1 flex justify-center items-center">
+          {/* countries  */}
+
+          <div className="border border-vgreen/30 p-3 rounded-xl col-span-3 row-span-1 flex justify-center items-center hover-lift">
             <div className="flex items-center justify-between w-full">
               <h2 className="inline-flex justify-center items-center gap-2 text-base text-gray-600 ">
                 <span className="size-1 ml-2 ring-2 ring-green-400/90 bg-green-400 rounded-full drop-shadow-sm drop-shadow-green-400 "></span>{" "}
