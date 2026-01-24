@@ -1,5 +1,6 @@
 // import Footer from "@/components/Footer";
 // import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import About from "@/components/homePage/About";
 import Certification from "@/components/homePage/Certifications";
 import Hero from "@/components/homePage/Hero";
@@ -23,11 +24,8 @@ export default function App() {
       <Certification />
       <StackingCardsSection />
       <TestimonialCarousel />
-      {/* <SustainableSection /> */}
       <Story />
-      {/* <ContactCta /> */}
-      {/* <Footer /> */}
-      {/* <About /> */}
+      <Footer />
     </main>
   );
 }

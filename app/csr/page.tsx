@@ -5,6 +5,7 @@ import PictureDivider from "@/components/otherpages/PictureDivider";
 import Story from "@/components/homePage/Story";
 import { stats } from "@/data/sustainability-data";
 import ReusableStats from "@/components/otherpages/ReuseableStats";
+import Footer from "@/components/Footer";
 
 const page = () => {
   return (
@@ -18,6 +19,7 @@ const page = () => {
       <PictureDivider />
       <SocialSection />
       <Story />
+      <Footer />
     </main>
   );
 };

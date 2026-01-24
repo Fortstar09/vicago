@@ -62,44 +62,42 @@ export default function DupHero({
             {subtitle}
           </p>
         </div>
-        {/* <div className="hero-image w-full relative flex items-center aspect-video justify-center overflow-hidden h-150  rounded-xl">
-          <Image
-            src="/hero-bg.jpg"
-            alt="Hero background"
-            width={500}
-            height={500}
-            className="w-full object-cover rounded-xl"
-          />
-        </div> */}
-        <div className="w-full relative flex flex-col gap-5 max-w-2xl">
-          <Image
+        <div className="w-full relative grid grid-cols-3 grid-rows-2 gap-4 max-w-2xl">
+          <div className="h-50 relative rounded-lg col-span-2 cursor-pointer overflow-hidden">
+            <Image
+              src="/images/about-main.jpg"
+              alt="Hero background"
+              fill
+              className="w-full object-cover rounded-lg hover:scale-150 transition-transform duration-800 "
+            />
+          </div>
+          {/* <Image
             src="/images/about-main.jpg"
             alt="Hero background"
-            width={500}
+            width={200}
             height={200}
-            className="w-full object-cover h-70 rounded-lg cursor-pointer hover:scale-105"
+            className="w-full object-cover h-50 rounded-lg cursor-pointer col-span-2 hover-lift hover:scale-105"
+          /> */}
+          <Image
+            src="/images/about-cocoa.jpg"
+            alt="Hero background"
+            width={200}
+            height={200}
+            className="w-full object-cover h-50 rounded-lg col-span-1 cursor-pointer hover-lift hover:scale-105"
           />
-          <div className="grid grid-cols-3 gap-5">
+          <Image
+            src="/images/about-wheat.jpg"
+            alt="Hero background"
+            width={200}
+            height={200}
+            className="w-full object-cover h-50 rounded-lg col-span-1 cursor-pointer hover-lift hover:scale-105"
+          />
+          <div className="h-50 relative rounded-lg col-span-2 cursor-pointer overflow-hidden">
             <Image
-              src="/images/about-cocoa.jpg"
+              src="/images/cocoa-tree-much.jpg"
               alt="Hero background"
-              width={200}
-              height={200}
-              className="w-full object-cover h-50 rounded-lg row-span-1 cursor-pointer hover:scale-105"
-            />{" "}
-            <Image
-              src="/images/cocoa-tree.jpg"
-              alt="Hero background"
-              width={200}
-              height={200}
-              className="w-full object-cover h-50 rounded-lg row-span-1 cursor-pointer hover:scale-105"
-            />{" "}
-            <Image
-              src="/images/about-wheat.jpg"
-              alt="Hero background"
-              width={200}
-              height={200}
-              className="w-full object-cover h-50 rounded-lg row-span-1 cursor-pointer hover:scale-105"
+              fill
+              className="w-full object-cover rounded-lg hover:scale-120 transition-transform duration-400 "
             />
           </div>
         </div>

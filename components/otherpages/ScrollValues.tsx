@@ -52,7 +52,7 @@ export default function VisionMissionPurpose() {
           end: `+=${cards.length * 1000}`,
           scrub: true,
           pin: true,
-          markers: true,
+          // markers: true,
         },
       });
 

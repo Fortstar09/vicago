@@ -19,6 +19,8 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
     const path = svg?.querySelector("path");
     if (!path) return;
 
+    console.log(path, svg);
+
     const tl = gsap.timeline({
       onComplete: () => router.push(url),
     });
@@ -55,7 +57,7 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
 
     gsap.to(blocksRef.current, {
       scaleX: 0,
-      duration: 0.4,
+      duration: 0.6,
       stagger: 0.02,
       ease: "power2.out",
       transformOrigin: "right",

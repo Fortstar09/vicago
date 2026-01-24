@@ -2,6 +2,7 @@ import AllProducts from "@/components/otherpages/AllProducts";
 import TestimonialCarousel from "@/components/homePage/Testimonial";
 import DupHero from "@/components/otherpages/HeroDup";
 import WhyPartner from "@/components/otherpages/WhyPartner";
+import Footer from "@/components/Footer";
 
 const Products = () => {
   return (
@@ -13,6 +14,7 @@ const Products = () => {
       <AllProducts />
       <WhyPartner />
       <TestimonialCarousel />
+      <Footer />
     </>
   );
 };

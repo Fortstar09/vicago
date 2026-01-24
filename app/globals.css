@@ -151,3 +151,14 @@ button {
   align-items: center;
   padding: 20px;
 }
+
+.hover-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px #00000026;
+}

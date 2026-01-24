@@ -44,9 +44,9 @@ const Partners = () => {
 
           <div className="flex flex-wrap items-center justify-center gap-12">
             <img
-              src="https://cdn.prod.website-files.com/686b85e087270569bd280001/686f3c911ea3c809db4ef892_cargill.webp"
-              alt="Cargill"
-              className="partners-animate h-10 object-contain"
+              src="/partners/inter.png"
+              alt="Inter"
+              className="partners-animate h-13 object-contain"
             />
 
             <img
@@ -56,15 +56,15 @@ const Partners = () => {
             />
 
             <img
-              src="https://cdn.prod.website-files.com/686b85e087270569bd280001/686f3c919f67d305e552c1dc_touton-neg.webp"
-              alt="Touton"
+              src="/partners/olam.png"
+              alt="Olam"
               className="partners-animate h-10 object-contain"
             />
 
             <img
-              src="https://cdn.prod.website-files.com/686b85e087270569bd280001/686f3c91e1122c356321caa5_JBCOCOA.webp"
-              alt="JBCocoa"
-              className="partners-animate h-10 object-contain"
+              src="/partners/sucden.png"
+              alt="sucden"
+              className="partners-animate h-13 object-contain"
             />
           </div>
         </div>

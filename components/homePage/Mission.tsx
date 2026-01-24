@@ -2,137 +2,238 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
 
-gsap.registerPlugin(ScrollTrigger);
+const avatars = [
+  "/partners/001.jpg",
+  "/partners/002.png",
+  "/partners/003.png",
+  "/partners/001.jpg",
+];
 
 export default function Mission() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    const track = trackRef.current;
+    if (!containerRef.current) return;
 
-    if (!section || !track) return;
+    const ctx = gsap.context(() => {
+      gsap.from(".mission-animate", {
+        opacity: 0,
+        y: 40,
+        duration: 0.9,
+        stagger: 0.15,
+        ease: "power3.out",
+      });
+    }, containerRef);
 
-    const scrollLength = track.scrollWidth - window.innerWidth;
-
-    gsap.to(track, {
-      x: -scrollLength,
-      ease: "none",
-      scrollTrigger: {
-        trigger: section,
-        start: "top top",
-        end: () => `+=${scrollLength}`,
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
-        // markers: true,
-      },
-    });
-
-    return () => ScrollTrigger.killAll();
+    return () => ctx.revert();
   }, []);
 
   return (
-    <div className=" bg-[#F8F5F3] z-10">
-      <section
-        ref={sectionRef}
-        className="relative h-screen overflow-hidden bg-white z-10"
-      >
-        <div ref={trackRef} className="flex h-full w-max">
-          {/* CARD 1 */}
-          <div className="flex h-full items-center justify-center">
-            <div className="grid grid-cols-3 gap-10 pl-22 pr-10  w-full">
-              <Image
-                src="/hero-bg.jpg"
-                alt="Farmer"
-                width={400}
-                height={400}
-                className="rounded-lg object-cover h-full col-span-1"
-              />
+    <section
+      ref={containerRef}
+      className="w-full bg-snow py-40 flex justify-center items-center z-50"
+    >
+      <div className="max-margin w-full h-full">
+        <div className="h-150 grid grid-cols-9 grid-rows-8 gap-5">
+          <div
+            id="blue"
+            className="bg-blue-300 rounded-xl col-span-9 row-span-3 relative"
+          >
+            <Image
+              src="/images/hero-bg-2.jpg"
+              alt="Hero background"
+              fill
+              className="object-cover rounded-xl"
+            />
+          </div>
 
-              <div className="grid grid-cols-2 gap-5 col-span-2">
-                <div className="rounded-lg w-full border border-gray-300 p-10 bg-[#f5faf7] max-h-62.5">
-                  <div className="flex flex-col justify-center items-start gap-9">
-                    <h3 className="text-7xl font-bold text-emerald-700">
-                      200K+
-                    </h3>
-                    <p className="text-xl text-gray-500 max-w-[250px]">
-                      Metric tonnes exported across the globe
-                    </p>
-                  </div>
+          {/* partners */}
+          <div
+            id="blue"
+            className="rounded-xl col-span-3 row-span-1 border border-vgreen/30 flex justify-between px-10 items-center gap-5 hover:shadow-lg cursor-pointer"
+          >
+            <div className="flex space-x-1">
+              {avatars.map((src, i) => (
+                <div
+                  key={i}
+                  className="h-8 w-8 overflow-hidden rounded-full drop-shadow-lg mission-animate"
+                >
+                  <Image src={src} alt="Avatar" width={32} height={32} />
                 </div>
-                <Image
-                  src="/hero-bg.jpg"
-                  alt="Farmer"
-                  width={500}
-                  height={250}
-                  className="rounded-lg object-cover max-h-62.5"
-                />
-                <div className="rounded-lg col-span-2 border border-gray-300 p-10 bg-[#F0EAE6] flex items-center justify-between ">
-                  <div className="flex flex-col justify-center items-start gap-9">
-                    <h3 className="text-7xl font-bold text-vgbrown">50+</h3>
-                    <p className="text-xl text-gray-700 max-w-[250px]">
-                      Partners spread across the world
-                    </p>
-                  </div>
-                  <Image
-                    src="https://cdn.prod.website-files.com/686b85e087270569bd280001/686f747cf0ecdecdba817744_partners-logo.webp"
-                    width={300}
-                    height={50}
-                    alt="partners-icon"
-                  />
-                </div>
+              ))}
+            </div>
+            <h2 className="text-sm font-semibold text-vgbrown uppercase">
+              50+ partners
+            </h2>
+          </div>
+
+          <div className=" border border-vgreen/30 p-3 rounded-xl col-span-3 row-span-4">
+            <div className="flex flex-col items-start justify-between max-w-sm h-full w-full z-10">
+              <p className="text-base text-snow/80 max-w-xs">
+                We delivered 50+ projects worldwide, helping service-based
+                companies secure more clients
+              </p>
+              <div className="flex justify-between items-end w-full">
+                <h2 className="font-semiblod text-3xl text-snow/80">
+                  <span className="text-7xl text-white">4.9</span>
+                  <span className="text-5xl">/</span>5
+                </h2>
+                <p className=" inline-flex flex-col gap-1 items-start uppercase text-xs text-snow">
+                  <span>⭐⭐⭐⭐⭐</span>
+                  <span className="text-[10px]">
+                    Trusted by client worldwide
+                  </span>
+                </p>
               </div>
             </div>
           </div>
 
-          {/* CARD 2 */}
-          <div className="flex h-full items-center justify-center pr-10">
-            <div className="grid grid-cols-3 gap-10 w-full">
-              {/* <Image
-                src="/hero-bg.jpg"
-                alt="Farmer"
-                width={500}
-                height={400}
-                className="rounded-lg object-cover h-full col-span-1"
-              /> */}
-
-              <div className="grid grid-cols-2 gap-5 col-span-2">
-                <div className="rounded-lg w-full border border-gray-300 p-10 bg-[#f5faf7] max-h-62.5">
-                  <div className="flex flex-col justify-center items-start gap-9">
-                    <h3 className="text-7xl font-bold text-emerald-700">3K+</h3>
-                    <p className="text-xl text-gray-500 max-w-[250px]">
-                      Farmers across <br /> West Africa
-                    </p>
-                  </div>
-                </div>
-
-                <div className="rounded-lg border border-gray-300 p-10 bg-[#f5faf7]">
-                  <div className="flex flex-col justify-center items-start gap-9">
-                    <h3 className="text-7xl font-bold text-emerald-700">
-                      200+
-                    </h3>
-                    <p className="text-xl text-gray-500 max-w-[250px]">
-                      Employees across Nigeria, UK and the Netherlands
-                    </p>
-                  </div>
-                </div>
-                <Image
-                  src="/hero-bg.jpg"
-                  alt="Farmer"
-                  width={500}
-                  height={250}
-                  className="rounded-lg object-cover w-full max-h-62.5 col-span-2"
-                />
+          <div className="bg-darkbrown rounded-xl col-span-3 row-span-5 relative p-6 drop-shadow-xl drop-shadow-darkbrown/50">
+            <Image
+              src="/trend-up.svg"
+              alt="trend background"
+              width={50}
+              height={50}
+              className="h-full w-full object-cover opacity-15 absolute -left-30 -bottom-10 "
+            />
+            <div className="flex flex-col items-start justify-between max-w-sm h-full w-full z-10">
+              <p className="text-base text-snow/80 max-w-xs">
+                We delivered 50+ projects worldwide, helping service-based
+                companies secure more clients
+              </p>
+              <div className="flex justify-between items-end w-full">
+                <h2 className="font-semiblod text-3xl text-snow/80">
+                  <span className="text-7xl text-white">4.9</span>
+                  <span className="text-5xl">/</span>5
+                </h2>
+                <p className=" inline-flex flex-col gap-1 items-start uppercase text-xs text-snow">
+                  <span>⭐⭐⭐⭐⭐</span>
+                  <span className="text-[10px]">
+                    Trusted by client worldwide
+                  </span>
+                </p>
               </div>
+            </div>
+          </div>
+          <div
+            id="green"
+            className="bg-darkbrown p-3 rounded-xl col-span-3 row-span-4"
+          ></div>
+
+          <div className="border border-vgreen/30 p-3 rounded-xl col-span-3 row-span-1 flex justify-center items-center">
+            <div className="flex items-center justify-between w-full">
+              <h2 className="inline-flex justify-center items-center gap-2 text-base text-gray-600 ">
+                <span className="size-1 ml-2 ring-2 ring-green-400/90 bg-green-400 rounded-full drop-shadow-sm drop-shadow-green-400 "></span>{" "}
+                Availabe in 2+ countries
+              </h2>
+              <span>
+                <svg
+                  width="50"
+                  height="50"
+                  viewBox="0 0 207 124"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_4100_90)">
+                    <mask
+                      id="mask0_4100_90"
+                      // style={"maskType:luminance"}
+                      maskUnits="userSpaceOnUse"
+                      x="69"
+                      y="-2"
+                      width="157"
+                      height="129"
+                    >
+                      <path
+                        d="M225.461 -1.55078H69.248V126.008H225.461V-1.55078Z"
+                        fill="white"
+                      />
+                    </mask>
+                    <g mask="url(#mask0_4100_90)">
+                      <path
+                        d="M233.635 -14.3027H61.0859V138.768H233.635V-14.3027Z"
+                        fill="#DB1F26"
+                      />
+                      <path
+                        d="M181.561 -2.51953H113.168V126.993H181.561V-2.51953Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M226.659 -2.51953H181.463V126.993H226.659V-2.51953Z"
+                        fill="#EC2224"
+                      />
+                      <path
+                        d="M113.255 -2.51953H68.0586V126.993H113.255V-2.51953Z"
+                        fill="#EC2224"
+                      />
+                      <path
+                        d="M147.355 21.668L141.999 33.9021C141.392 35.2325 140.303 35.1088 139.213 34.3664L135.336 31.9058L138.225 50.7041C138.833 54.138 136.883 54.138 135.92 52.6468L129.151 43.367L128.053 48.079C127.927 48.6976 127.369 49.3482 126.533 49.1926L117.977 46.9909L120.225 57.0004C120.705 59.2263 121.081 60.1486 119.739 60.7366L116.689 62.4905L131.421 77.1483C131.717 77.4336 131.938 77.8185 132.057 78.2558C132.176 78.693 132.188 79.1633 132.092 79.6089L130.802 84.7891C135.878 84.0735 140.417 82.9956 145.492 82.3285C145.941 82.2698 146.69 83.1754 146.687 83.812L146.016 102.794H148.48L148.096 83.8451C148.096 83.2073 148.774 82.2634 149.221 82.3221C154.297 82.9854 158.843 84.0632 163.912 84.7827L162.622 79.6076C162.525 79.1626 162.537 78.6924 162.655 78.2552C162.773 77.8179 162.994 77.4327 163.289 77.147L178.016 62.4905L174.965 60.7353C173.624 60.1473 173.999 59.225 174.48 56.9991L176.728 46.9896L168.171 49.1913C167.338 49.3469 166.778 48.6964 166.652 48.0777L165.553 43.3657L158.784 52.6456C157.821 54.1304 155.868 54.1304 156.478 50.7029L159.373 31.9096L155.497 34.3703C154.408 35.1126 153.318 35.2364 152.711 33.9072"
+                        fill="#EC2224"
+                      />
+                    </g>
+                  </g>
+                  <rect
+                    x="88"
+                    y="3"
+                    width="118"
+                    height="118"
+                    rx="59"
+                    stroke="#4A290F"
+                    strokeWidth="2"
+                  />
+                  <g clipPath="url(#clip1_4100_90)">
+                    <path
+                      d="M2 61.9984C2 88.1984 18.8 110.398 42 118.598V5.39844C18.8 13.5984 2 35.7984 2 61.9984Z"
+                      fill="#009A49"
+                    />
+                    <path
+                      d="M122 61.9984C122 35.7984 105.4 13.5984 82 5.39844V118.598C105.4 110.398 122 88.1984 122 61.9984Z"
+                      fill="#009A49"
+                    />
+                    <path
+                      d="M42.002 118.6C48.202 120.8 55.002 122 62.002 122C69.002 122 75.802 120.8 82.002 118.6V5.4C75.802 3.2 69.002 2 62.002 2C55.002 2 48.202 3.2 42.002 5.4V118.6Z"
+                      fill="#F9F9F9"
+                    />
+                  </g>
+                  <rect
+                    x="1"
+                    y="1"
+                    width="122"
+                    height="122"
+                    rx="61"
+                    stroke="#4A290F"
+                    strokeWidth="2"
+                  />
+                  <defs>
+                    <clipPath id="clip0_4100_90">
+                      <rect
+                        x="87"
+                        y="2"
+                        width="120"
+                        height="120"
+                        rx="60"
+                        fill="white"
+                      />
+                    </clipPath>
+                    <clipPath id="clip1_4100_90">
+                      <rect
+                        x="2"
+                        y="2"
+                        width="120"
+                        height="120"
+                        rx="60"
+                        fill="white"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
