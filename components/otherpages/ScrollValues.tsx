@@ -17,7 +17,7 @@ const cards = [
   {
     title: "Our Mission",
     text: "To connect producers and processors through world-class commodity sourcing, reliable delivery, and uncompromising standards.",
-    bg: "bg-gray-100 text-neutral-900",
+    bg: "bg-gray-100 text-neutral-900 text-gray-300",
     image: "/value-bg.jpg",
   },
   {
@@ -80,8 +80,8 @@ export default function VisionMissionPurpose() {
     >
       <div className="mx-auto flex justify-center items-center h-full max-w-6xl px-6">
         <div className="relative h-80 w-full mt-5">
-          <div className="p-7 absolute top-10 w-full h-full rounded-3xl shadow-2xl bg-vgreen overflow-hidden flex justify-between items-center gap-15">
-            <div className="w-4/5  flex flex-col justify-center">
+          <div className="p-5 absolute top-10 w-full h-full rounded-3xl shadow-2xl bg-vgreen overflow-hidden flex justify-between items-center gap-15">
+            <div className="max-w-md flex flex-col justify-center ml-3">
               <h3 className="mb-6 text-4xl font-bold text-snow">Our Vision</h3>
               <p className="text-lg leading-relaxed text-gray-50">
                 To become a globally recognised trade facilitator and trusted
@@ -102,21 +102,21 @@ export default function VisionMissionPurpose() {
           {cards.map((card, index) => (
             <div
               key={index}
-              className={`stack-card p-7 absolute top-10 w-full h-full rounded-3xl ${card.bg} overflow-hidden flex justify-between items-center gap-15`}
+              className={`stack-card p-5 absolute top-10 w-full h-full rounded-3xl ${card.bg} overflow-hidden flex justify-between items-center gap-15`}
             >
-              <div className="w-4/5  flex flex-col justify-center">
+              <div className="max-w-md flex flex-col justify-center ml-3">
                 <h3 className="mb-6 text-4xl font-bold">{card.title}</h3>
-                <p className="text-lg leading-relaxed text-gray-300">
+                <p className="text-lg leading-relaxed opacity-70 ">
                   {card.text}
                 </p>
               </div>
               <div>
                 <Image
                   src={card.image}
-                  width={400}
+                  width={500}
                   height={500}
                   alt={`${card.title}-image`}
-                  className="object-cover rounded-2xl"
+                  className="object-cover aspect-video rounded-2xl h-full"
                 />
               </div>
             </div>

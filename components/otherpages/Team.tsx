@@ -86,13 +86,13 @@ const Team: React.FC = () => {
             <div className="team-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {members.map((m) => (
                 <article key={m.id} className="team-card bg-transparent w-full">
-                  <div className="relative w-full aspect-[4/5] cursor-pointer bg-gray-100 overflow-hidden">
+                  <div className="relative w-full aspect-[4/5] cursor-pointer bg-gray-100 overflow-hidden hover-lift">
                     <Image
                       src={m.img || "/hero-bg.jpg"}
                       alt={m.name}
                       fill
                       sizes="(max-width: 540px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover grayscale hover:grayscale-0"
+                      className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     />
 
                     <div className="absolute bottom-2 right-2 bg-white border p-1 text-xs font-light">
@@ -123,13 +123,13 @@ const Team: React.FC = () => {
             <div className="team-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {boardMembers.map((m) => (
                 <article key={m.id} className="team-card bg-transparent w-full">
-                  <div className="relative w-full aspect-[4/5] cursor-pointer bg-gray-100 overflow-hidden">
+                  <div className="relative w-full aspect-[4/5] cursor-pointer bg-gray-100 overflow-hidden hover-lift">
                     <Image
                       src={m.img || "/hero-bg.jpg"}
                       alt={m.name}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover  grayscale hover:grayscale-0"
+                      className="object-cover  grayscale transition-all duration-500 hover:grayscale-0"
                     />
 
                     <div className="absolute bottom-2 right-2 bg-white border p-1 text-xs font-light">

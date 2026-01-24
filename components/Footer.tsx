@@ -8,6 +8,17 @@ import Button from "./ui/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const OfficeData = [
+  {
+    location: "Nigeria Head Office",
+    address: "333 Broad Street <br/> Odode-Idanre, Ondo State",
+  },
+  {
+    location: "Canadian Office",
+    address: "556 Marlee Avenue <br/> Toronto, M6B 0B1",
+  },
+];
+
 export default function Footer() {
   const footerRef = useRef<HTMLDivElement>(null);
 
@@ -67,12 +78,12 @@ export default function Footer() {
         </div>
 
         {/* Footer content box */}
-        <div className="bg-white footer-box rounded-xl p-6 md:p-12 shadow-2xl mb-10 footer-animate">
-          <div className="grid grid-cols-1 md:grid-cols-6 gap-16">
+        <div className="bg-white footer-box rounded-xl p-4 md:p-6 xl:p-12 shadow-2xl mb-10 footer-animate">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-1">
             {/* Brand Section */}
             <div className="md:col-span-2 space-y-3">
               <h3 className="text-3xl font-bold text-gray-900">Vicago</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-sm text-gray-600 leading-relaxed max-w-xs">
                 Cross-border agricultural commodity trading company specializing
                 in premium cocoa beans and wheat, connecting global markets with
                 quality raw materials since 2004.
@@ -116,6 +127,30 @@ export default function Footer() {
               </ul>
             </div>
 
+            <div className="space-y-4">
+              <p className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
+                Our Offices
+              </p>
+              <ul className="space-y-3 text-sm ">
+                {OfficeData.map((item, i) => (
+                  <li
+                    key={i}
+                    className="text-gray-800 cursor-pointer transition-colors leading-6"
+                  >
+                    {item.location} <br />
+                    <span className="text-gray-400 text-xs leading-1 ">
+                      {item.address.split("<br/>").map((line, index) => (
+                        <span key={index}>
+                          {line}
+                          <br />
+                        </span>
+                      ))}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             {/* Resources */}
             {/* <div className="space-y-4">
               <p className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
@@ -142,7 +177,7 @@ export default function Footer() {
             </div> */}
 
             {/* Social */}
-            <div className="space-y-4">
+            {/* <div className="space-y-4">
               <p className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
                 Connect with us
               </p>
@@ -162,7 +197,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
           </div>
 
           {/* Bottom bar */}

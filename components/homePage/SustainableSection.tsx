@@ -110,7 +110,7 @@ export default function SustainableSection() {
         </div>
         <div className="h-full w-full ">
           <div className="grid grid-cols-6 gap-4  w-full h-fit">
-            <div className="rounded-xl bg-vgreen col-span-4 p-5 flex flex-col gap-6 h-full ">
+            <div className="rounded-xl bg-vgreen col-span-4 p-5 flex flex-col gap-6 h-full hover-lift ">
               <h2 className="sustain-stat-desc mt-2 text-4xl font-semibold text-creamy max-w-lg">
                 Strengthening Community Wellbeing
               </h2>
@@ -125,16 +125,16 @@ export default function SustainableSection() {
               alt="Crops"
               width={200}
               height={200}
-              className="rounded-xl object-cover col-span-2 w-full aspect-video h-full"
+              className="rounded-xl object-cover col-span-2 w-full aspect-video h-full hover-lift"
             />
             <Image
               src="/images/strategy-two.jpg"
               alt="Crops"
               width={200}
               height={200}
-              className="rounded-xl object-cover col-span-2 w-full aspect-video h-full"
+              className="rounded-xl object-cover col-span-2 w-full aspect-video h-full hover-lift"
             />
-            <div className="rounded-xl bg-vgbrown col-span-4 p-5 flex flex-col gap-6 h-full ">
+            <div className="rounded-xl bg-vgbrown col-span-4 p-5 flex flex-col gap-6 h-full hover-lift">
               <h2 className="sustain-stat-desc mt-2 text-4xl font-semibold text-creamy max-w-lg">
                 Improving Farmers’ Livelihoods
               </h2>
