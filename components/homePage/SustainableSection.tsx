@@ -59,8 +59,8 @@ export default function SustainableSection() {
       ref={sectionRef}
       className="relative min-h-dvh w-full overflow-hidden bg-white text-gray-900"
     >
-      <div className=" max-out relative z-10 h-full flex flex-col justify-center gap-20 items-start max-margin py-20">
-        <div className="w-full  space-y-4 flex justify-between items-end">
+      <div className=" max-out relative z-10 h-full flex flex-col justify-center gap-6 items-start max-margin py-20">
+        <div className="w-full flex justify-between items-end">
           <h2 className=" sustain-heading max-w-md text-3xl md:text-6xl font-normal leading-tight text-vgreen">
             Our strategy
           </h2>

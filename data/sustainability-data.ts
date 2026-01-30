@@ -38,7 +38,7 @@ export const stats: StatBall[] = [
     size: 360,
     position: {
       bottom: "50px",
-      right: "0%",
+      right: "3%",
     },
     textClassName: "text-8xl text-green-600",
     subTextClassName: "text-sm text-gray-600",

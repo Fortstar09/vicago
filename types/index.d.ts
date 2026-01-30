@@ -18,3 +18,16 @@ export interface StatBall {
   subTextClassName?: string;
   background: BallBackground;
 }
+
+export interface Product {
+  id: number;
+  name: string;
+  image: string;
+  description: string;
+  locate: string;
+  features: string[];
+  specification: {
+    title: string;
+    value: string;
+  }[];
+}

@@ -57,7 +57,7 @@ const Navbar = () => {
         <div className="flex gap-4 items-center">
           <a
             href="/contact"
-            className="rounded-full border border-gray-400 px-3 py-2 text-sm font-semibold hover:text-white hover:bg-vgbrown hover:border-vgbrown"
+            className="rounded-full border border-gray-400 px-3 py-2 text-sm font-semibold hover:text-white hover:bg-vgbrown hover:border-vgbrown transform transition-all duration-300"
           >
             Contact us
           </a>

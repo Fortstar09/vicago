@@ -45,7 +45,7 @@ const SocialEach = () => {
           and economic possibilities for members of our sourcing communities.
         </p>
       </div>
-      <div className="relative overflow-hidden h-70 aspect-video ">
+      <div className="relative overflow-hidden h-70 aspect-video rounded-xl hover-lift ">
         <Image
           src="/hero-bg.jpg"
           alt="image"

@@ -2,7 +2,9 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import Button from "../ui/Button";
+import { ArrowUpRight, Globe, Leaf } from "lucide-react";
+import EachProduct from "./EachProduct";
+import { products } from "@/data/product-data";
 
 export default function AllProducts() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -17,20 +19,20 @@ export default function AllProducts() {
         duration: 1.2,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: ".sustain-heading",
+          trigger: ".product-heading",
           start: "top 75%",
           end: "bottom 30%",
         },
       });
 
       // 2️⃣ Paragraph — softer, from right
-      gsap.from(".sustain-text", {
+      gsap.from(".product-text", {
         x: 60,
         opacity: 0,
         duration: 1,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: ".sustain-text",
+          trigger: ".product-text",
           start: "top 75%",
           end: "bottom 15%",
         },
@@ -43,90 +45,24 @@ export default function AllProducts() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-dvh w-full overflow-hidden bg-white text-gray-900"
+      className="relative min-h-fit w-full overflow-hidden bg-white text-gray-900"
     >
-      <div className="relative z-10 h-full flex flex-col justify-center gap-20 items-start max-margin py-20">
-        <div className="w-full text-black/80 gap-6 flex flex-col justify-center items-start max-w-3xl">
-          <h2 className=" sustain-heading max-w-4xl text-5xl md:text-6xl mb-0 font-normal">
-            The building blocks of sustainable global food security
+      <div className="relative z-10 h-full flex flex-col items-center justify-center gap-20 max-margin py-30">
+        <div className="w-full text-vgbrown gap-6 flex flex-col justify-center items-center text-center max-w-3xl">
+          <h2 className=" product-heading max-w-4xl text-5xl md:text-6xl mb-0 font-normal">
+            The blocks of sustainable global food security
           </h2>
-          <p className="sustain-text text-base text-gray-500">
+          <p className="product-text text-base text-gray-500">
             Every product we export carries with it the care, standards, and
             responsibility we put behind it, not just to meet expectations, but
             to uphold everything our name stands for.
           </p>
         </div>
         <div className="h-full w-full flex justify-center items-center ">
-          <div className="flex items-center justify-center gap-5 lg:gap-20 w-full">
-            {/* cocoa  */}
-            <div className="relative w-full h-120 overflow-hidden max-w-[384px]">
-              <Image
-                src="/hero-bg.jpg"
-                alt="Crops"
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="rounded-xl object-cover"
-              />
-
-              <div className="bg-creamy border-2 border-black rounded-lg w-[95%] h-fit absolute bottom-2 left-1/2 -translate-x-1/2 p-5">
-                <div className="flex items-center justify-between">
-                  <div className="max-w-md flex flex-col gap-3 items-start">
-                    <h3 className="text-3xl font-semibold">
-                      Certified Cocoa Beans
-                    </h3>
-                    <p className="text-sm font-normal ">
-                      We export premium, certified cocoa beans to partners
-                      around the world. Every shipment meets global standards
-                      for traceability and sustainability.
-                    </p>
-                    <p className="text-sm font-medium">
-                      Primary Markets: Europe, Asia and North America
-                    </p>
-                    <a
-                      href="/contact"
-                      className="bg-white text-green-950 px-3 py-2 border border-black rounded-full text-sm font-semibold hover:text-white hover:bg-emerald-800"
-                    >
-                      Contact us
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* wheat  */}
-            <div className="relative w-full h-120 overflow-hidden max-w-[384px]">
-              <Image
-                src="/hero-bg.jpg"
-                alt="Crops"
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="rounded-xl object-cover h-250 w-20"
-              />
-
-              <div className="bg-creamy border-2 border-black rounded-lg w-[95%] h-fit absolute bottom-2 left-1/2 -translate-x-1/2 p-5">
-                <div className="flex items-center justify-between">
-                  <div className="max-w-md flex flex-col gap-3 items-start">
-                    <h3 className="text-3xl font-semibold">
-                      Premium Canadian Wheat
-                    </h3>
-                    <p className="text-sm font-normal ">
-                      Premium wheat varieties from Canadian farms, perfect for
-                      milling, baking, and food processing applications
-                      worldwide.
-                    </p>
-                    <p className="text-sm font-medium">
-                      Primary Markets: Europe, Asia and North America
-                    </p>
-                    <a
-                      href="/contact"
-                      className="bg-white text-green-950 px-3 py-2 border border-black rounded-full text-sm font-semibold hover:text-white hover:bg-emerald-800"
-                    >
-                      Contact us
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="grid lg:grid-cols-2 gap-16">
+            {products.map((product) => (
+              <EachProduct key={product.id} {...product} />
+            ))}
           </div>
         </div>
       </div>

@@ -101,7 +101,7 @@ export default function Story() {
         <div className="tc-cta mt-14 flex justify-center">
           <Link
             href="/blog"
-            className="inline-flex justify-center items-center gap-2 animate-bounce text-sm text-gray-400"
+            className="inline-flex justify-center items-center gap-2 text-sm text-gray-400"
           >
             Explore more <ArrowDown size={16} />
           </Link>
