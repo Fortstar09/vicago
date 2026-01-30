@@ -20,9 +20,9 @@ const WhyPartner = () => {
             alt="Crops"
             width={400}
             height={400}
-            className="rounded-xl object-cover col-span-1 w-full h-full"
+            className="rounded-xl object-cover col-span-1 w-full h-full hidden md:inline-flex"
           />
-          <div className="col-span-2 grid grid-rows-4 gap-3">
+          <div className="col-span-3 md:col-span-2 grid grid-rows-4 gap-3">
             <div className="rounded-xl bg-vgreen  col-span-1 p-4 flex flex-col gap-3 hover-lift">
               <h2 className="sustain-stat-desc text-2xl font-normal text-creamy max-w-lg">
                 Our global reach

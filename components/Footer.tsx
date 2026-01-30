@@ -54,7 +54,7 @@ export default function Footer() {
         src="/hero-bg.jpg"
         alt="Hero background"
         fill
-        className="object-cover"
+        className="object-cover  w-auto h-auto"
         priority
       />
       {/* Dark overlay */}
@@ -74,12 +74,16 @@ export default function Footer() {
               ready to help you build smarter, more sustainable solutions.
             </p>
           </div>
-          <Button title="Partner with us" animationClass="hero-animate" />
+          <Button
+            title="Partner with us"
+            animationClass="hero-animate"
+            link="/contact"
+          />
         </div>
 
         {/* Footer content box */}
         <div className="bg-white footer-box rounded-xl p-4 md:p-6 xl:p-12 shadow-2xl mb-10 footer-animate">
-          <div className="grid grid-cols-1 md:grid-cols-6 gap-1">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
             {/* Brand Section */}
             <div className="md:col-span-2 space-y-3">
               <h3 className="text-3xl font-bold text-gray-900">Vicago</h3>
@@ -90,7 +94,7 @@ export default function Footer() {
               </p>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 md:col-span-2">
               <p className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
                 Reach out
               </p>

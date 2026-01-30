@@ -64,7 +64,7 @@ export default function Values() {
           src="/images/about-main.jpg"
           alt="Values background"
           fill
-          className="object-cover"
+          className="object-cover w-auto h-auto"
           priority
         />
 

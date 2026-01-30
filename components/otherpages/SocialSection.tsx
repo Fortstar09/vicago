@@ -46,7 +46,12 @@ const SocialEach = () => {
         </p>
       </div>
       <div className="relative overflow-hidden h-70 aspect-video ">
-        <Image src="/hero-bg.jpg" alt="image" fill className="object-cover" />
+        <Image
+          src="/hero-bg.jpg"
+          alt="image"
+          fill
+          className="object-cover w-auto h-auto"
+        />
       </div>
     </div>
   );

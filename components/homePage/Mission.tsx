@@ -41,7 +41,7 @@ export default function Mission() {
   return (
     <section
       ref={containerRef}
-      className="w-full bg-snow py-40 flex justify-center items-center relative z-50"
+      className="w-full bg-snow py-40 flex justify-center items-center relative z-30"
     >
       <div className="max-margin w-full h-full">
         <div className="h-150 grid grid-cols-9 grid-rows-8 gap-5">
@@ -53,7 +53,8 @@ export default function Mission() {
               src="/images/hero-bg-2.jpg"
               alt="Hero background"
               fill
-              className="object-cover rounded-xl"
+              className="object-cover rounded-xl w-auto h-auto"
+              loading="eager"
             />
           </div>
 

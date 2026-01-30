@@ -57,7 +57,7 @@ export default function AllProducts() {
           </p>
         </div>
         <div className="h-full w-full flex justify-center items-center ">
-          <div className="flex items-center justify-center gap-20 w-full">
+          <div className="flex items-center justify-center gap-5 lg:gap-20 w-full">
             {/* cocoa  */}
             <div className="relative w-full h-120 overflow-hidden max-w-[384px]">
               <Image
@@ -68,7 +68,7 @@ export default function AllProducts() {
                 className="rounded-xl object-cover"
               />
 
-              <div className="bg-creamy border-2 border-black rounded-lg w-[95%] h-58 absolute bottom-2 left-1/2 -translate-x-1/2 p-5">
+              <div className="bg-creamy border-2 border-black rounded-lg w-[95%] h-fit absolute bottom-2 left-1/2 -translate-x-1/2 p-5">
                 <div className="flex items-center justify-between">
                   <div className="max-w-md flex flex-col gap-3 items-start">
                     <h3 className="text-3xl font-semibold">
@@ -89,14 +89,6 @@ export default function AllProducts() {
                       Contact us
                     </a>
                   </div>
-
-                  {/* <Image
-                    src="https://cdn.prod.website-files.com/686b85e087270569bd280001/686f747c90e455fee36a592c_cocoa%20shapes.webp"
-                    alt="cocoa icon"
-                    width={100}
-                    height={100}
-                    className=""
-                  /> */}
                 </div>
               </div>
             </div>

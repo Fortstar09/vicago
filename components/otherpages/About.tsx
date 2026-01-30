@@ -3,7 +3,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,27 +17,6 @@ const About: React.FC = () => {
     if (!container) return;
 
     const words = Array.from(container.querySelectorAll<HTMLElement>(".word"));
-    const imgInners = Array.from(
-      container.querySelectorAll<HTMLElement>(".img-inner"),
-    );
-
-    // derive image size from text
-    const sample = words[0] ?? container;
-    const fontSize = parseFloat(getComputedStyle(sample).fontSize || "16");
-    const height = 10;
-    const width = Math.round(height * 2.2);
-
-    imgInners.forEach((el) => {
-      Object.assign(el.style, {
-        width: "0px",
-        height: `${height}px`,
-        overflow: "hidden",
-        display: "inline-flex",
-        verticalAlign: "middle",
-        opacity: "0",
-        position: "relative",
-      });
-    });
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -56,15 +34,6 @@ const About: React.FC = () => {
       { opacity: 0 },
       { opacity: 1, stagger: 0.02, ease: "none" },
       0,
-    ).to(
-      imgInners,
-      {
-        width,
-        opacity: 1,
-        stagger: 0.5,
-        ease: "power2.out",
-      },
-      0,
     );
 
     return () => {
@@ -74,8 +43,6 @@ const About: React.FC = () => {
   }, []);
 
   const tokens = TEXT.split(" ");
-
-  console.log(tokens.length);
 
   return (
     <section className="bg-vgreen text-snow  overflow-hidden z-10">
@@ -105,13 +72,3 @@ const About: React.FC = () => {
 };
 
 export default About;
-
-/* ---------- helpers ---------- */
-
-const InlineImage = ({ src }: { src: string }) => (
-  <span className="inline-flex justify-center items-center p-1.5 overflow-hidden">
-    <span className="img-inner rounded-lg">
-      <Image src={src} alt="" fill className="object-cover" />
-    </span>
-  </span>
-);

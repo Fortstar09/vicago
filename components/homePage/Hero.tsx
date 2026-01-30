@@ -98,7 +98,7 @@ export default function Hero() {
               src={slide.image}
               alt="Hero background"
               fill
-              className="object-cover"
+              className="object-cover w-auto h-auto"
               priority={i === 2}
             />
             <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/50 to-black/70" />

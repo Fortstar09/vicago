@@ -129,7 +129,7 @@ export default function TestimonialCarousel() {
                     src="/hero-bg.jpg"
                     alt={testimonial.name}
                     fill
-                    className="object-cover"
+                    className="object-cover w-auto h-auto"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 via-black/50 to-transparent p-6 pt-20">
                     <h3 className="text-white font-semibold text-xl mb-1">

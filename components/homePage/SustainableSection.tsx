@@ -24,49 +24,6 @@ export default function SustainableSection() {
         },
       });
 
-      // 2️⃣ Paragraph — softer, from right
-      gsap.from(".sustain-text", {
-        x: 60,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".sustain-text",
-          start: "top 75%",
-          end: "bottom 15%",
-          // toggleActions: "play reverse play reverse",
-          // markers: true,
-        },
-      });
-
-      // 3️⃣ Button — delayed pop
-      gsap.from(".sustain-button", {
-        y: 30,
-        opacity: 0,
-        scale: 0.9,
-        duration: 0.8,
-        ease: "back.out(1.6)",
-        scrollTrigger: {
-          trigger: ".sustain-button",
-          start: "top 80%",
-          end: "bottom 20%",
-          // toggleActions: "play reverse play reverse",
-        },
-      });
-
-      // 4️⃣ Stat number — impact moment
-      gsap.from(".sustain-stat", {
-        scale: 0.7,
-        opacity: 0,
-        duration: 1,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: ".sustain-stat",
-          start: "top 85%",
-          // toggleActions: "play reverse play reverse",
-        },
-      });
-
       // 5️⃣ Stat description
       gsap.from(".sustain-stat-desc", {
         y: 40,

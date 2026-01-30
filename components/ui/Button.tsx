@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 const Button = ({
   title,
@@ -7,15 +8,15 @@ const Button = ({
 }: {
   title: string;
   animationClass?: string;
-  link?: string;
+  link: string;
 }) => {
   return (
-    <a
+    <Link
       href={link}
-      className={`${animationClass} rounded-full border border-vgbrown px-3 py-2 text-sm font-semibold hover:text-white bg-vgbrown hover:bg-vgbrown/80 cursor-pointer`}
+      className={`${animationClass} rounded-full border border-vgbrown px-3 py-2 text-sm font-semibold text-white bg-vgbrown hover:bg-vgbrown/80 cursor-pointer`}
     >
       {title}
-    </a>
+    </Link>
   );
 };
 

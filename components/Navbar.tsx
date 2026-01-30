@@ -37,7 +37,7 @@ const Navbar = () => {
   return (
     <header
       ref={navRef}
-      className={`fixed top-0 z-20 w-full transition-colors duration-300 ${bgStyle} z-40`}
+      className={`fixed top-0 z-50 w-full transition-colors duration-300 ${bgStyle} z-40`}
     >
       <nav
         className={`w-full max-margin py-4 flex items-center justify-between transition-colors duration-300 ${textColor}`}
@@ -50,8 +50,8 @@ const Navbar = () => {
           <a href="/about">About us</a>
           <a href="/product">Product</a>
           <a href="/csr">CSR</a>
-          {/* <a href="/carears">Carears</a> */}
           <a href="/blog">Blog</a>
+          <a href="/careers">Careers</a>
         </div>
 
         <div className="flex gap-4 items-center">

@@ -19,8 +19,6 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
     const path = svg?.querySelector("path");
     if (!path) return;
 
-    console.log(path, svg);
-
     const tl = gsap.timeline({
       onComplete: () => router.push(url),
     });
@@ -31,28 +29,29 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
       stagger: 0.02,
       ease: "power2.out",
       transformOrigin: "left",
-    })
-      .set(signOverlayRef.current, { opacity: 1 }, "-=0.2")
-      .set(path, {
-        strokeDashoffset: path.getTotalLength(),
-        fill: "transparent",
-      })
-      .to(path, {
-        strokeDashoffset: 0,
-        duration: 2,
-        ease: "power2.inOut",
-      })
-      .to(path, {
-        fill: "#e3e4d8",
-        duration: 1,
-      })
-      .to(signOverlayRef.current, {
-        opacity: 0,
-        duration: 0.25,
-      });
+    });
+    // .set(signOverlayRef.current, { opacity: 1 }, "-=0.2")
+    // .set(path, {
+    //   strokeDashoffset: path.getTotalLength(),
+    //   fill: "transparent",
+    // })
+    // .to(path, {
+    //   strokeDashoffset: 0,
+    //   duration: 2,
+    //   ease: "power2.inOut",
+    // })
+    // .to(path, {
+    //   fill: "#e3e4d8",
+    //   duration: 1,
+    // })
+    // .to(signOverlayRef.current, {
+    //   opacity: 1,
+    //   duration: 0.25,
+    // });
   };
 
   const revealPage = () => {
+    console.log("block start");
     gsap.set(blocksRef.current, { scaleX: 1, transformOrigin: "right" });
 
     gsap.to(blocksRef.current, {
@@ -65,10 +64,12 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
         isTransitioning.current = false;
       },
     });
+    console.log("block end");
   };
 
   useEffect(() => {
     if (!overlayRef.current) return;
+    // console.log(signOverlayRef.current);
 
     overlayRef.current.innerHTML = "";
     blocksRef.current = [];
@@ -81,7 +82,9 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
     }
 
     gsap.set(blocksRef.current, { scaleX: 0 });
+    console.log("block 1 start");
     revealPage();
+    console.log("block 1 end");
 
     const handleRouteChange = (url: string) => {
       if (isTransitioning.current) return;

@@ -5,7 +5,12 @@ const BlogHero = () => {
   return (
     <section className="min-h-fit bg-[#f5faf7]">
       <div className="h-110 relative overflow-hidden w-full flex justify-start items-end">
-        <Image src="/hero-bg.jpg" fill alt="bg" className="object-cover" />
+        <Image
+          src="/hero-bg.jpg"
+          fill
+          alt="bg"
+          className="object-cover  w-auto h-auto"
+        />
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/50 to-black/70" />
         <div className="max-margin h-110 w-full flex justify-start items-end">
           <div className="z-30 mb-20">

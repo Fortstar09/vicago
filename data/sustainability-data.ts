@@ -8,7 +8,7 @@ export const stats: StatBall[] = [
     size: 270,
     position: {
       bottom: "220px",
-      left: "15%",
+      left: "4%",
     },
     textClassName: "text-7xl text-white/70 text-stroke",
     background: {
@@ -22,8 +22,8 @@ export const stats: StatBall[] = [
     subtitle: "Facilities",
     size: 300,
     position: {
-      top: "160px",
-      left: "45%",
+      top: "40%",
+      left: "35%",
     },
     textClassName: "text-5xl text-white/70 text-stroke",
     background: {
@@ -37,11 +37,11 @@ export const stats: StatBall[] = [
     subtitle: "Units Traceability to Plantations",
     size: 360,
     position: {
-      bottom: "100px",
-      right: "10%",
+      bottom: "50px",
+      right: "0%",
     },
     textClassName: "text-8xl text-green-600",
-    subTextClassName: "text-xs text-gray-600",
+    subTextClassName: "text-sm text-gray-600",
     background: {
       type: "color",
       value: "#fff",

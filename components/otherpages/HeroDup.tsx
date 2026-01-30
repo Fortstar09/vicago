@@ -31,19 +31,6 @@ export default function DupHero({
         // toggleActions: "play reverse play reverse",
       },
     );
-    gsap.fromTo(
-      ".hero-image",
-      { opacity: 0, y: 200 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.2,
-        stagger: 0.2,
-        ease: "power3.out",
-        delay: 0.5,
-        // toggleActions: "play reverse play reverse",
-      },
-    );
   }, []);
 
   return (
@@ -51,9 +38,9 @@ export default function DupHero({
       ref={heroRef}
       className="relative w-full overflow-hidden bg-lightGreen z-10"
     >
-      <div className="max-margin flex items-center justify-between h-screen gap-6 pt-20">
+      <div className="max-margin flex flex-col md:flex-row items-start md:items-center justify-between h-screen gap-6 pt-20">
         {/* Hero Content */}
-        <div className="flex flex-col items-start space-y-6 max-w-lg">
+        <div className="flex flex-col items-start space-y-6 max-w-lg pt-10">
           <h1 className="hero-animate text-5xl md:text-5xl lg:text-6xl lg:leading-16 text-black font-normal font-grotesque leading-tight">
             {title}
           </h1>
@@ -68,16 +55,9 @@ export default function DupHero({
               src="/images/about-main.jpg"
               alt="Hero background"
               fill
-              className="w-full object-cover rounded-lg hover:scale-150 transition-transform duration-800 "
+              className="w-full h-auto object-cover rounded-lg hover:scale-150 transition-transform duration-800 "
             />
           </div>
-          {/* <Image
-            src="/images/about-main.jpg"
-            alt="Hero background"
-            width={200}
-            height={200}
-            className="w-full object-cover h-50 rounded-lg cursor-pointer col-span-2 hover-lift hover:scale-105"
-          /> */}
           <Image
             src="/images/about-cocoa.jpg"
             alt="Hero background"
@@ -97,7 +77,7 @@ export default function DupHero({
               src="/images/cocoa-tree-much.jpg"
               alt="Hero background"
               fill
-              className="w-full object-cover rounded-lg hover:scale-120 transition-transform duration-400 "
+              className="w-full h-auto object-cover rounded-lg hover:scale-120 transition-transform duration-400 "
             />
           </div>
         </div>

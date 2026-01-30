@@ -8,7 +8,7 @@ const PictureDivider = () => {
         src="/hero-bg.jpg"
         fill
         alt="divider-bg"
-        className="object-cover z-0"
+        className="object-cover z-0 w-auto h-auto"
       />
       <div className="absolute inset-0 bg-black/20" />
       <div className="max-margin  z-10 h-full">

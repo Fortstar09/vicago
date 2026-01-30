@@ -5,6 +5,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../ui/Button";
 import BlogCard from "../ui/BlogCard";
+import { ArrowDown } from "lucide-react";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,7 +59,6 @@ export default function Story() {
         scale: 0.9,
         duration: 0.8,
         ease: "back.out(1.5)",
-        delay: 0.5,
       });
     }, sectionRef);
 
@@ -73,7 +74,7 @@ export default function Story() {
         </h2>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <BlogCard
             title="A Year in Cocoa"
             subTitle="Reflections on the Cocoa Industry in 2024"
@@ -89,11 +90,21 @@ export default function Story() {
             subTitle=" "
             src="/images/strategy-one.jpg"
           />
+          <BlogCard
+            title="Spotlighting Our Sustainability Champions"
+            subTitle=" "
+            src="/images/strategy-one.jpg"
+          />
         </div>
 
         {/* CTA */}
         <div className="tc-cta mt-14 flex justify-center">
-          <Button title="Learn more" />
+          <Link
+            href="/blog"
+            className="inline-flex justify-center items-center gap-2 animate-bounce text-sm text-gray-400"
+          >
+            Explore more <ArrowDown size={16} />
+          </Link>
         </div>
       </div>
     </section>

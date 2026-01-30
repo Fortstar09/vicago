@@ -13,18 +13,6 @@ const DATA = [
     subtitle: "High-quality cocoa beans sourced directly from Nigerian farms.",
     image: "/images/about-cocoa.jpg",
   },
-  // {
-  //   title: "Agriculture technology integration",
-  //   subtitle:
-  //     "Technology-driven tools that improve farming accuracy and productivity.",
-  //   image: "/value-bg.jpg",
-  // },
-  // {
-  //   title: "Precision farming solutions",
-  //   subtitle:
-  //     "Advanced monitoring systems that enhance crop yields and resource management.",
-  //   image: "/hero-bg.jpg",
-  // },
   {
     title: "Canadian Wheat",
     subtitle:
@@ -91,7 +79,12 @@ export default function StackingCardsSection() {
           className={`bg-image-${i} absolute inset-0`}
           style={{ zIndex: i }}
         >
-          <Image src={item.image} alt="" fill className="object-cover" />
+          <Image
+            src={item.image}
+            alt=""
+            fill
+            className="object-cover w-auto h-auto"
+          />
           <div className="absolute inset-0 bg-black/50" />
         </div>
       ))}
@@ -112,7 +105,7 @@ export default function StackingCardsSection() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover"
+                    className="object-cover w-auto h-auto"
                   />
                 </div>
               ))}
