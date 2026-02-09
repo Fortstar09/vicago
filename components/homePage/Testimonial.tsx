@@ -7,49 +7,31 @@ import Image from "next/image";
 // Mock testimonial data - based on the image
 const testimonials = [
   {
-    id: 1,
-    name: "Garry Humberg",
-    role: "Vegetable Farmer",
+    id: 3,
+    name: "Mr Godwin",
+    role: "Cocoa Farmer",
     image:
-      "https://images.unsplash.com/photo-1595314617711-b7b3b4f0c4ff?w=400&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=500&fit=crop",
     testimonial:
-      "With their smart farming solutions, we've increased our crop yield by 35% while reducing water usage by 40%. The IoT monitoring system and AI analytics completely transformed the way we manage our farm.",
+      "Vicago’s support goes far beyond the transaction. By providing high-quality farm inputs and technical guidance, they have significantly improved my crop yields and farm health. They don't just buy my cocoa; they invest in my future as a farmer.",
   },
-  // {
-  //   id: 2,
-  //   name: "Leo Albertus",
-  //   role: "Strawberry Farmer",
-  //   image:
-  //     "https://images.unsplash.com/photo-1595314617711-b7b3b4f0c4ff?w=400&h=500&fit=crop",
-  //   testimonial:
-  //     "The precision agriculture tools have revolutionized our strawberry production. We're seeing healthier crops and significantly better yields than ever before.",
-  // },
-  // {
-  //   id: 3,
-  //   name: "Jim Welbeck",
-  //   role: "Vegetable Farmer",
-  //   image:
-  //     "https://images.unsplash.com/photo-1595314617711-b7b3b4f0c4ff?w=400&h=500&fit=crop",
-  //   testimonial:
-  //     "With their smart farming solutions, we've increased our crop yield by 35% while reducing water usage by 40%. The IoT monitoring system and AI analytics completely transformed the way we manage our farm.",
-  // },
+  {
+    id: 2,
+    name: "Mr Johnson",
+    role: "Global Procurement Specialist",
+    image:
+      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=400&h=500&fit=crop",
+    testimonial:
+      "In the global commodity market, reliability is the only currency that matters. I have absolute confidence in Vicago Group to deliver premium-grade cocoa beans that meet the highest international standards. Their attention to detail and commitment to excellence make them our preferred supplier year after year.",
+  },
   {
     id: 4,
-    name: "Amy Rosenfield",
-    role: "Vegetable Farmer",
+    name: "Mr Frank",
+    role: "Strategic Trade Partner",
     image:
-      "https://images.unsplash.com/photo-1595314617711-b7b3b4f0c4ff?w=400&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=500&fit=crop",
     testimonial:
-      "The automated irrigation system has saved us countless hours and resources. Our farm has never been more efficient or productive.",
-  },
-  {
-    id: 5,
-    name: "Christoper McFly",
-    role: "Fruit Farmer",
-    image:
-      "https://images.unsplash.com/photo-1595314617711-b7b3b4f0c4ff?w=400&h=500&fit=crop",
-    testimonial:
-      "Outstanding technology that delivers real results. The data-driven insights help us make better decisions every single day.",
+      "Vicago Group has been a cornerstone of our expansion. Their consistent financial support and timely advances were instrumental in our recent farm acquisitions and the successful scaling of our trading division. They are a partner that understands the value of liquidity and long-term vision.",
   },
 ];
 

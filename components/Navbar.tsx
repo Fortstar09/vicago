@@ -8,7 +8,11 @@ import Image from "next/image";
 const Navbar = () => {
   const navRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
-  const isHome = pathname === "/" || pathname === "/blog";
+  const isHome =
+    pathname === "/" ||
+    pathname === "/about" ||
+    pathname === "/product" ||
+    pathname === "/blog";
 
   const [scrolled, setScrolled] = useState(false);
 

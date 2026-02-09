@@ -3,8 +3,6 @@ import SustainableSection from "@/components/homePage/SustainableSection";
 import SocialSection from "@/components/otherpages/SocialSection";
 import PictureDivider from "@/components/otherpages/PictureDivider";
 import Story from "@/components/homePage/Story";
-import { stats } from "@/data/sustainability-data";
-import ReusableStats from "@/components/otherpages/ReuseableStats";
 import Footer from "@/components/Footer";
 
 const page = () => {
@@ -14,7 +12,7 @@ const page = () => {
         title="Stewards of a global value chain"
         subtitle=" Our environmental commitments are built to protect this entire ecosystem, locally and globally."
       />
-      <ReusableStats balls={stats} className="relative" />
+      {/* <ReusableStats balls={stats} className="relative" /> */}
       <SustainableSection />
       <PictureDivider />
       <SocialSection />

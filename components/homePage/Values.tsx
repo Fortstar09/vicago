@@ -94,22 +94,28 @@ export default function Values() {
             <BlurCard
               id="1"
               title="Reliability"
-              subTitle="We empower farmers with smart, accessible technology that improves productivity."
+              subTitle="We are consistent, timely, and responsive. Our clients trust us to deliver highquality products under the most demanding conditions."
             />
             <BlurCard
               id="2"
               title="Impact"
-              subTitle="We develop cutting-edge solutions to address global food challenges."
+              subTitle="WWe believe that trade has the power to create meaningful, measurable change. At
+Vicago, every shipment we deliver and every relationship we build contributes to the
+broader ecosystem, from supporting local farmers and producers to strengthening food
+systems in underserved markets. "
             />
             <BlurCard
               id="3"
               title="Integrity"
-              subTitle="We build partnerships that uplift local communities and support economic growth."
+              subTitle=" We deliver on our word. Every transaction, every contract, and every shipment
+reflects our commitment to ethical and transparent business practices."
             />
             <BlurCard
               id="4"
               title="Transformation"
-              subTitle="We operate with transparency, accountability, and ethical practices in all our endeavors."
+              subTitle="Transformation is the heart of our mission. We don’t just move
+commodities, we empower manufacturers, processors, and food businesses to scale,
+innovate, and elevate the quality of their products."
             />
           </div>
         </div>

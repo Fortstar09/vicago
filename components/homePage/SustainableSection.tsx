@@ -71,10 +71,12 @@ export default function SustainableSection() {
               <h2 className="sustain-stat-desc mt-2 text-4xl font-semibold text-creamy max-w-lg">
                 Strengthening Community Wellbeing
               </h2>
-              <p className="sustain-caption  text-base text-gray-50/80 max-w-md">
-                We build with the whole community in mind. From education access
-                and child labor prevention to women’s income programs, we invest
-                in the communities behind the produce.
+              <p className="sustain-caption  text-base text-gray-50/80 max-w-xl">
+                Supporting farmers is not a side initiative — it is central to
+                how we operate. We invest in local communities, provide fair
+                wages, and offer education and resources to help farmers thrive.
+                By empowering those at the heart of our supply chain, we create
+                a more sustainable and equitable future for all.
               </p>
             </div>
             <Image
@@ -95,11 +97,13 @@ export default function SustainableSection() {
               <h2 className="sustain-stat-desc mt-2 text-4xl font-semibold text-creamy max-w-lg">
                 Improving Farmers’ Livelihoods
               </h2>
-              <p className="sustain-caption   text-base text-gray-50/80  max-w-md">
-                We believe farmers are the backbone of our global value chain
-                and should earn more than survival. That’s why we pay fairly,
-                educate consistently, and help local producers unlock real
-                value, from sourcing to financing.
+              <p className="sustain-caption   text-base text-gray-50/80  max-w-xl">
+                Our farmer network forms the backbone of a reliable and
+                resilient supply chain. We work closely with farmers to provide
+                them with the resources, training, and market access they need
+                to succeed. By fostering strong partnerships and investing in
+                their growth, we help improve livelihoods and create a more
+                sustainable future for everyone involved.
               </p>
             </div>
           </div>

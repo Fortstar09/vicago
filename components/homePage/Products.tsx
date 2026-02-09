@@ -19,6 +19,13 @@ const DATA = [
       "Premium wheat varieties from Canadian farms, perfect for milling, baking, and food processing.",
     image: "/value-bg.jpg",
   },
+  {
+    title: "Soya Beans",
+    subtitle:
+      "Premium soya beans from Nigerian farms, ideal for oil extraction and protein production.",
+    image:
+      "https://i0.wp.com/www.agriculturenigeria.com/wp-content/uploads/2013/05/Soya-Bean-1.jpg",
+  },
 ];
 
 export default function StackingCardsSection() {

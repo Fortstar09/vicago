@@ -14,7 +14,7 @@ const OfficeData = [
     address: "333 Broad Street <br/> Odode-Idanre, Ondo State",
   },
   {
-    location: "Canadian Office",
+    location: "Canada Office",
     address: "556 Marlee Avenue <br/> Toronto, M6B 0B1",
   },
 ];

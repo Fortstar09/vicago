@@ -21,7 +21,7 @@ export default function App() {
       <About />
       <Mission />
       <Values />
-      <Certification />
+      {/* <Certification /> */}
       <StackingCardsSection />
       <TestimonialCarousel />
       <Story />

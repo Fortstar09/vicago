@@ -21,7 +21,7 @@ const Aboutpage = () => {
         <OurJourney />
         <VisionMissionStack />
         <SustainableSection />
-        <Team />
+        {/* <Team /> */}
       </main>
       <Footer />
     </>

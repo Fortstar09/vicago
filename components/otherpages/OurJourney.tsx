@@ -20,57 +20,65 @@ const OurJourney: React.FC = () => {
 
   const timelineData: TimelineItem[] = [
     {
-      year: "2004",
-      title: "A Bold Start Against the Odds",
+      year: "1980",
+      title: "Rooted in the Land",
       description:
-        'When our founder sought funding to scale, he was denied a loan despite having assets. The reason? "No experience." But that setback became a setup. That same year, we secured our first client, Touton, and exported our very first shipment of cocoa. We started with just 200 metric tonnes, and a relentless belief in possibility.',
+        "Our journey began with earth, sweat, and vision. Vicago Group was founded as Vicago Farms when we acquired our first cocoa farm in Nigeria. We didn’t just trade cocoa; we grew it, learning every stage of cultivation, quality, and care from the ground up.",
       achievements: [],
-      images: ["/images/found-office.jpg"],
-    },
-    {
-      year: "2020",
-      title: "Building Momentum",
-      description:
-        "We expanded our operations and strengthened our relationships with farming communities.",
-      achievements: [
-        "Established partnerships with 50+ farming cooperatives",
-        "Increased export capacity to 5,000 metric tonnes",
-        "Implemented sustainable farming training programs",
-        "Launched our first quality certification initiative",
-      ],
       images: [
         "https://images.unsplash.com/photo-1595855759920-86582396756a?w=800",
         "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800",
       ],
     },
     {
-      year: "2024",
-      title: "Planting Strong Roots",
+      year: "2004",
+      title: "Stepping into Global Trade",
       description:
-        "We opened our corporate office in Nigeria, marking a new phase of growth and operational excellence. By this year, we had:",
-      achievements: [
-        "Created over 30,000 direct and indirect jobs",
-        "Provided 20,000 people with access to clean water",
-        "Enabled ₦5 billion in increased household income for farming households and value chain partners",
-      ],
+        "To bridge the gap between local harvests and global demand, Vicago Nigeria Limited was officially incorporated. This marked our evolution into a premier commodity trading house, bringing corporate structure to our agricultural expertise and exporting premium cocoa beans to the world’s most demanding confectionery leaders.",
+      achievements: [],
       images: [
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800",
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800",
+        "https://images.unsplash.com/photo-1589927986089-35812388d1f4?w=800",
+        "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800",
+      ],
+    },
+    {
+      year: "2015",
+      title: "Growing Together, Growing Stronger",
+      description:
+        "Through trust and empowerment, our network expanded organically. By 2015, we were partnering with over 10,000 farmers across Nigeria, providing training, fair pricing, and sustainable farming support—proving that growth and community can go hand in hand.",
+      achievements: ["10,000+ partnered farmers"],
+      images: [
+        "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800",
+      ],
+    },
+    {
+      year: "2019",
+      title: "A Milestone Year",
+      description:
+        "Our unwavering commitment to reliability built a legacy of meaningful volume. By 2019, Vicago had cumulatively traded over 150,000 metric tons of cocoa, cementing our role as a trusted and enduring link between African farms and international markets.",
+      achievements: ["150,000+ metric tons traded"],
+      images: [
+        "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=800",
       ],
     },
     {
       year: "2025",
-      title: "A Year of Impact and Expansion",
-      achievements: [
-        "Joined the International Cocoa Initiative (ICI), becoming the first Nigerian company to do so, deepening our commitment to child protection and ethical labour practices.",
-        "Expanded into Dubai and Cameroon, solidifying our reach across the Middle East and Francophone Africa.",
-        "We proudly earned our ISO 9001, 45001 & 14001 certification, affirming our commitment to global quality standards.",
-        'Rated "A" by DataPro, affirming our financial credibility and risk management excellence.',
-        "Hit 200,000 metric tonnes of cocoa exports; a dramatic leap from our 200-tonne start in 2017.",
-      ],
+      title: "A New Continent, A Broader Vision",
+      description:
+        "Building on 45 years of agricultural mastery, Vicago expanded to North America with the incorporation of Vicago Canada Inc. This strategic move marked our evolution into a multi-commodity global powerhouse, integrating wheat, Canadian Western Red Spring (CWRS), Canadian Western Amber Durum (CWAD), and soybeans into our portfolio.",
+      achievements: ["Expansion to North America", "Multi-commodity trading"],
       images: [
-        "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800",
-        "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800",
+        "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800",
+      ],
+    },
+    {
+      year: "Today",
+      title: "A Global Trading Group with Purpose",
+      description:
+        "From a single cocoa farm to a multinational commodity trading group, Vicago now operates across Africa and North America. We enable reliable, transparent, and efficient supply chains that connect premium agricultural origins to global manufacturers and processors.",
+      achievements: ["Operations across Africa & North America"],
+      images: [
+        "https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=800",
       ],
     },
   ];

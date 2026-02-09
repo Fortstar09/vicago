@@ -25,38 +25,42 @@ const WhyPartner = () => {
           <div className="col-span-3 md:col-span-2 grid grid-rows-4 gap-3">
             <div className="rounded-xl bg-vgreen  col-span-1 p-4 flex flex-col gap-3 hover-lift">
               <h2 className="sustain-stat-desc text-2xl font-normal text-creamy max-w-lg">
-                Our global reach
+                Diversified Sourcing Networks
               </h2>
               <p className="sustain-caption  text-sm text-gray-50 max-w-lg">
-                We supply top-tier buyers across Europe, Asia, and the Middle
-                East, and we&apos;re built to scale with you.
+                We cultivate deep, long-term relationships with farmers and
+                aggregators, expanding supply reliability across seasons and
+                geographies.
               </p>
             </div>
             <div className="rounded-xl bg-vgbrown col-span-1 p-4 flex flex-col gap-3 hover-lift ">
               <h2 className="sustain-stat-desc text-2xl font-normal text-snow max-w-lg">
-                Certified, high-quality commodities
+                Global Market Integration
               </h2>
               <p className="sustain-caption  text-sm text-gray-50 max-w-lg">
-                Every product we move meets premium export standards, with full
-                traceability and global certifications.
+                With offices in Africa and North America, we enable cross-border
+                access to commodities, linking origin producers to international
+                customers.
               </p>
             </div>
             <div className="rounded-xl bg-vgreen col-span-1 p-4 flex flex-col gap-3 hover-lift">
               <h2 className="sustain-stat-desc text-2xl font-normal text-creamy max-w-lg">
-                Ethical, farmer-centered sourcing
+                Data-Driven Execution
               </h2>
               <p className="sustain-caption  text-sm text-gray-50 max-w-lg">
-                We work directly with local agents and farming communities,
-                supporting sustainable practices and livelihoods.
+                By combining market insights with disciplined risk management,
+                we ensure timely delivery, premium quality and operational
+                resilience.
               </p>
             </div>
             <div className="rounded-xl bg-vgbrown  col-span-1 p-4 flex flex-col gap-3 hover-lift">
               <h2 className="sustain-stat-desc text-2xl font-normal text-snow max-w-lg">
-                End-to-end logistics
+                Farmer Partnership Model
               </h2>
               <p className="sustain-caption  text-sm text-gray-50 max-w-lg">
-                From warehousing in Nigeria to shipping across continents, we
-                manage the full chain so you don&apos;t have to.
+                Our approach goes beyond trade, including farmer support,
+                pre-financing solutions, and direct engagement that enhance
+                productivity and community welfare.
               </p>
             </div>
           </div>

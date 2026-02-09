@@ -16,7 +16,7 @@ const cards = [
   // },
   {
     title: "Our Mission",
-    text: "To connect producers and processors through world-class commodity sourcing, reliable delivery, and uncompromising standards.",
+    text: "To connect producers and processors through world-class commodity sourcing, reliable delivery, and uncompromising standards, enabling transformative outcomes in food production, trade, and regional development.",
     bg: "bg-gray-100 text-neutral-900 text-gray-300",
     image: "/value-bg.jpg",
   },
@@ -86,7 +86,8 @@ export default function VisionMissionPurpose() {
               <p className="text-lg leading-relaxed text-gray-50">
                 To become a globally recognised trade facilitator and trusted
                 supplier of premium agricultural commodities, empowering
-                manufacturers worldwide
+                manufacturers to produce high-quality food products that nourish
+                communities worldwide.
               </p>
             </div>
             <div className="h-full">

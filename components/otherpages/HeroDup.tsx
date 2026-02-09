@@ -41,7 +41,7 @@ export default function DupHero({
       <div className="max-margin flex flex-col md:flex-row items-start md:items-center justify-between h-screen gap-6 pt-20">
         {/* Hero Content */}
         <div className="flex flex-col items-start space-y-6 max-w-lg pt-10">
-          <h1 className="hero-animate text-5xl md:text-5xl lg:text-6xl lg:leading-16 text-black font-normal font-grotesque leading-tight">
+          <h1 className="hero-animate text-5xl md:text-5xl lg:text-6xl lg:leading-16 text-vgreen font-normal font-grotesque leading-tight">
             {title}
           </h1>
 

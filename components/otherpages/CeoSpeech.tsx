@@ -5,9 +5,8 @@ const CeoSpeech = () => {
   return (
     <div className="flex flex-col justify-center items-center text-center max-margin py-30">
       <h2 className="text-4xl font-normal leading-relaxed text-vgreen mb-10 text-center max-w-6xl">
-        &quot; At Vicago, Our mission is to revolutionize the way people and
-        goods move around the world by leveraging cutting-edge technology and a
-        commitment to environmental responsibility. &quot;
+        &quot; At VICAGO, your work creates real impact — from empowering rural
+        farmers to serving global buyers. &quot;
       </h2>
       <Image
         src="/hero-bg.jpg"

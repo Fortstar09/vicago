@@ -4,9 +4,9 @@ import Image from "next/image";
 
 const EachProduct = (product: Product) => {
   return (
-    <div className="group hover-lift rounded-3xl">
-      <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-500">
-        <div className="relative overflow-hidden">
+    <div className="group rounded-3xl h-full">
+      <div className="bg-white relative rounded-2xl overflow-hidden border border-gray-200 hover-lift h-full flex flex-col items-start justify-between">
+        <div className="relative overflow-hidden w-full">
           <Image
             src={product.image}
             alt={product.name}
@@ -14,24 +14,28 @@ const EachProduct = (product: Product) => {
             height={300}
             className="w-full h-100 object-cover group-hover:scale-105 transition-transform duration-500"
           />
-          <div className="absolute top-6 right-6">
+          {/* <div className="absolute top-6 right-6">
             <span className="bg-vgreen text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
               {product.locate}
             </span>
-          </div>
+          </div> */}
         </div>
-        <div className="p-8">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-3xl font-bold text-vgbrown">{product.name}</h3>
-            <div className="flex items-center space-x-2">
-              <Leaf size={20} color="#679550" />
-              <Globe size={20} color="#679550" />
+        <div className="p-8 flex flex-col justify-between h-fit">
+          <div>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-3xl font-bold text-vgbrown">
+                {product.name}
+              </h3>
+              <div className="flex items-center space-x-2">
+                <Leaf size={20} color="#679550" />
+                <Globe size={20} color="#679550" />
+              </div>
             </div>
+            <p className="text-gray-600 mb-4 leading-relaxed text-base">
+              {product.description}
+            </p>
           </div>
-          <p className="text-gray-600 mb-4 leading-relaxed text-base">
-            {product.description}
-          </p>
-          <div className="mb-6">
+          {/* <div className="mb-6">
             <h4 className="font-bold text-vgbrown mb-2 text-base">
               Key Features:
             </h4>
@@ -46,8 +50,8 @@ const EachProduct = (product: Product) => {
                 </div>
               ))}
             </div>
-          </div>
-          <div className="bg-orange-50 border-vgbrown border px-6 py-4 rounded-lg mb-6">
+          </div> */}
+          {/* <div className="bg-orange-50 border-vgbrown border px-6 py-4 rounded-lg mb-6">
             <h4 className="font-bold text-gray-900 text-base mb-2">
               Specifications:
             </h4>
@@ -61,9 +65,9 @@ const EachProduct = (product: Product) => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
           <a
-            className=" border border-vgreen text-base text-vgreen px-8 py-4 rounded-lg hover:shadow-xl transform hover:scale-102 transition-all duration-300 inline-flex items-center w-full justify-center gap-2"
+            className=" border border-vgreen text-lg text-vgreen px-8 py-4 rounded-lg hover:bg-vgreen transform hover:text-white transition-all duration-300 inline-flex items-center w-full justify-center gap-2"
             href="/contact"
           >
             Request Quote

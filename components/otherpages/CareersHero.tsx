@@ -8,11 +8,11 @@ const CareersHero = () => {
       <div className="flex flex-col justify-center items-center max-margin py-30">
         <div className="text-center flex flex-col justify-center items-center w-full gap-8 pt-12">
           <h1 className="text-6xl font-normal text-vgbrown font-semibold max-w-xl">
-            Be part of moving the world forward
+            Grow Your Career Where the World Gets Fed.
           </h1>
           <p className="text-base text-gray-500 max-w-xl text-center">
-            If you are interested in working with us at Vicago, please check out
-            our current job openings below.
+            Join a global agricultural company shaping the future of sustainable
+            trade
           </p>
           <a
             href="#job-openings"

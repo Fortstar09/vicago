@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const TEXT =
-  "With strategic operations in Nigeria and Canada, we serve manufacturers and processors across West Africa, Europe, and North America. Our mission is to facilitate global trade, enabling food producers to source premium ingredients. We combine market knowledge, global logistics, and deep-rooted partnerships to create efficient, reliable, and transparent supply chains built on integrity.";
+  "Vicago Group was founded to address one of the world’s most critical challenges: building resilient, efficient, and scalable agricultural value chains that support food security, economic growth, and global competitiveness. We operate at the intersection of agriculture, infrastructure, and data, developing integrated systems that connect production to global markets. Our work is driven by the belief that agriculture underpins global growth, trade, and economic resilience. From the outset, Vicago has focused on creating structured, data-driven, and commercially viable agricultural solutions. Rather than operating as a single-purpose agribusiness, we function as a group with interconnected verticals designed to solve real problems across the agricultural ecosystem, reducing inefficiencies, improving traceability, and enabling scale.";
 
 const About: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -44,24 +44,26 @@ const About: React.FC = () => {
 
   const tokens = TEXT.split(" ");
 
+  console.log(tokens.length / 3);
+
   return (
     <section className="bg-vgreen text-snow  overflow-hidden z-10">
       <div ref={containerRef} className="max-w-7xl mx-auto px-4 pb-30 mb-20">
         <p className="text-lg font-medium leading-snug text-center mx-auto max-w-6xl justify-center items-center">
-          {tokens.slice(0, 17).map((word, i) => (
+          {tokens.slice(0, 37).map((word, i) => (
             <span key={i} className="word">
               {word}
             </span>
           ))}
 
-          {tokens.slice(18, 34).map((word, i) => (
-            <span key={i + 12} className="word">
+          {tokens.slice(37, 74).map((word, i) => (
+            <span key={i + 37} className="word">
               {word}
             </span>
           ))}
 
-          {tokens.slice(35, 56).map((word, i) => (
-            <span key={i + 24} className="word">
+          {tokens.slice(74).map((word, i) => (
+            <span key={i + 74} className="word">
               {word}
             </span>
           ))}

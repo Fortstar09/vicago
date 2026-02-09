@@ -3,7 +3,7 @@ import { Product } from "@/types";
 export const products: Product[] = [
   {
     id: 1,
-    name: "Premium Nigeria Cocoa",
+    name: "Cocoa beans",
     image: "/images/about-cocoa.jpg",
     description:
       "High-quality cocoa beans sourced directly from Nigerian farms, meeting international standards for chocolate and confectionery production.",
@@ -23,8 +23,49 @@ export const products: Product[] = [
   },
 
   {
-    id: 1,
-    name: "Premium Canadian Wheat",
+    id: 2,
+    name: "Wheat – Canadian Western Amber Durum (CWAD)",
+    image: "/images/about-wheat.jpg",
+    description:
+      "Premium wheat varieties from Canadian farms, perfect for milling, baking, and food processing applications worldwide.",
+    locate: "Canada",
+    features: [
+      "Multiple wheat varieties",
+      "Food-grade quality",
+      "High protein content",
+      "Reliable logistics",
+    ],
+    specification: [
+      { title: "Protein", value: "≤ 11.5%" },
+      { title: "Test Weight", value: "≥ 76kg/hl" },
+      { title: "Moisture", value: "≤ 14.5%" },
+      { title: "Origin", value: "Western Canada" },
+    ],
+  },
+  {
+    id: 3,
+    name: "Soybean",
+    image:
+      "https://i0.wp.com/www.agriculturenigeria.com/wp-content/uploads/2013/05/Soya-Bean-1.jpg",
+    description:
+      "Premium soybeans sourced from reliable Nigerian farms, ideal for oil extraction and protein production.",
+    locate: "Nigeria",
+    features: [
+      "Multiple wheat varieties",
+      "Food-grade quality",
+      "High protein content",
+      "Reliable logistics",
+    ],
+    specification: [
+      { title: "Protein", value: "≤ 11.5%" },
+      { title: "Test Weight", value: "≥ 76kg/hl" },
+      { title: "Moisture", value: "≤ 14.5%" },
+      { title: "Origin", value: "Western Canada" },
+    ],
+  },
+  {
+    id: 4,
+    name: "Wheat – Canada Western Red Spring (CWRS)",
     image: "/images/about-wheat.jpg",
     description:
       "Premium wheat varieties from Canadian farms, perfect for milling, baking, and food processing applications worldwide.",
