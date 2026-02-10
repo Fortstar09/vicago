@@ -116,7 +116,7 @@ const Partners = () => {
       <div className="mx-auto max-w-7xl px-6 md:px-2">
         <div className="flex flex-col items-center gap-14 text-center">
           <div className="flex flex-col items-center gap-10 text-center">
-            <h2 className="partners-animate text-xl md:text-5xl font-medium text-charcoal max-w-4xl">
+            <h2 className="partners-animate text-xl md:text-3xl font-medium text-charcoal max-w-4xl">
               Trusted by global leaders in food and trade
             </h2>
           </div>

@@ -21,7 +21,7 @@ const CareersOpenPositions = () => {
               Please check back later or drop your resume with us.
             </p>
           </div>
-          <Button title="Drop Your Resume" link="google.com" />
+          <Button title="Drop Your Resume" link="www.google.com" />
         </div>
       </div>
       <CeoSpeech />
