@@ -52,6 +52,8 @@ export default function StackingCardsSection() {
           end: `+=${DATA.length * window.innerHeight}`,
           scrub: true,
           pin: true,
+          // markers: true,
+          // id: "product",
         },
       });
 
@@ -61,14 +63,20 @@ export default function StackingCardsSection() {
         // slide previous out, bring bg/card in, then bring new slide in
         tl.to(
           `.slide-${i - 1}`,
-          { yPercent: -100, duration: 0.45, ease: "power2.inOut" },
+          {
+            yPercent: -50,
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.inOut",
+            delay: 0.7,
+          },
           "<",
         )
           .to(`.bg-image-${i}`, { yPercent: 0, duration: 0.6 })
           .to(`.card-${i}`, { yPercent: 0, duration: 0.6 }, "<")
           .to(
             `.slide-${i}`,
-            { yPercent: 0, duration: 0.45, ease: "power2.out" },
+            { yPercent: 0, duration: 0.3, ease: "power2.out" },
             "<",
           );
       });
@@ -124,8 +132,8 @@ export default function StackingCardsSection() {
                 {DATA.map((item, i) => (
                   <div
                     key={i}
-                    className={`slide-${i} absolute inset-0 flex flex-col items-center justify-center text-center`}
-                    style={{ zIndex: DATA.length - i }}
+                    className={`slide-${i} absolute inset-0 flex flex-col items-center justify-center text-center bg-white`}
+                    style={{ zIndex: DATA.length + i }}
                   >
                     <h2 className="text-3xl text-gray-800 mb-2">
                       {item.title}
