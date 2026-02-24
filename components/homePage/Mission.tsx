@@ -80,7 +80,7 @@ export default function Mission() {
               ))}
             </div>
             <h2 className="text-sm font-semibold text-vgbrown uppercase">
-              50+ partners
+              45+ Years of Operational History
             </h2>
           </div>
 
@@ -95,12 +95,13 @@ export default function Mission() {
               className="opacity-5 absolute right-0 bottom-0 "
             />
             <div className="flex flex-col items-start justify-between max-w-sm h-full w-full z-10">
-              <p className="text-base text-gray-500/80 max-w-62">
-                Through our custom tailored funnel systems, we generated
+              <p className="text-base text-gray-500/80 max-w-90">
+                Financial support is provided to cocoa farmers, enabling
+                productivity, stability, and shared growth
               </p>
               <div className="flex flex-col justify-center items-start w-full gap-4">
                 <h2 className="font-semiblod text-3xl text-darkbrown/80">
-                  <span className="text-7xl text-darkbrown">$2M</span>+
+                  <span className="text-7xl text-darkbrown">$5M</span>+
                 </h2>
                 <p className="uppercase text-xs text-gray-600">
                   Revenue generated
@@ -111,7 +112,7 @@ export default function Mission() {
 
           {/* rating  */}
 
-          <div className="bg-darkbrown rounded-xl col-span-3 row-span-5 relative p-6 drop-shadow-xl drop-shadow-darkbrown/50 hover-lift">
+          <div className="bg-darkbrown rounded-xl col-span-3 row-span-5 relative p-6 drop-shadow-xl drop-shadow-darkbrown/50 hover-lift w-full">
             <Image
               src="/trend-up.svg"
               alt="trend background"
@@ -119,16 +120,19 @@ export default function Mission() {
               height={50}
               className="h-full w-full object-cover opacity-15 absolute -left-30 -bottom-10 "
             />
-            <div className="flex flex-col items-start justify-between max-w-sm h-full w-full z-10">
-              <p className="text-base text-snow/80 max-w-xs">
-                We delivered 50+ projects worldwide, helping service-based
-                companies secure more clients
+            <div className="flex flex-col items-start justify-between h-full w-full z-10">
+              <p className="text-base text-snow/80 max-w-sm ">
+                A large and growing community of producers that form the
+                backbone of our supply chain.
               </p>
               <div className="flex justify-between items-end w-full">
-                <h2 className="font-semiblod text-3xl text-snow/80">
-                  <span className="text-7xl text-white">4.9</span>
-                  <span className="text-5xl">/</span>5
-                </h2>
+                <div>
+                  <h2 className="font-semiblod text-xl text-snow/80">
+                    <span className="text-7xl text-white">10K</span>
+                    <span className="text-5xl">+</span>
+                  </h2>
+                  <p className="text-sm text-snow/80">Farmers in Network</p>
+                </div>
                 <p className=" inline-flex flex-col gap-1 items-start uppercase text-xs text-snow">
                   <span>⭐⭐⭐⭐⭐</span>
                   <span className="text-[10px]">
@@ -147,14 +151,16 @@ export default function Mission() {
           >
             <div className="flex flex-col items-start justify-between max-w-sm h-full w-full z-10">
               <div className="flex flex-col justify-center items-start w-full">
-                <h2 className="font-bold text-3xl text-snow/70">
-                  <span className="text-7xl text-snow">60K</span>+
+                <h2 className="font-bold text-4xl text-snow/70">
+                  <span className="text-6xl text-snow">150K</span>+
                 </h2>
-                <p className="uppercase text-xs text-creamy">METRIC TONNES</p>
+                <p className="uppercase text-sm text-creamy">
+                  Metric Tons Traded
+                </p>
               </div>
-              <p className="text-base text-creamy max-w-62">
-                Seedlings of wheat and cocoa beans successfully distributed to
-                40+ farmers
+              <p className="text-base text-creamy max-w-90">
+                Milestone volume handled in cocoa beans is a testament to market
+                trust and operational capacity.
               </p>
             </div>
           </div>

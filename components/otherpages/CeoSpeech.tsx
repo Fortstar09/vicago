@@ -16,9 +16,11 @@ const CeoSpeech = () => {
         className="size-20 object-cover rounded-full"
       />
       <p className="text-lg text-gray-700 font-semibold leading-7 mt-2">
-        Samson Jackson
+        Akinjide Agosile MBA, ACCA
       </p>
-      <p className="text-sm text-gray-600 text-center mt-1">CEO, Vicago</p>
+      <p className="text-sm text-gray-600 text-center mt-1">
+        CEO, Vicago North America
+      </p>
     </div>
   );
 };

@@ -9,7 +9,7 @@ const BlogSection = () => {
       <div className=" max-out relative z-10 h-full flex flex-col justify-center gap-20 items-start max-margin py-20">
         <div className="w-full text-black/80 gap-6 flex flex-col justify-center items-start max-w-3xl">
           <h2 className=" sustain-heading max-w-4xl text-5xl md:text-6xl leading-tight mb-0 font-normal">
-            People. Planet. Shared Prosperity.
+            Our Story
           </h2>
           <p className="sustain-text text-base text-gray-500">
             From the field to the frontlines of trade, these are the people,
@@ -18,16 +18,10 @@ const BlogSection = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <BlogCard
-            title="A Year in Cocoa"
-            subTitle="Reflections on the Cocoa Industry in 2024"
-          />
-          <BlogCard
-            title="Driving Positive Change"
-            subTitle="Highlights of Vicago Group Global Concepts' Rural Impact in 2024"
-          />
-          <BlogCard
-            title="Spotlighting Our Sustainability Champions"
-            subTitle=" "
+            title="VICAGO Group Expands into Canada"
+            subTitle="Commences Origination of Wheat and Soybeans"
+            src="/blog/blog-1.jpg"
+            link="/blog/352"
           />
         </div>
 

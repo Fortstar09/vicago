@@ -22,7 +22,7 @@ const CareersHero = () => {
           </a>
         </div>
 
-        <div style={{ height: "500px", position: "relative", width: "100%" }}>
+        {/* <div style={{ height: "500px", position: "relative", width: "100%" }}>
           <div className="absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-lightGreen to-transparent"></div>
           <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-lightGreen to-transparent"></div>
           <CircularGallery
@@ -31,7 +31,7 @@ const CareersHero = () => {
             scrollEase={0.02}
             scrollSpeed={3.4}
           />
-        </div>
+        </div> */}
       </div>
     </section>
   );

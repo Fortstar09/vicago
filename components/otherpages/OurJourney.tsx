@@ -24,7 +24,11 @@ const OurJourney: React.FC = () => {
       title: "Rooted in the Land",
       description:
         "Our journey began with earth, sweat, and vision. Vicago Group was founded as Vicago Farms when we acquired our first cocoa farm in Nigeria. We didn’t just trade cocoa; we grew it, learning every stage of cultivation, quality, and care from the ground up.",
-      achievements: [],
+      achievements: [
+        "Legacy Launch",
+        "Built expertise from soil to harvest",
+        "Rooted in practical agricultural knowledge",
+      ],
       images: [
         "https://images.unsplash.com/photo-1595855759920-86582396756a?w=800",
         "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800",
@@ -35,7 +39,11 @@ const OurJourney: React.FC = () => {
       title: "Stepping into Global Trade",
       description:
         "To bridge the gap between local harvests and global demand, Vicago Nigeria Limited was officially incorporated. This marked our evolution into a premier commodity trading house, bringing corporate structure to our agricultural expertise and exporting premium cocoa beans to the world’s most demanding confectionery leaders.",
-      achievements: [],
+      achievements: [
+        "Formalized Operations",
+        "Premium Cocoa Specialists",
+        "Quality-First Reputation",
+      ],
       images: [
         "https://images.unsplash.com/photo-1589927986089-35812388d1f4?w=800",
         "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800",
@@ -46,7 +54,11 @@ const OurJourney: React.FC = () => {
       title: "Growing Together, Growing Stronger",
       description:
         "Through trust and empowerment, our network expanded organically. By 2015, we were partnering with over 10,000 farmers across Nigeria, providing training, fair pricing, and sustainable farming support—proving that growth and community can go hand in hand.",
-      achievements: ["10,000+ partnered farmers"],
+      achievements: [
+        "10,000+ partnered farmers",
+        "Farmer Training Programs",
+        "Community-Led Growth",
+      ],
       images: [
         "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800",
       ],
@@ -56,7 +68,11 @@ const OurJourney: React.FC = () => {
       title: "A Milestone Year",
       description:
         "Our unwavering commitment to reliability built a legacy of meaningful volume. By 2019, Vicago had cumulatively traded over 150,000 metric tons of cocoa, cementing our role as a trusted and enduring link between African farms and international markets.",
-      achievements: ["150,000+ metric tons traded"],
+      achievements: [
+        "150,000+ metric tons traded",
+        "Decade-Spanning Reliability",
+        "Global Recognition",
+      ],
       images: [
         "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=800",
       ],
@@ -66,7 +82,11 @@ const OurJourney: React.FC = () => {
       title: "A New Continent, A Broader Vision",
       description:
         "Building on 45 years of agricultural mastery, Vicago expanded to North America with the incorporation of Vicago Canada Inc. This strategic move marked our evolution into a multi-commodity global powerhouse, integrating wheat, Canadian Western Red Spring (CWRS), Canadian Western Amber Durum (CWAD), and soybeans into our portfolio.",
-      achievements: ["Expansion to North America", "Multi-commodity trading"],
+      achievements: [
+        "Expansion to North America",
+        "Multi-commodity trading",
+        "Two-Continent Sourcing Network",
+      ],
       images: [
         "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800",
       ],
@@ -76,7 +96,11 @@ const OurJourney: React.FC = () => {
       title: "A Global Trading Group with Purpose",
       description:
         "From a single cocoa farm to a multinational commodity trading group, Vicago now operates across Africa and North America. We enable reliable, transparent, and efficient supply chains that connect premium agricultural origins to global manufacturers and processors.",
-      achievements: ["Operations across Africa & North America"],
+      achievements: [
+        "Operations across Africa & North America",
+        "End-to-End Supply Chain Partner",
+        "45+ Years of Agricultural Legacy",
+      ],
       images: [
         "https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=800",
       ],

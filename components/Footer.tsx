@@ -19,6 +19,40 @@ const OfficeData = [
   },
 ];
 
+const FooterLinks = [
+  {
+    name: "Home",
+    link: "/",
+  },
+  {
+    name: "About",
+    link: "/about",
+  },
+  {
+    name: "Product",
+    link: "/product",
+  },
+  {
+    name: "CSR",
+    link: "/csr",
+  },
+  {
+    name: "Blog",
+    link: "/blog",
+  },
+  {
+    name: "Careers",
+    link: "/careers",
+  },
+];
+
+const SocialData = [
+  {
+    name: "Instagram",
+    link: "https://www.instagram.com/vicagogroup?igsh=ZGV2OXdxMWc3cnExIG",
+  },
+];
+
 export default function Footer() {
   const footerRef = useRef<HTMLDivElement>(null);
 
@@ -99,16 +133,14 @@ export default function Footer() {
                 Reach out
               </p>
               <ul className="space-y-3 text-sm text-gray-700">
-                {["+234 701 254 4554", "info@vicagogroup.com"].map(
-                  (item, i) => (
-                    <li
-                      key={i}
-                      className="hover:text-green-600 cursor-pointer transition-colors"
-                    >
-                      {item}
-                    </li>
-                  ),
-                )}
+                {["info@vicagogroup.com"].map((item, i) => (
+                  <li
+                    key={i}
+                    className="hover:text-green-600 cursor-pointer transition-colors"
+                  >
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -118,16 +150,16 @@ export default function Footer() {
                 Quick Menu
               </p>
               <ul className="space-y-3 text-sm text-gray-700">
-                {["Home", "About", "Product", "CSR", "Blog", "Contact"].map(
-                  (item, i) => (
-                    <li
-                      key={i}
-                      className="hover:text-green-600 cursor-pointer transition-colors"
-                    >
-                      {item}
-                    </li>
-                  ),
-                )}
+                {FooterLinks.map((item, i) => (
+                  <li
+                    key={i}
+                    className="hover:text-green-600 cursor-pointer transition-colors"
+                  >
+                    <a href={item.link} rel="noopener noreferrer">
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -181,27 +213,27 @@ export default function Footer() {
             </div> */}
 
             {/* Social */}
-            {/* <div className="space-y-4">
+            <div className="space-y-4">
               <p className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
                 Connect with us
               </p>
               <ul className="space-y-3 text-sm text-gray-700">
-                {[
-                  "Instagram",
-                  "X (Twitter)",
-                  "TikTok",
-                  "LinkedIn",
-                  "Facebook",
-                ].map((item, i) => (
+                {SocialData.map((item, i) => (
                   <li
                     key={i}
                     className="hover:text-green-600 cursor-pointer transition-colors"
                   >
-                    {item}
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.name}
+                    </a>
                   </li>
                 ))}
               </ul>
-            </div> */}
+            </div>
           </div>
 
           {/* Bottom bar */}

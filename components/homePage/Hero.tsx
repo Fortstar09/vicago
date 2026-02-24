@@ -7,10 +7,10 @@ import Button from "../ui/Button";
 
 const slides = [
   {
-    badge: "Sustainable Farming Tech",
+    badge: "Sustainable Farming",
     title: (
       <>
-        Bringing Innovation to <br /> your Farming Journey.
+        Trusted Agricultural Commodity <br /> Trading Across Continents
       </>
     ),
     description:
@@ -19,21 +19,16 @@ const slides = [
   },
   {
     badge: "Smart Agriculture",
-    title: (
-      <>
-        Technology That Grows <br /> With You.
-      </>
-    ),
-    description:
-      "Modern tools and data-driven farming solutions for better yields.",
+    title: <>From Farm to Global Trade</>,
+    description: "Built on 45 Years of Experience",
     image: "/images/hero-bg-2.jpg",
   },
   {
     badge: "Reliability • Innovation • Growth",
     title: (
       <>
-        Premium Wheat from
-        <br /> Canada.
+        Built on decades of farmer <br />
+        partnerships and market trust.
       </>
     ),
     description: "North American grain excellence for global food production",

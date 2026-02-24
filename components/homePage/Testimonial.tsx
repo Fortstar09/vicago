@@ -50,7 +50,7 @@ export default function TestimonialCarousel() {
 
       gsap.to(card, {
         translateY: isActive ? -40 : 0,
-        opacity: isActive ? 1 : 0.4,
+        opacity: isActive ? 1 : 0.2,
         y: isActive ? -20 : 0,
         zIndex: isActive ? 10 : 5 - distance,
         duration: 0.6,
@@ -104,21 +104,13 @@ export default function TestimonialCarousel() {
                   cardsRef.current[index] = el;
                 }}
                 onClick={() => handleCardClick(index)}
-                className="relative w-64 h-70 cursor-pointer flex justify-center items-center"
+                className="relative w-fit h-fit cursor-pointer flex justify-center items-center"
               >
-                <div className="w-full h-full rounded-xl overflow-hidden shadow-2xl bg-white relative">
-                  <Image
-                    src="/hero-bg.jpg"
-                    alt={testimonial.name}
-                    fill
-                    className="object-cover w-auto h-auto"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 via-black/50 to-transparent p-6 pt-20">
-                    <h3 className="text-white font-semibold text-xl mb-1">
-                      {testimonial.name}
-                    </h3>
-                    <p className="text-gray-300 text-sm">{testimonial.role}</p>
-                  </div>
+                <div className="p-6 pt-20 text-center">
+                  <h3 className="text-vgreen font-semibold text-2xl mb-1">
+                    {testimonial.name}
+                  </h3>
+                  <p className="text-gray-400 text-sm">{testimonial.role}</p>
                 </div>
               </div>
             ))}

@@ -1,13 +1,14 @@
-import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Button from "./Button";
 
 export default function BlogCard({
   title,
   subTitle,
+  link,
   src = "/hero-bg.jpg",
 }: {
   title: string;
+  link: string;
   subTitle: string;
   src?: string;
 }) {
@@ -22,7 +23,7 @@ export default function BlogCard({
       />
       <h3 className="font-medium text-xl text-gray-900">{title}</h3>
       <p className="text-sm text-gray-500 mb-5">{subTitle}</p>
-      <Button title="View story" link="/" />
+      <Button title="View story" link={link} />
     </div>
   );
 }

@@ -23,13 +23,13 @@ const BlogHero = () => {
       </div>
       <div className="max-margin py-15 pr-20 flex flex-col justify-start items-end text-emerald-950/80">
         <p className="max-w-xl mb-10">
-          Founded in Nigeria in 2017, Vicago began with a clear vision to
-          advance global food security by sourcing and exporting
-          agro-commodities in a way that empower origin producers. What started
-          as a bold idea has grown into a global enterprise. Today, Vicago
-          operates across key international markets, with footprints in South
-          Africa, Cameroon, Dubai, the United Kingdom, and the Netherlands;
-          proudly rooted in Africa, and purposefully connected to the world.
+          With strategic operations in Nigeria and Canada, we serve
+          manufacturers and processors across West Africa, Europe, and North
+          America. Our mission is to facilitate global trade, enabling food
+          producers to source premium ingredients. <br /> <br />
+          We combine market knowledge, global logistics, and deep-rooted
+          partnerships to create efficient, reliable, and transparent supply
+          chains built on integrity.
         </p>
       </div>
     </section>

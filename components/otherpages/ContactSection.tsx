@@ -268,26 +268,6 @@ const ContactSection = () => {
                 )}
               </div>
 
-              {/* Email Address (alternative contact) */}
-              <div>
-                <h3 className=" text-sm font-medium text-gray-700 mb-2">
-                  Email Address
-                </h3>
-                <input
-                  type="email"
-                  name="address"
-                  value={formData.address}
-                  onChange={handleChange}
-                  placeholder="john@example.com"
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring focus:ring-vgbrown/70 ${
-                    errors.address ? "border-red-500" : "border-gray-300"
-                  }`}
-                />
-                {errors.address && (
-                  <p className="text-red-500 text-sm mt-1">{errors.address}</p>
-                )}
-              </div>
-
               {/* Company */}
               <div>
                 <h3 className=" text-sm font-medium text-gray-700 mb-2">

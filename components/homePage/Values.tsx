@@ -79,9 +79,8 @@ export default function Values() {
             </h2>
             <div className="max-w-lg mb-4">
               <p className="values-text text-base text-white/80 mb-6">
-                At Vicago, we believe technology should empower communities,
-                protect the environment, and create lasting impact for
-                generations to come.
+                We source, finance, and trade high-quality agricultural
+                commodities, connecting producers to global demand centers.
               </p>
               <Button
                 title="About us"

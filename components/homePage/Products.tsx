@@ -20,9 +20,9 @@ const DATA = [
     image: "/value-bg.jpg",
   },
   {
-    title: "Soya Beans",
+    title: "Soyabeans",
     subtitle:
-      "Premium soya beans from Nigerian farms, ideal for oil extraction and protein production.",
+      "Premium soybeans ideal for oil extraction and protein production.",
     image:
       "https://i0.wp.com/www.agriculturenigeria.com/wp-content/uploads/2013/05/Soya-Bean-1.jpg",
   },

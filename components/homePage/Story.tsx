@@ -76,24 +76,10 @@ export default function Story() {
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <BlogCard
-            title="A Year in Cocoa"
-            subTitle="Reflections on the Cocoa Industry in 2024"
-            src="/images/cocoa-tree-much.jpg"
-          />
-          <BlogCard
-            title="Driving Positive Change"
-            subTitle="Highlights of Vicago Group Global Concepts' Rural Impact in 2024"
-            src="/images/blog1.jpg"
-          />
-          <BlogCard
-            title="Spotlighting Our Sustainability Champions"
-            subTitle=" "
-            src="/images/strategy-one.jpg"
-          />
-          <BlogCard
-            title="Spotlighting Our Sustainability Champions"
-            subTitle=" "
-            src="/images/strategy-one.jpg"
+            title="VICAGO Group Expands into Canada"
+            subTitle="Commences Origination of Wheat and Soybeans"
+            src="/blog/blog-1.jpg"
+            link="/blog/352"
           />
         </div>
 
