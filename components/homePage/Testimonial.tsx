@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import Image from "next/image";
 
 // Mock testimonial data - based on the image
 const testimonials = [
@@ -106,7 +105,7 @@ export default function TestimonialCarousel() {
                 onClick={() => handleCardClick(index)}
                 className="relative w-fit h-fit cursor-pointer flex justify-center items-center"
               >
-                <div className="p-6 pt-20 text-center">
+                <div className="  pt-10 text-center">
                   <h3 className="text-vgreen font-semibold text-2xl mb-1">
                     {testimonial.name}
                   </h3>

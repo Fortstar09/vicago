@@ -58,7 +58,10 @@ export default function Values() {
 
   return (
     <>
-      <section ref={valueRef} className="relative h-dvh w-full overflow-hidden">
+      <section
+        ref={valueRef}
+        className="relative min-h-dvh w-full overflow-hidden"
+      >
         {/* Background image */}
         <Image
           src="/images/about-main.jpg"
@@ -72,8 +75,8 @@ export default function Values() {
         <div className="absolute inset-0 bg-linear-to-b from-black/40 to-black/30" />
 
         {/* Content */}
-        <div className="relative z-10 h-full flex flex-col justify-between items-start max-margin py-20">
-          <div className="w-full text-white space-y-4 flex flex-col md:flex-row items-end justify-between mt-10 ">
+        <div className="relative z-10 h-full flex flex-col justify-between gap-10 items-start max-margin py-20">
+          <div className="w-full text-white space-y-4 flex flex-col md:flex-row items-start md:items-end justify-between mt-10 ">
             <h2 className="values-text max-w-md text-5xl md:text-7xl font-light leading-tight">
               Our Values - RIIT
             </h2>

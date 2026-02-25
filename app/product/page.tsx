@@ -8,8 +8,9 @@ const Products = () => {
   return (
     <>
       <DupHero
-        title=" Securing global food futures"
-        subtitle="We source and export ethically grown cocoa, wheat, and more, partnering with global brands to build a fairer agro-commodity chain."
+        title="From Source to Market, Done Right"
+        subtitle="We manage agricultural commodities end-to-end, ensuring quality, consistency, and
+accountability from farm gate to final buyer."
       />
       <AllProducts />
       <WhyPartner />

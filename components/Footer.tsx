@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Button from "./ui/Button";
+import { LinkedinIcon, LucideInstagram } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,7 +50,14 @@ const FooterLinks = [
 const SocialData = [
   {
     name: "Instagram",
+    icons: LucideInstagram,
+
     link: "https://www.instagram.com/vicagogroup?igsh=ZGV2OXdxMWc3cnExIG",
+  },
+  {
+    name: "LinkedIn",
+    icons: LinkedinIcon,
+    link: "https://www.linkedin.com/company/vicago-group/about/?viewAsMember=true",
   },
 ];
 
@@ -227,7 +235,11 @@ export default function Footer() {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="flex justify-start items-start"
                     >
+                      <span className="mr-2">
+                        <item.icons className="size-4" />
+                      </span>{" "}
                       {item.name}
                     </a>
                   </li>

@@ -9,8 +9,9 @@ const page = () => {
   return (
     <main>
       <Hero
-        title="Stewards of a global value chain"
-        subtitle=" Our environmental commitments are built to protect this entire ecosystem, locally and globally."
+        title="Advancing Sustainable Trade, Practically"
+        subtitle="We focus on real, measurable actions: financing farmers, improving yields, and simplifying
+access to markets."
       />
       {/* <ReusableStats balls={stats} className="relative" /> */}
       <SustainableSection />

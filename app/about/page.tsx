@@ -13,8 +13,9 @@ const Aboutpage = () => {
     <>
       <main className="relative w-full overflow-y-hidden overflow-x-hidden bg-white">
         <DupHero
-          title="Bridging Global Markets"
-          subtitle=" Cross-border agricultural commodity trading company connecting global supply and demand for premium raw materials across continents."
+          title="Quality You Can Trace to the Source"
+          subtitle="Whether it's the amber hue of durum wheat or the rich fermentation of Nigerian cocoa, we
+know exactly where our products come from, and we ensure our buyers do too."
         />
         <About />
         <Mission />

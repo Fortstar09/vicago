@@ -1,8 +1,6 @@
 "use client";
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ArrowUpRight, Globe, Leaf } from "lucide-react";
 import EachProduct from "./EachProduct";
 import { products } from "@/data/product-data";
 
@@ -50,12 +48,12 @@ export default function AllProducts() {
       <div className="relative z-10 h-full flex flex-col items-center justify-center gap-20 max-margin py-30">
         <div className="w-full text-vgbrown gap-6 flex flex-col justify-center items-center text-center max-w-3xl">
           <h2 className=" product-heading max-w-4xl text-5xl md:text-6xl mb-0 font-normal">
-            The blocks of sustainable global food security
+            Empowering the Value Chain
           </h2>
           <p className="product-text text-base text-gray-500">
-            Every product we export carries with it the care, standards, and
-            responsibility we put behind it, not just to meet expectations, but
-            to uphold everything our name stands for.
+            We simplify global trade by investing in our network of 10,000+
+            farmers, ensuring integrity and shared growth from the soil to the
+            end consumer.
           </p>
         </div>
         <div className="h-full w-full flex justify-center items-center ">
