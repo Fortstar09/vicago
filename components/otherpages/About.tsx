@@ -16,16 +16,17 @@ const About: React.FC = () => {
     const container = containerRef.current;
     if (!container) return;
 
+    const isMobile = window.innerWidth < 768;
     const words = Array.from(container.querySelectorAll<HTMLElement>(".word"));
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container,
         start: "top 25%",
-        end: "+=600",
+        end: `+=${isMobile ? window.innerHeight * 0.8 : window.innerHeight * 1.2}`,
         scrub: 0.6,
-        pin: true,
-        anticipatePin: 1,
+        pin: !isMobile, // disable pin on mobile
+        anticipatePin: !isMobile ? 1 : 0,
       },
     });
 
@@ -44,12 +45,10 @@ const About: React.FC = () => {
 
   const tokens = TEXT.split(" ");
 
-  console.log(tokens.length / 3);
-
   return (
-    <section className="bg-vgreen text-snow  overflow-hidden z-10">
-      <div ref={containerRef} className="max-w-7xl mx-auto px-4 pb-30 mb-20">
-        <p className="text-lg font-medium leading-snug text-center mx-auto max-w-6xl justify-center items-center">
+    <section className="bg-vgreen text-snow overflow-hidden z-10">
+      <div ref={containerRef} className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:pb-30 md:mb-20">
+        <p className="text-sm sm:text-base md:text-lg font-medium leading-relaxed text-left mx-auto max-w-6xl">
           {tokens.slice(0, 37).map((word, i) => (
             <span key={i} className="word">
               {word}

@@ -24,16 +24,16 @@ const SocialSectinData = [
 const SocialSection = () => {
   return (
     <section className="relative min-h-dvh w-full overflow-hidden bg-white text-gray-900">
-      <div className=" max-out relative z-10 h-full flex flex-col justify-center gap-20 items-start max-margin py-20">
-        <div className="w-full  space-y-4 flex justify-between items-end">
+      <div className="max-out relative z-10 h-full flex flex-col justify-center gap-12 md:gap-20 items-start max-margin py-16 md:py-20">
+        <div className="w-full space-y-4 flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4">
           <h2 className="max-w-md text-vgreen text-3xl md:text-6xl font-light mb-0">
             Social responsibility
           </h2>
-          <p className="sustain-text text-lg text-gray-500 max-w-sm">
+          <p className="sustain-text text-base md:text-lg text-gray-500 max-w-sm">
             Our Approach to Sustainable and Responsible Trade
           </p>
         </div>
-        <div className="h-full w-full ">
+        <div className="h-full w-full">
           {SocialSectinData.map((item, i) => (
             <SocialEach key={i} item={item} />
           ))}
@@ -48,14 +48,14 @@ export default SocialSection;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const SocialEach = ({ item }: any) => {
   return (
-    <div className="flex justify-between items-center py-6 border-t-2 border-gray-200">
-      <div className="flex flex-col items-start gap-4">
-        <h3 className="text-3xl font-medium text-vgbrown ">{item.title}</h3>
+    <div className="flex flex-col md:flex-row justify-between items-start md:items-center py-6 border-t-2 border-gray-200 gap-6">
+      <div className="flex flex-col items-start gap-4 flex-1">
+        <h3 className="text-2xl md:text-3xl font-medium text-vgbrown">{item.title}</h3>
         <p className="text-sm font-light text-gray-500 leading-relaxed max-w-xl">
           {item.description}
         </p>
       </div>
-      <div className="relative overflow-hidden h-70 aspect-video rounded-xl hover-lift ">
+      <div className="relative overflow-hidden w-full md:w-auto h-56 md:h-70 md:aspect-video rounded-xl hover-lift shrink-0">
         <Image
           src={item.src}
           alt="image"

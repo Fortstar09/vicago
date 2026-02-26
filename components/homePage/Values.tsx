@@ -12,45 +12,46 @@ export default function Values() {
   const valueRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: valueRef.current,
-          start: "top top", // 👈 START animation when section enters
-
-          pin: true,
-          scrub: false,
-          // toggleActions: "play reverse play reverse",
-          // markers: {
-          //   startColor: "green",
-          //   endColor: "red",
-          //   fontSize: "12px",
-          // },
-        },
-      });
-
-      // 1️⃣ Text reveal
-      tl.from(".values-text", {
+      // Text + cards animate in on scroll (no pin on mobile)
+      gsap.from(".values-text", {
         opacity: 0,
         y: 40,
-        duration: 1.1,
+        duration: 1,
         ease: "power3.out",
-        // stagger: 0.2,
+        scrollTrigger: {
+          trigger: valueRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
       });
 
-      // 2️⃣ Cards slide up
-      tl.from(
-        ".blur-card",
-        {
-          opacity: 0,
-          y: 60,
-          scale: 0.96,
-          duration: 0.7,
-          ease: "power3.out",
-          stagger: 0.2,
+      gsap.from(".blur-card", {
+        opacity: 0,
+        y: 60,
+        scale: 0.96,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: valueRef.current,
+          start: "top 70%",
+          toggleActions: "play none none none",
         },
-        "-=0.4",
-      );
+      });
+
+      // Only pin on desktop, with scrub so scroll progress drives the pin
+      if (!isMobile) {
+        ScrollTrigger.create({
+          trigger: valueRef.current,
+          start: "top top",
+          end: `+=${window.innerHeight * 0.5}`,
+          pin: true,
+          scrub: 1,
+        });
+      }
     }, valueRef);
 
     return () => ctx.revert();
@@ -75,13 +76,13 @@ export default function Values() {
         <div className="absolute inset-0 bg-linear-to-b from-black/40 to-black/30" />
 
         {/* Content */}
-        <div className="relative z-10 h-full flex flex-col justify-between gap-10 items-start max-margin py-20">
-          <div className="w-full text-white space-y-4 flex flex-col md:flex-row items-start md:items-end justify-between mt-10 ">
-            <h2 className="values-text max-w-md text-5xl md:text-7xl font-light leading-tight">
+        <div className="relative z-10 h-full flex flex-col justify-between gap-10 items-start max-margin py-16 md:py-20">
+          <div className="w-full text-white space-y-4 flex flex-col md:flex-row items-start md:items-end justify-between mt-6 md:mt-10">
+            <h2 className="values-text max-w-md text-3xl sm:text-5xl md:text-7xl font-light leading-tight">
               Our Values - RIIT
             </h2>
             <div className="max-w-lg mb-4">
-              <p className="values-text text-base text-white/80 mb-6">
+              <p className="values-text text-sm sm:text-base text-white/80 mb-6">
                 We source, finance, and trade high-quality agricultural
                 commodities, connecting producers to global demand centers.
               </p>
@@ -92,7 +93,7 @@ export default function Values() {
               />
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full items-center ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full items-center">
             <BlurCard
               id="1"
               title="Reliability"
@@ -101,23 +102,17 @@ export default function Values() {
             <BlurCard
               id="2"
               title="Impact"
-              subTitle="WWe believe that trade has the power to create meaningful, measurable change. At
-Vicago, every shipment we deliver and every relationship we build contributes to the
-broader ecosystem, from supporting local farmers and producers to strengthening food
-systems in underserved markets. "
+              subTitle="We believe that trade has the power to create meaningful, measurable change. At Vicago, every shipment we deliver and every relationship we build contributes to the broader ecosystem, from supporting local farmers and producers to strengthening food systems in underserved markets."
             />
             <BlurCard
               id="3"
               title="Integrity"
-              subTitle=" We deliver on our word. Every transaction, every contract, and every shipment
-reflects our commitment to ethical and transparent business practices."
+              subTitle="We deliver on our word. Every transaction, every contract, and every shipment reflects our commitment to ethical and transparent business practices."
             />
             <BlurCard
               id="4"
               title="Transformation"
-              subTitle="Transformation is the heart of our mission. We don’t just move
-commodities, we empower manufacturers, processors, and food businesses to scale,
-innovate, and elevate the quality of their products."
+              subTitle="Transformation is the heart of our mission. We don't just move commodities, we empower manufacturers, processors, and food businesses to scale, innovate, and elevate the quality of their products."
             />
           </div>
         </div>

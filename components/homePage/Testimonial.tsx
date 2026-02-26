@@ -81,7 +81,7 @@ export default function TestimonialCarousel() {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen bg-snow flex items-center justify-center p-8"
+      className="min-h-screen bg-snow flex items-center justify-center p-4 md:p-8"
     >
       <div className="max-w-7xl w-full">
         {/* Testimonial Quote */}
@@ -95,7 +95,7 @@ export default function TestimonialCarousel() {
 
         {/* Carousel Container */}
         <div className="relative mb-12">
-          <div className="flex items-center justify-center gap-8">
+          <div className="flex items-center justify-center gap-3 sm:gap-8">
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.id}

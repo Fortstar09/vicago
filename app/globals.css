@@ -30,6 +30,12 @@
   }
 }
 
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -70,7 +76,7 @@ button {
     @apply xl:max-w-[1550px] px-6 xl:px-10  xl:mx-auto w-full;
   }
   .word {
-    @apply text-2xl font-bold inline-flex justify-center items-center p-1;
+    @apply text-base sm:text-lg md:text-2xl font-bold inline-flex justify-center items-center p-0.5 md:p-1;
   }
 }
 

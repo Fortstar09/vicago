@@ -8,12 +8,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const cards = [
-  // {
-  //   title: "Vision",
-  //   text: "To shape the future through thoughtful innovation. We believe in pushing boundaries and exploring new possibilities to create meaningful solutions that drive progress. Our vision is rooted in the belief that technology and design can work together to solve complex problems and make a lasting impact on society.",
-  //   bg: "bg-white text-neutral-900",
-  //   image: "/hero-bg.jpg",
-  // },
   {
     title: "Our Mission",
     text: "To connect producers and processors through world-class commodity sourcing, reliable delivery, and uncompromising standards, enabling transformative outcomes in food production, trade, and regional development.",
@@ -32,42 +26,58 @@ export default function VisionMissionPurpose() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+
     const ctx = gsap.context(() => {
-      const cards = gsap.utils.toArray<HTMLElement>(".stack-card");
+      const cardEls = gsap.utils.toArray<HTMLElement>(".stack-card");
 
-      const enterFrom = 500; // start fully hidden below
-
-      // Initial state — cards start from below, hidden
-      cards.forEach((card, index) => {
-        gsap.set(card, {
-          y: enterFrom,
-          opacity: index === 0 ? 1 : 0,
+      if (isMobile) {
+        // On mobile: simple fade-in on scroll, no pinning
+        cardEls.forEach((card) => {
+          gsap.from(card, {
+            opacity: 0,
+            y: 40,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 80%",
+            },
+          });
         });
-      });
+      } else {
+        // Desktop: stacking card animation with pin
+        const enterFrom = 500;
+        cardEls.forEach((card, index) => {
+          gsap.set(card, {
+            y: enterFrom,
+            opacity: index === 0 ? 1 : 0,
+          });
+        });
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: `+=${cards.length * 1000}`,
-          scrub: true,
-          pin: true,
-          // markers: true,
-        },
-      });
-
-      cards.forEach((card, index) => {
-        tl.to(
-          card,
-          {
-            y: -index,
-            opacity: 1,
-            ease: "power2.inOut",
-            duration: 1.5,
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: `+=${cardEls.length * 1000}`,
+            scrub: true,
+            pin: true,
           },
-          index === 0 ? 0 : "-=0.5",
-        );
-      });
+        });
+
+        cardEls.forEach((card, index) => {
+          tl.to(
+            card,
+            {
+              y: -index,
+              opacity: 1,
+              ease: "power2.inOut",
+              duration: 1.5,
+            },
+            index === 0 ? 0 : "-=0.5",
+          );
+        });
+      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -76,48 +86,51 @@ export default function VisionMissionPurpose() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen bg-[#F1EAE4] text-white z-10 "
+      className="relative min-h-screen md:h-screen bg-[#F1EAE4] text-white z-10"
     >
-      <div className="mx-auto flex justify-center items-center h-full max-w-6xl px-6">
-        <div className="relative h-80 w-full mt-5">
-          <div className="p-5 absolute top-10 w-full h-full rounded-3xl shadow-2xl bg-vgreen overflow-hidden flex justify-between items-center gap-15">
-            <div className="max-w-md flex flex-col justify-center ml-3">
-              <h3 className="mb-6 text-4xl font-bold text-snow">Our Vision</h3>
-              <p className="text-lg leading-relaxed text-gray-50">
+      <div className="mx-auto flex flex-col md:flex-row justify-center items-center h-full max-w-6xl px-4 sm:px-6 py-16 md:py-0">
+        <div className="relative w-full md:h-80 md:mt-5 flex flex-col gap-6 md:block">
+          {/* Vision Card — always visible */}
+          <div className="md:p-5 p-5 md:absolute md:top-10 w-full md:h-full rounded-3xl shadow-2xl bg-vgreen overflow-hidden flex flex-col md:flex-row justify-between items-center gap-6 md:gap-15">
+            <div className="max-w-md flex flex-col justify-center md:ml-3">
+              <h3 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl font-bold text-snow">Our Vision</h3>
+              <p className="text-base md:text-lg leading-relaxed text-gray-50">
                 To become a globally recognised trade facilitator and trusted
                 supplier of premium agricultural commodities, empowering
                 manufacturers to produce high-quality food products that nourish
                 communities worldwide.
               </p>
             </div>
-            <div className="h-full">
+            <div className="w-full md:w-auto md:h-full shrink-0">
               <Image
                 src="/images/cocoa-tree.jpg"
                 width={500}
                 height={500}
-                alt={`cocoa-tree-image`}
-                className="object-cover aspect-video rounded-2xl h-full"
+                alt="cocoa-tree-image"
+                className="object-cover rounded-2xl h-48 md:h-full w-full md:aspect-video"
               />
             </div>
           </div>
+
+          {/* Stacking Cards */}
           {cards.map((card, index) => (
             <div
               key={index}
-              className={`stack-card p-5 absolute top-10 w-full h-full rounded-3xl ${card.bg} overflow-hidden flex justify-between items-center gap-15`}
+              className={`stack-card md:p-5 p-5 md:absolute md:top-10 w-full md:h-full rounded-3xl ${card.bg} overflow-hidden flex flex-col md:flex-row justify-between items-center gap-6 md:gap-15`}
             >
-              <div className="max-w-md flex flex-col justify-center ml-3">
-                <h3 className="mb-6 text-4xl font-bold">{card.title}</h3>
-                <p className="text-lg leading-relaxed opacity-70 ">
+              <div className="max-w-md flex flex-col justify-center md:ml-3">
+                <h3 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl font-bold">{card.title}</h3>
+                <p className="text-base md:text-lg leading-relaxed opacity-70">
                   {card.text}
                 </p>
               </div>
-              <div>
+              <div className="w-full md:w-auto md:h-full shrink-0">
                 <Image
                   src={card.image}
                   width={500}
                   height={500}
                   alt={`${card.title}-image`}
-                  className="object-cover aspect-video rounded-2xl h-full"
+                  className="object-cover rounded-2xl h-48 md:h-full w-full md:aspect-video"
                 />
               </div>
             </div>

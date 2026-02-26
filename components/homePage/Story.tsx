@@ -69,7 +69,7 @@ export default function Story() {
     <section ref={sectionRef} className="py-20 bg-lightGreen ">
       <div className="mx-auto rounded-3xl max-margin ">
         {/* Header */}
-        <h2 className="tc-header text-2xl md:text-6xl font-normal text-gray-900 max-w-lg mb-18">
+        <h2 className="tc-header text-2xl md:text-6xl font-normal text-gray-900 max-w-lg mb-10 md:mb-18">
           Our Story
         </h2>
 

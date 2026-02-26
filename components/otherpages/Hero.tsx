@@ -67,7 +67,7 @@ export default function Hero({
                 {subtitle}
               </p>
             </div>
-            <button className="inline-flex justify-center items-center gap-2 animate-bounce text-sm text-gray-400">
+            <button className="inline-flex justify-center items-center gap-2 animate-bounce text-sm text-gray-400 mt-6 md:mt-0">
               Explore more <ArrowDown size={16} />
             </button>
           </div>

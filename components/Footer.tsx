@@ -106,7 +106,7 @@ export default function Footer() {
         {/* Top text */}
         <div className="flex flex-col lg:flex-row w-full justify-center items-start lg:items-end lg:justify-between gap-6 text-white footer-animate">
           <div className="max-w-xl space-y-6">
-            <h2 className="mt-5 hero-text text-5xl md:text-5xl font-light leading-tight">
+            <h2 className="mt-5 hero-text text-3xl md:text-5xl font-light leading-tight">
               Let&apos;s grow something <br />
               impactful together
             </h2>

@@ -112,7 +112,7 @@ const Partners = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-lightGreen pt-30 pb-10">
+    <section ref={sectionRef} className="bg-lightGreen pt-16 md:pt-30 pb-10">
       <div className="mx-auto max-w-7xl px-6 md:px-2">
         <div className="flex flex-col items-center gap-14 text-center">
           <div className="flex flex-col items-center gap-10 text-center">

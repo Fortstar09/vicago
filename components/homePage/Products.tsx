@@ -23,8 +23,7 @@ const DATA = [
     title: "Soyabeans",
     subtitle:
       "Premium soybeans ideal for oil extraction and protein production.",
-    image:
-      "https://i0.wp.com/www.agriculturenigeria.com/wp-content/uploads/2013/05/Soya-Bean-1.jpg",
+    image: "/images/about-wheat.jpg",
   },
 ];
 
@@ -44,6 +43,8 @@ export default function StackingCardsSection() {
         }
       });
 
+      const isMobile = window.innerWidth < 768;
+
       // 🔹 Timeline for scroll animation
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -51,9 +52,7 @@ export default function StackingCardsSection() {
           start: "top top",
           end: `+=${DATA.length * window.innerHeight}`,
           scrub: true,
-          pin: true,
-          // markers: true,
-          // id: "product",
+          pin: !isMobile,
         },
       });
 
