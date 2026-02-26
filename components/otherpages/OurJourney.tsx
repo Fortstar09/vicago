@@ -190,11 +190,11 @@ const OurJourney: React.FC = () => {
         className="relative max-margin text-creamy overflow-hidden"
       >
         {/* Header Section */}
-        <div className="relative z-20 pt-20 pb-12 px-6 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
+        <div className="relative z-20 pt-24 md:pt-20 pb-12 px-6 text-left">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-6">
             Experience our journey
           </h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto text-white/90">
+          <p className="text-base md:text-xl max-w-3xl text-white/90">
             Since 2017, sustainability has been at the heart of everything we
             do; for people, for the planet, and for a shared prosperity that
             leaves no one behind.

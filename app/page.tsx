@@ -11,7 +11,7 @@ import Values from "@/components/homePage/Values";
 export default function App() {
   return (
     <main className="relative w-full overflow-x-hidden overflow-y-hidden ">
-      {/* <Navbar /> */}
+
       <Hero />
       <Partners />
       <About />

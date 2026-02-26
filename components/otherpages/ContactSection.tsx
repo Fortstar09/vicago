@@ -288,26 +288,104 @@ const ContactSection = () => {
                 )}
               </div>
 
-              {/* Subject Dropdown */}
+              {/* Subject Dropdown — Custom styled */}
               <div>
                 <h3 className=" text-sm font-medium text-gray-700 mb-2">
                   Subject
                 </h3>
-                <select
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring focus:ring-vgbrown/70 ${
-                    errors.subject ? "border-red-500" : "border-gray-300"
-                  }`}
-                >
-                  <option value="">Select a subject</option>
-                  <option value="general">General Inquiry</option>
-                  <option value="products">Products Information</option>
-                  <option value="partnership">Partnership Opportunity</option>
-                  <option value="pricing">Pricing Request</option>
-                  <option value="support">Support</option>
-                </select>
+                <div style={{ position: "relative" }}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const el = document.getElementById("subject-dropdown");
+                      if (el) el.style.display = el.style.display === "block" ? "none" : "block";
+                    }}
+                    style={{
+                      width: "100%",
+                      padding: "12px 16px",
+                      border: errors.subject ? "1px solid #ef4444" : "1px solid #d1d5db",
+                      borderRadius: 8,
+                      backgroundColor: "#fff",
+                      textAlign: "left",
+                      fontSize: 14,
+                      color: formData.subject ? "#1f2937" : "#9ca3af",
+                      cursor: "pointer",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
+                    {formData.subject
+                      ? ["General Inquiry", "Products Information", "Partnership Opportunity", "Pricing Request", "Support"][
+                          ["general", "products", "partnership", "pricing", "support"].indexOf(formData.subject)
+                        ] || "Select a subject"
+                      : "Select a subject"}
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </button>
+                  <div
+                    id="subject-dropdown"
+                    style={{
+                      display: "none",
+                      position: "absolute",
+                      top: "100%",
+                      left: 0,
+                      right: 0,
+                      zIndex: 20,
+                      backgroundColor: "#fff",
+                      border: "1px solid #d1d5db",
+                      borderRadius: 8,
+                      marginTop: 4,
+                      boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                      overflow: "hidden",
+                    }}
+                  >
+                    {[
+                      { value: "general", label: "General Inquiry" },
+                      { value: "products", label: "Products Information" },
+                      { value: "partnership", label: "Partnership Opportunity" },
+                      { value: "pricing", label: "Pricing Request" },
+                      { value: "support", label: "Support" },
+                    ].map((opt) => (
+                      <button
+                        key={opt.value}
+                        type="button"
+                        onClick={() => {
+                          setFormData((prev) => ({ ...prev, subject: opt.value }));
+                          if (errors.subject) {
+                            setErrors((prev) => ({ ...prev, subject: "" }));
+                          }
+                          const el = document.getElementById("subject-dropdown");
+                          if (el) el.style.display = "none";
+                        }}
+                        style={{
+                          display: "block",
+                          width: "100%",
+                          padding: "12px 16px",
+                          textAlign: "left",
+                          fontSize: 14,
+                          border: "none",
+                          cursor: "pointer",
+                          backgroundColor: formData.subject === opt.value ? "#815331" : "#fff",
+                          color: formData.subject === opt.value ? "#fff" : "#374151",
+                        }}
+                        onMouseEnter={(e) => {
+                          if (formData.subject !== opt.value) {
+                            e.currentTarget.style.backgroundColor = "rgba(129, 83, 49, 0.1)";
+                          }
+                        }}
+                        onMouseLeave={(e) => {
+                          if (formData.subject !== opt.value) {
+                            e.currentTarget.style.backgroundColor = "#fff";
+                          }
+                        }}
+                      >
+                        {opt.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
                 {errors.subject && (
                   <p className="text-red-500 text-sm mt-1">{errors.subject}</p>
                 )}

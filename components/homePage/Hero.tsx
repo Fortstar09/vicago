@@ -10,7 +10,11 @@ const slides = [
     badge: "Sustainable Farming",
     title: (
       <>
-        Trusted Agricultural Commodity <br /> Trading Across Continents
+        Trusted Agricultural Commodity{" "}
+        <span className="hidden sm:inline">
+          <br />
+        </span>
+        Trading Across Continents
       </>
     ),
     description:
@@ -27,7 +31,10 @@ const slides = [
     badge: "Reliability • Innovation • Growth",
     title: (
       <>
-        Built on decades of farmer <br />
+        Built on decades of farmer{" "}
+        <span className="hidden sm:inline">
+          <br />
+        </span>
         partnerships and market trust.
       </>
     ),
@@ -94,25 +101,25 @@ export default function Hero() {
               alt="Hero background"
               fill
               className="object-cover w-auto h-auto"
-              priority={i === 2}
+              priority={i === 0}
             />
             <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/50 to-black/70" />
 
-            {/* Hero Content — UNCHANGED */}
+            {/* Hero Content */}
             <div className="max-margin relative z-10 h-full flex items-end w-full">
-              <div className="text-snow flex flex-col md:flex-row justify-between items-start md:items-end w-full mb-20">
-                <div className="flex flex-col items-start space-y-6">
+              <div className="text-snow flex flex-col md:flex-row justify-between items-start md:items-end w-full mb-10 md:mb-20 gap-6 md:gap-0">
+                <div className="flex flex-col items-start space-y-4 md:space-y-6">
                   <div>
-                    <span className="inline-block rounded-full mb-5 backdrop-blur-sm px-4 py-1.5 text-xs border border-white/20">
+                    <span className="inline-block rounded-full mb-4 md:mb-5 backdrop-blur-sm px-4 py-1.5 text-xs border border-white/20">
                       {slide.badge}
                     </span>
 
-                    <h1 className="text-4xl md:text-5xl lg:text-[66px] lg:leading-20 font-medium font-grotesque leading-tight">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[66px] lg:leading-20 font-medium font-grotesque leading-tight">
                       {slide.title}
                     </h1>
                   </div>
 
-                  <p className="text-base text-lightgray/80 max-w-150 leading-7">
+                  <p className="text-sm sm:text-base text-lightgray/80 max-w-sm md:max-w-150 leading-7">
                     {slide.description}
                   </p>
                 </div>
