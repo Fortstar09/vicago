@@ -6,7 +6,7 @@ const BlogHero = () => {
     <section className="min-h-fit bg-[#f5faf7]">
       <div className="h-110 relative overflow-hidden w-full flex justify-start items-end">
         <Image
-          src="/hero-bg.jpg"
+          src="/images/blog-hero.jpg"
           fill
           alt="bg"
           className="object-cover  w-auto h-auto"

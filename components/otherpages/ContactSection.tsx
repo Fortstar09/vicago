@@ -102,7 +102,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="w-full bg-white py-16 md:py-40">
+    <section className="w-full bg-white py-30 md:py-40">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
         <div className="text-center mb-16 md:mb-20">
@@ -298,12 +298,16 @@ const ContactSection = () => {
                     type="button"
                     onClick={() => {
                       const el = document.getElementById("subject-dropdown");
-                      if (el) el.style.display = el.style.display === "block" ? "none" : "block";
+                      if (el)
+                        el.style.display =
+                          el.style.display === "block" ? "none" : "block";
                     }}
                     style={{
                       width: "100%",
                       padding: "12px 16px",
-                      border: errors.subject ? "1px solid #ef4444" : "1px solid #d1d5db",
+                      border: errors.subject
+                        ? "1px solid #ef4444"
+                        : "1px solid #d1d5db",
                       borderRadius: 8,
                       backgroundColor: "#fff",
                       textAlign: "left",
@@ -316,11 +320,30 @@ const ContactSection = () => {
                     }}
                   >
                     {formData.subject
-                      ? ["General Inquiry", "Products Information", "Partnership Opportunity", "Pricing Request", "Support"][
-                          ["general", "products", "partnership", "pricing", "support"].indexOf(formData.subject)
+                      ? [
+                          "General Inquiry",
+                          "Products Information",
+                          "Partnership Opportunity",
+                          "Pricing Request",
+                          "Support",
+                        ][
+                          [
+                            "general",
+                            "products",
+                            "partnership",
+                            "pricing",
+                            "support",
+                          ].indexOf(formData.subject)
                         ] || "Select a subject"
                       : "Select a subject"}
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
                       <path d="M6 9l6 6 6-6" />
                     </svg>
                   </button>
@@ -344,7 +367,10 @@ const ContactSection = () => {
                     {[
                       { value: "general", label: "General Inquiry" },
                       { value: "products", label: "Products Information" },
-                      { value: "partnership", label: "Partnership Opportunity" },
+                      {
+                        value: "partnership",
+                        label: "Partnership Opportunity",
+                      },
                       { value: "pricing", label: "Pricing Request" },
                       { value: "support", label: "Support" },
                     ].map((opt) => (
@@ -352,11 +378,15 @@ const ContactSection = () => {
                         key={opt.value}
                         type="button"
                         onClick={() => {
-                          setFormData((prev) => ({ ...prev, subject: opt.value }));
+                          setFormData((prev) => ({
+                            ...prev,
+                            subject: opt.value,
+                          }));
                           if (errors.subject) {
                             setErrors((prev) => ({ ...prev, subject: "" }));
                           }
-                          const el = document.getElementById("subject-dropdown");
+                          const el =
+                            document.getElementById("subject-dropdown");
                           if (el) el.style.display = "none";
                         }}
                         style={{
@@ -367,12 +397,15 @@ const ContactSection = () => {
                           fontSize: 14,
                           border: "none",
                           cursor: "pointer",
-                          backgroundColor: formData.subject === opt.value ? "#815331" : "#fff",
-                          color: formData.subject === opt.value ? "#fff" : "#374151",
+                          backgroundColor:
+                            formData.subject === opt.value ? "#815331" : "#fff",
+                          color:
+                            formData.subject === opt.value ? "#fff" : "#374151",
                         }}
                         onMouseEnter={(e) => {
                           if (formData.subject !== opt.value) {
-                            e.currentTarget.style.backgroundColor = "rgba(129, 83, 49, 0.1)";
+                            e.currentTarget.style.backgroundColor =
+                              "rgba(129, 83, 49, 0.1)";
                           }
                         }}
                         onMouseLeave={(e) => {

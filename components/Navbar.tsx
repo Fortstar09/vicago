@@ -17,6 +17,7 @@ const Navbar = () => {
   const navRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const isHome = pathname === "/" || pathname === "/blog";
+  // const isActive = pathname;
 
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);

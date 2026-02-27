@@ -18,7 +18,7 @@ const cards = [
     title: "Our Values",
     text: "To create long-term impact with clarity and intention. We understand that success isn't just about metrics—it's about creating positive change that resonates beyond numbers.",
     bg: "bg-vgbrown text-creamy",
-    image: "/hero-bg.jpg",
+    image: "/careers/value.jpg",
   },
 ];
 
@@ -93,7 +93,9 @@ export default function VisionMissionPurpose() {
           {/* Vision Card — always visible */}
           <div className="md:p-5 p-5 md:absolute md:top-10 w-full md:h-full rounded-3xl shadow-2xl bg-vgreen overflow-hidden flex flex-col md:flex-row justify-between items-center gap-6 md:gap-15">
             <div className="max-w-md flex flex-col justify-center md:ml-3">
-              <h3 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl font-bold text-snow">Our Vision</h3>
+              <h3 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl font-bold text-snow">
+                Our Vision
+              </h3>
               <p className="text-base md:text-lg leading-relaxed text-gray-50">
                 To become a globally recognised trade facilitator and trusted
                 supplier of premium agricultural commodities, empowering
@@ -119,7 +121,9 @@ export default function VisionMissionPurpose() {
               className={`stack-card md:p-5 p-5 md:absolute md:top-10 w-full md:h-full rounded-3xl ${card.bg} overflow-hidden flex flex-col md:flex-row justify-between items-center gap-6 md:gap-15`}
             >
               <div className="max-w-md flex flex-col justify-center md:ml-3">
-                <h3 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl font-bold">{card.title}</h3>
+                <h3 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl font-bold">
+                  {card.title}
+                </h3>
                 <p className="text-base md:text-lg leading-relaxed opacity-70">
                   {card.text}
                 </p>

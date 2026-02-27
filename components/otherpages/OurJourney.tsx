@@ -29,10 +29,7 @@ const OurJourney: React.FC = () => {
         "Built expertise from soil to harvest",
         "Rooted in practical agricultural knowledge",
       ],
-      images: [
-        "https://images.unsplash.com/photo-1595855759920-86582396756a?w=800",
-        "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800",
-      ],
+      images: ["/journey/1980.jpg", "/journey/1981.jpg"],
     },
     {
       year: "2004",
@@ -44,10 +41,7 @@ const OurJourney: React.FC = () => {
         "Premium Cocoa Specialists",
         "Quality-First Reputation",
       ],
-      images: [
-        "https://images.unsplash.com/photo-1589927986089-35812388d1f4?w=800",
-        "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800",
-      ],
+      images: ["/journey/2004.jpg", "/journey/2005.jpg"],
     },
     {
       year: "2015",
@@ -59,10 +53,10 @@ const OurJourney: React.FC = () => {
         "Farmer Training Programs",
         "Community-Led Growth",
       ],
-      images: [
-        "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800",
-      ],
+      images: ["/journey/2015.jpg", "/journey/2016.jpg"],
     },
+
+    //  "",
     {
       year: "2019",
       title: "A Milestone Year",
@@ -73,9 +67,7 @@ const OurJourney: React.FC = () => {
         "Decade-Spanning Reliability",
         "Global Recognition",
       ],
-      images: [
-        "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=800",
-      ],
+      images: ["/journey/2019.jpg", "/journey/2020.jpg"],
     },
     {
       year: "2025",
@@ -88,7 +80,8 @@ const OurJourney: React.FC = () => {
         "Two-Continent Sourcing Network",
       ],
       images: [
-        "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800",
+        "https://images.unsplash.com/photo-1500937386664-56d1dfef3854",
+        "/journey/2025.jpg",
       ],
     },
     {
@@ -101,9 +94,7 @@ const OurJourney: React.FC = () => {
         "End-to-End Supply Chain Partner",
         "45+ Years of Agricultural Legacy",
       ],
-      images: [
-        "https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=800",
-      ],
+      images: ["/journey/2026-1.jpg", "/journey/2026-2.jpg"],
     },
   ];
 
@@ -190,7 +181,7 @@ const OurJourney: React.FC = () => {
         className="relative max-margin text-creamy overflow-hidden"
       >
         {/* Header Section */}
-        <div className="relative z-20 pt-24 md:pt-20 pb-12 px-6 text-left">
+        <div className="relative z-20 pt-24 md:pt-20 pb-12 text-left">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-6">
             Experience our journey
           </h1>
@@ -224,7 +215,7 @@ const OurJourney: React.FC = () => {
           {timelineData.map((item, index) => (
             <div
               key={item.year}
-              className="timeline-section min-h-screen flex items-center justify-center px-6"
+              className="timeline-section min-h-screen flex items-center justify-center"
             >
               <div className="timeline-content w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start border-t border-white/30 ">
                 {/* Left Column - Year and Title */}
@@ -245,7 +236,7 @@ const OurJourney: React.FC = () => {
 
                   {/* Images */}
                   {item.images && item.images.length > 0 && (
-                    <div className="grid grid-cols-2 gap-4 pt-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
                       {item.images.map((image, idx) => (
                         <div
                           key={idx}

@@ -74,11 +74,11 @@ export default function Hero({
         </div>
         <div className="hero-image w-full relative flex items-center aspect-video justify-center overflow-hidden h-100  rounded-xl">
           <Image
-            src="/hero-bg.jpg"
-            alt="Hero background"
+            src="/csr/csr-hero.jpg"
+            alt="CSR Hero background"
             width={500}
-            height={500}
-            className="w-full object-cover rounded-xl"
+            height={800}
+            className="w-full h-full object-cover object-center rounded-xl"
           />
         </div>
       </div>

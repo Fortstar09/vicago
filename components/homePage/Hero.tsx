@@ -19,7 +19,7 @@ const slides = [
     ),
     description:
       "From precision agriculture to sustainable practices, we help you grow more efficiently and profitably.",
-    image: "/images/hero-bg-1.jpg",
+    image: "/images/hero-bg-1.webp  ",
   },
   {
     badge: "Smart Agriculture",
