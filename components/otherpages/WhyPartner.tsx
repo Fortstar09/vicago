@@ -16,7 +16,7 @@ const WhyPartner = () => {
         </div>
         <div className="grid grid-cols-3 gap-4  w-full">
           <Image
-            src="/hero-bg.jpg"
+            src="/images/soyabeans.jpg"
             alt="Crops"
             width={400}
             height={400}

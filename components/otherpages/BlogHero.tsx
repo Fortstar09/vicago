@@ -9,7 +9,7 @@ const BlogHero = () => {
           src="/images/blog-hero.jpg"
           fill
           alt="bg"
-          className="object-cover  w-auto h-auto"
+          className="w-auto h-auto object-cover"
         />
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/50 to-black/70" />
         <div className="max-margin h-110 w-full flex justify-start items-end">

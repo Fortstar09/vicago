@@ -147,7 +147,7 @@ export default function DupHero({
           /* Cocoa card: mobile stays at bottom-left edge */
           .cocoa-card {
             position: absolute;
-            bottom: 18%;
+            bottom: 10%;
             left: 0;
             width: clamp(90px, 28%, 160px);
             aspect-ratio: 3/4;
@@ -268,7 +268,7 @@ export default function DupHero({
             <div className="dhero-float cocoa-card">
               <Image
                 src="/images/about-hero-2.jpg"
-                alt="Cocoa cultivation"
+                alt="Cocoa farmer"
                 fill
                 style={{ objectFit: "cover" }}
               />

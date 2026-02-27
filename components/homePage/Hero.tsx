@@ -10,7 +10,7 @@ const slides = [
     badge: "Sustainable Farming",
     title: (
       <>
-        Trusted Agricultural Commodity{" "}
+        Agricultural Commodity{" "}
         <span className="hidden sm:inline">
           <br />
         </span>
@@ -19,7 +19,7 @@ const slides = [
     ),
     description:
       "From precision agriculture to sustainable practices, we help you grow more efficiently and profitably.",
-    image: "/images/hero-bg-1.webp  ",
+    image: "/images/soya-hero.png",
   },
   {
     badge: "Smart Agriculture",
@@ -39,7 +39,7 @@ const slides = [
       </>
     ),
     description: "North American grain excellence for global food production",
-    image: "/images/hero-bg-3.jpg",
+    image: "/images/cocoa-bg.jpg",
   },
 ];
 

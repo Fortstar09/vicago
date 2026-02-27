@@ -255,7 +255,7 @@ const OurJourney: React.FC = () => {
 
                 {/* Right Column - Achievements */}
                 {item.achievements.length > 0 && (
-                  <div className="pt-10">
+                  <div className=" mb-6 pt-0 md:pt-40 ">
                     <ul className="space-y-4">
                       {item.achievements.map((achievement, idx) => (
                         <li key={idx} className="flex gap-3">

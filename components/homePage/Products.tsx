@@ -23,7 +23,7 @@ const DATA = [
     title: "Soyabeans",
     subtitle:
       "Premium soybeans ideal for oil extraction and protein production.",
-    image: "/images/about-wheat.jpg",
+    image: "/images/about-soya.webp",
   },
 ];
 

@@ -29,8 +29,6 @@ export default function About() {
           trigger: sectionRef.current,
           start: "top 40%",
           end: "bottom 55%",
-          // toggleActions: "play reverse play reverse",
-          // markers: true,
         },
       },
     );
@@ -42,7 +40,7 @@ export default function About() {
       id="about"
       className="relative overflow-hidden flex justify-center items-center bg-lightGreen "
     >
-      <div className="max-margin py-20 flex justify-center items-center">
+      <div className="max-margin py-10 md:py-20 flex justify-center items-center">
         {/* Static Images */}
         <div className="absolute inset-0 pointer-events-none">
           {/* <div className="absolute left-3 xl:left-35 top-60 mission-reveal">

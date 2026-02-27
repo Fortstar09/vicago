@@ -51,7 +51,6 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
   };
 
   const revealPage = () => {
-    console.log("block start");
     gsap.set(blocksRef.current, { scaleX: 1, transformOrigin: "right" });
 
     gsap.to(blocksRef.current, {
@@ -64,12 +63,10 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
         isTransitioning.current = false;
       },
     });
-    console.log("block end");
   };
 
   useEffect(() => {
     if (!overlayRef.current) return;
-    // console.log(signOverlayRef.current);
 
     overlayRef.current.innerHTML = "";
     blocksRef.current = [];
@@ -82,9 +79,7 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
     }
 
     gsap.set(blocksRef.current, { scaleX: 0 });
-    console.log("block 1 start");
     revealPage();
-    console.log("block 1 end");
 
     const handleRouteChange = (url: string) => {
       if (isTransitioning.current) return;

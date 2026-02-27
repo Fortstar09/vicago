@@ -22,9 +22,6 @@ export default function Story() {
           start: "top 50%", // start when section top is near bottom of viewport
           end: "bottom top", // active range
           scrub: false, // scroll-tied? set true if you want
-          // toggleActions: "play reverse play reverse",
-          // markers: true, // debug markers
-          // id: "Product Section",
         },
       });
 

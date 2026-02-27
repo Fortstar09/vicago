@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { LoaderCircle, SplinePointerIcon } from "lucide-react";
 
 interface FormData {
   firstName: string;
   lastName: string;
   email: string;
-  address: string;
-  company: string;
   subject: string;
   message: string;
 }
@@ -21,14 +21,13 @@ const ContactSection = () => {
     firstName: "",
     lastName: "",
     email: "",
-    address: "",
-    company: "",
     subject: "",
     message: "",
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -44,12 +43,6 @@ const ContactSection = () => {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Please enter a valid email";
     }
-    if (!formData.address.trim()) {
-      newErrors.address = "Email address is required";
-    }
-    if (!formData.company.trim()) {
-      newErrors.company = "Company is required";
-    }
     if (!formData.subject) {
       newErrors.subject = "Please select a subject";
     }
@@ -60,6 +53,7 @@ const ContactSection = () => {
     }
 
     setErrors(newErrors);
+    setLoading(false);
     return Object.keys(newErrors).length === 0;
   };
 
@@ -84,19 +78,40 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
 
     if (validateForm()) {
-      console.log("Form submitted with values:", formData);
-      setSubmitted(true);
+      const templateParams = {
+        fullname: formData.firstName + " " + formData.lastName,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        time: new Date().toDateString,
+      };
+
+      emailjs
+        .send(
+          process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID!,
+          process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID!,
+          templateParams,
+          process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY!,
+        )
+        .then(
+          () => {
+            setSubmitted(true);
+          },
+          (error) => {
+            console.log("FAILED...", error);
+          },
+        );
       setFormData({
         firstName: "",
         lastName: "",
         email: "",
-        address: "",
-        company: "",
         subject: "",
         message: "",
       });
+      setLoading(false);
       setTimeout(() => setSubmitted(false), 3000);
     }
   };
@@ -198,7 +213,7 @@ const ContactSection = () => {
             </h2>
 
             {submitted && (
-              <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg hidden">
+              <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
                 Thank you! Your message has been submitted successfully.
               </div>
             )}
@@ -265,26 +280,6 @@ const ContactSection = () => {
                 />
                 {errors.email && (
                   <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-                )}
-              </div>
-
-              {/* Company */}
-              <div>
-                <h3 className=" text-sm font-medium text-gray-700 mb-2">
-                  Company
-                </h3>
-                <input
-                  type="text"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  placeholder="Your Company Name"
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring focus:ring-vgbrown/70 ${
-                    errors.company ? "border-red-500" : "border-gray-300"
-                  }`}
-                />
-                {errors.company && (
-                  <p className="text-red-500 text-sm mt-1">{errors.company}</p>
                 )}
               </div>
 
@@ -366,7 +361,10 @@ const ContactSection = () => {
                   >
                     {[
                       { value: "general", label: "General Inquiry" },
-                      { value: "products", label: "Products Information" },
+                      {
+                        value: "products",
+                        label: "Products Information",
+                      },
                       {
                         value: "partnership",
                         label: "Partnership Opportunity",
@@ -433,7 +431,7 @@ const ContactSection = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Tell us about your requirements..."
+                  placeholder="Drop your message here ..."
                   rows={6}
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring focus:ring-vgbrown/70 resize-none ${
                     errors.message ? "border-red-500" : "border-gray-300"
@@ -447,9 +445,15 @@ const ContactSection = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-vgbrown hover:bg-vgbrown/90 text-white font-semibold py-3.5 px-6 rounded-lg transition-colors duration-200 hover-lift"
+                className="w-full bg-vgbrown hover:bg-vgbrown/90 text-white font-semibold py-3.5 px-6 rounded-lg transition-colors duration-200 hover-lift flex items-center justify-center gap-2 disabled:bg-vgbrown/80 disabled:cursor-not-allowed "
+                disabled={loading}
               >
-                Send Message
+                {loading && (
+                  <span>
+                    <LoaderCircle strokeWidth={1.5} className="animate-spin" />
+                  </span>
+                )}
+                {loading ? "Submitting..." : "Submit"}
               </button>
             </form>
           </div>

@@ -4,6 +4,7 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 const NAV_LINKS = [
   { label: "About us", href: "/about" },
@@ -17,7 +18,6 @@ const Navbar = () => {
   const navRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const isHome = pathname === "/" || pathname === "/blog";
-  // const isActive = pathname;
 
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,6 +47,11 @@ const Navbar = () => {
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(href + "/");
+  };
 
   /**
    * COLORS LOGIC
@@ -87,9 +92,15 @@ const Navbar = () => {
           {/* Desktop Nav */}
           <div className="hidden md:flex gap-8 text-base font-normal">
             {NAV_LINKS.map((link) => (
-              <a key={link.href} href={link.href}>
+              <Link
+                key={link.href}
+                href={link.href}
+                className={
+                  isActive(link.href) ? "text-vgreen font-semibold" : ""
+                }
+              >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -183,7 +194,7 @@ const Navbar = () => {
         {/* Nav Links */}
         <nav className="flex flex-col gap-1 px-8 py-4">
           {NAV_LINKS.map((link, i) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
@@ -193,7 +204,7 @@ const Navbar = () => {
               }}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
