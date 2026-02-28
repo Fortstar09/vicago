@@ -27,6 +27,8 @@ const ContactSection = () => {
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [failed, setFailed] = useState(false);
+
   const [loading, setLoading] = useState(false);
 
   const validateForm = (): boolean => {
@@ -99,20 +101,22 @@ const ContactSection = () => {
           () => {
             setSubmitted(true);
             setLoading(false);
+            setFormData({
+              firstName: "",
+              lastName: "",
+              email: "",
+              subject: "",
+              message: "",
+            });
+            setTimeout(() => setSubmitted(false), 3000);
           },
           (error) => {
             console.log("FAILED...", error);
+            setFailed(true);
             setLoading(false);
+            setTimeout(() => setFailed(false), 5000);
           },
         );
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-      setTimeout(() => setSubmitted(false), 3000);
     }
   };
 
@@ -215,6 +219,12 @@ const ContactSection = () => {
             {submitted && (
               <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
                 Thank you! Your message has been submitted successfully.
+              </div>
+            )}
+
+            {failed && (
+              <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                Sorry, your message failed to submit. Please try again.
               </div>
             )}
 
