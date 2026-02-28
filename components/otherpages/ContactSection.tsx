@@ -53,7 +53,6 @@ const ContactSection = () => {
     }
 
     setErrors(newErrors);
-    setLoading(false);
     return Object.keys(newErrors).length === 0;
   };
 
@@ -78,9 +77,9 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
 
     if (validateForm()) {
+      setLoading(true);
       const templateParams = {
         fullname: formData.firstName + " " + formData.lastName,
         email: formData.email,
@@ -99,9 +98,11 @@ const ContactSection = () => {
         .then(
           () => {
             setSubmitted(true);
+            setLoading(false);
           },
           (error) => {
             console.log("FAILED...", error);
+            setLoading(false);
           },
         );
       setFormData({
@@ -111,7 +112,6 @@ const ContactSection = () => {
         subject: "",
         message: "",
       });
-      setLoading(false);
       setTimeout(() => setSubmitted(false), 3000);
     }
   };
